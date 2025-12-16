@@ -2,13 +2,13 @@
 /obj/structure/drape/desert
 	name = "desert drape"
 	desc = "Made from durable fabric."
-	icon = 'icons/desert_town/drapes.dmi'
+	icon = 'modular/DesertTown/icons/drapes.dmi'
 	icon_state = "desertdrape"
 
 /obj/structure/drape/zybantine
 	name = "zybantine drape"
 	desc = "Made from prestigious fabric."
-	icon = 'icons/desert_town/drapes.dmi'
+	icon = 'modular/DesertTown/icons/drapes.dmi'
 	icon_state = "zybantinedrape1"
 
 /obj/structure/drape/zybantine/Initialize()
@@ -18,17 +18,17 @@
 //cushion
 /obj/item/cushion/desert1
 	name = "desert cushion"
-	icon = 'icons/desert_town/cushions.dmi'
+	icon = 'modular/DesertTown/icons/cushions.dmi'
 	icon_state = "desertcushion1"
 
 /obj/item/cushion/desert2
 	name = "desert cushion"
-	icon = 'icons/desert_town/cushions.dmi'
+	icon = 'modular/DesertTown/icons/cushions.dmi'
 	icon_state = "desertcushion2"
 
 /obj/item/cushion/zybantine
 	name = "zybantine cushion"
-	icon = 'icons/desert_town/cushions.dmi'
+	icon = 'modular/DesertTown/icons/cushions.dmi'
 	icon_state = "zybantinecushion"
 
 //kegs
@@ -39,19 +39,19 @@
 /obj/structure/fermentation_keg/sandpot
 	name = "sand pot"
 	desc = ""
-	icon = 'icons/desert_town/pots.dmi'
+	icon = 'modular/DesertTown/icons/pots.dmi'
 	icon_state = "sandpot1"
 
 /obj/structure/fermentation_keg/fancypot
 	name = "fancy pot"
 	desc = ""
-	icon = 'icons/desert_town/pots.dmi'
+	icon = 'modular/DesertTown/icons/pots.dmi'
 	icon_state = "fancypot1"
 
 
 /obj/item/reagent_containers/glass/bucket/wooden/tinypot
 	name = "tiny pot"
-	icon = 'icons/desert_town/pots.dmi'
+	icon = 'modular/DesertTown/icons/pots.dmi'
 	icon_state = "tinypot1"
 
 
@@ -131,7 +131,7 @@
 ///
 /obj/machinery/light/rogue/wallfire/desert
 	name = "desert fireplace"
-	icon = 'icons/desert_town/fireplace.dmi'
+	icon = 'modular/DesertTown/icons/fireplace.dmi'
 	icon_state = "fireplace1"
 	base_state = "fireplace"
 	fueluse = 0
@@ -144,7 +144,7 @@
 /obj/structure/pillar
 	name = "pillar"
 	desc = ""
-	icon = 'icons/desert_town/sandpillar.dmi'
+	icon = 'modular/DesertTown/icons/sandpillar.dmi'
 	opacity = 0
 	max_integrity = 1000
 	density = TRUE
@@ -168,19 +168,19 @@
 
 /obj/item/chair/wood/zybantine
 	name = "zybantine chair"
-	icon = 'icons/desert_town/chairs.dmi'
+	icon = 'modular/DesertTown/icons/chairs.dmi'
 	icon_state = "zybantinechair"
 	origin_type = /obj/structure/chair/wood/zybantine
 
 /obj/structure/chair/wood/zybantine
 	name = "zybantine chair"
-	icon = 'icons/desert_town/chairs.dmi'
+	icon = 'modular/DesertTown/icons/chairs.dmi'
 	icon_state = "zybantinechair"
 
 /obj/structure/chair/wood/rogue/throne/zybantine
 	name = "zybantine throne"
 	icon_state = "zybantinethrone"
-	icon = 'icons/desert_town/throne.dmi'
+	icon = 'modular/DesertTown/icons/throne.dmi'
 	pixel_x = -16
 
 
@@ -202,14 +202,14 @@
 /obj/structure/chair/zybantine_sofa/right
 	name = "zybantine sofa"
 	icon_state = "zybantinesofa_right"
-	icon = 'icons/desert_town/chairs.dmi'
+	icon = 'modular/DesertTown/icons/chairs.dmi'
 	buildstackamount = 1
 	item_chair = null
 
 /obj/structure/chair/zybantine_sofa/left
 	name = "zybantine sofa"
 	icon_state = "zybantinesofa_left"
-	icon = 'icons/desert_town/chairs.dmi'
+	icon = 'modular/DesertTown/icons/chairs.dmi'
 	buildstackamount = 1
 	item_chair = null
 
@@ -219,7 +219,7 @@
 	name = "sandrock"
 	desc = "A large desert rock protuding from the ground."
 	icon_state = "rock1"
-	icon = 'icons/desert_town/sandrock.dmi'
+	icon = 'modular/DesertTown/icons/sandrock.dmi'
 	opacity = 0
 	max_integrity = 1000
 	density = TRUE
@@ -250,7 +250,7 @@
 
 /obj/item/natural/rock/desert
 	name = "sand rock"
-	icon = 'icons/desert_town/small_sandrock.dmi'
+	icon = 'modular/DesertTown/icons/small_sandrock.dmi'
 	icon_state = "sandrock1"
 
 /obj/item/natural/rock/desert/Initialize()
@@ -263,7 +263,7 @@
 /obj/structure/flora/roguegrass/bush/desert
 	name = "saigahorn"
 	desc = ""
-	icon = 'icons/desert_town/flora.dmi'
+	icon = 'modular/DesertTown/icons/flora.dmi'
 	icon_state = "saigahorn1"
 
 /obj/structure/flora/roguegrass/bush/desert/Initialize()
@@ -273,7 +273,7 @@
 /obj/structure/flora/roguegrass/bush/desertshrub
 	name = "treelet"
 	desc = ""
-	icon = 'icons/desert_town/flora.dmi'
+	icon = 'modular/DesertTown/icons/flora.dmi'
 	icon_state = "bushshrub"
 	max_integrity = 100
 	debris = list(/obj/item/natural/fibers = 1, /obj/item/grown/log/tree/stick = 1, /obj/item/grown/log/tree/small = 1)
@@ -282,7 +282,7 @@
 /obj/structure/flora/roguetree/palm
 	name = "palm tree"
 	desc = "Scant, precious shade."
-	icon = 'icons/desert_town/bigpalm.dmi'
+	icon = 'modular/DesertTown/icons/bigpalm.dmi'
 	icon_state = "palm"
 	stump_type = /obj/structure/flora/roguetree/stump/burnt
 	pixel_x = -32
@@ -295,7 +295,7 @@
 	name = "tree stump"
 	desc = "Shade no more."
 	icon_state = "palmstump"
-	icon = 'icons/desert_town/bigpalm.dmi'
+	icon = 'modular/DesertTown/icons/bigpalm.dmi'
 	stump_type = null
 	pixel_x = -32
 
@@ -307,7 +307,7 @@
 
 /obj/structure/stairs/desert
 	name = "sand stairs"
-	icon = 'icons/desert_town/sandstairs.dmi'
+	icon = 'modular/DesertTown/icons/sandstairs.dmi'
 	icon_state = "sandstairs"
 	max_integrity = 600
 
