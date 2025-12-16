@@ -274,7 +274,7 @@
 	name = "treelet"
 	desc = ""
 	icon = 'modular/DesertTown/icons/flora.dmi'
-	icon_state = 'bushshrub'
+	icon_state = "bushshrub"
 	max_integrity = 100
 	debris = list(/obj/item/natural/fibers = 1, /obj/item/grown/log/tree/stick = 1, /obj/item/grown/log/tree/small = 1)
 
@@ -283,7 +283,7 @@
 	name = "palm tree"
 	desc = "Scant, precious shade."
 	icon = 'modular/DesertTown/icons/bigpalm.dmi'
-	icon_state = 'palm'
+	icon_state = "palm"
 	stump_type = /obj/structure/flora/roguetree/stump/burnt
 	pixel_x = -32
 

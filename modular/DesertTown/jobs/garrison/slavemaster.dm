@@ -1,5 +1,5 @@
 /datum/job/roguetown/slavemaster
-	title = "Slave master"
+	title = "Slave Master"
 	flag = DUNGEONEER
 	department_flag = GARRISON
 	faction = "Station"

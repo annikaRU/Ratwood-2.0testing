@@ -53,11 +53,11 @@
 		switch(weapon_choice)
 			if("Scimitar & Shield")
 				r_hand = /obj/item/rogueweapon/sword/short/falchion
-				beltr = /obj/item/rogueweapon/scabbard/sheath
-				backl = /obj/item/rogueweapon/shield/iron
+				beltr = /obj/item/rogueweapon/scabbard/sword
+				backl = /obj/item/rogueweapon/shield/iron/zybantine
 			if("Warhammer & Shield")
 				r_hand = /obj/item/rogueweapon/mace/warhammer
-				backl = /obj/item/rogueweapon/shield/iron
+				backl = /obj/item/rogueweapon/shield/iron/zybantine
 			if("Bardiche")
 				r_hand = /obj/item/rogueweapon/halberd/bardiche
 				backl = /obj/item/rogueweapon/scabbard/gwstrap

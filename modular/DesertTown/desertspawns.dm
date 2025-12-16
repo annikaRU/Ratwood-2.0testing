@@ -13,7 +13,7 @@
 /obj/effect/landmark/start/Mamluk
 	name = "Mamluk"
 /obj/effect/landmark/start/slavemaster
-	name = "Slave master""
+	name = "Slave master"
 /obj/effect/landmark/start/sheikh
 	name = "sheikh"
 /obj/effect/landmark/start/vizier

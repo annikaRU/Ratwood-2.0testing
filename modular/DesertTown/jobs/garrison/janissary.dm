@@ -57,7 +57,7 @@
 	tutorial = "You are well versed in the ways of handling a bow. \
 	You will stand in the back, and protect the front with arrows."
 	outfit = /datum/outfit/job/roguetown/janissary/ranger
-	category_tags = list(_WARDENCTAG_JANISSARY)
+	category_tags = list(CTAG_JANISSARY)
 	traits_applied = list(TRAIT_DODGEEXPERT)
 	subclass_stats = list(
 		STATKEY_PER = 2,//7 points weighted, same as MAA. They get temp buffs in the woods instead of in the city.
