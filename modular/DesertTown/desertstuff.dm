@@ -272,29 +272,33 @@
 
 /obj/structure/flora/roguegrass/bush/desertshrub
 	name = "treelet"
-	desc = ""
+	desc = "A rounded bush-like tree or perhaps tree-like bush native to Zybantium. A valuable source of wood in the sparse desert."
 	icon = 'modular/DesertTown/icons/flora.dmi'
-	icon_state = "bushshrub"
+	icon_state = "bushshrub1"
+	attacked_sound = 'sound/misc/woodhit.ogg'
 	max_integrity = 100
 	debris = list(/obj/item/natural/fibers = 1, /obj/item/grown/log/tree/stick = 1, /obj/item/grown/log/tree/small = 1)
 
+/obj/structure/flora/roguegrass/bush/desertshrub/Initialize()
+	. = ..()
+	icon_state = "bushshrub[pick(1,2)]"
 
 /obj/structure/flora/roguetree/palm
 	name = "palm tree"
 	desc = "Scant, precious shade."
 	icon = 'modular/DesertTown/icons/bigpalm.dmi'
-	icon_state = "palm"
-	stump_type = /obj/structure/flora/roguetree/stump/burnt
+	icon_state = "palm1"
+	stump_type = /obj/structure/flora/roguetree/stump/palm
 	pixel_x = -32
 
-// /obj/structure/flora/roguetree/palm/Initialize() //no alt sprites done yet
-// 	. = ..()
-// 	icon_state = "t[rand(1,4)]"
+/obj/structure/flora/roguetree/palm/Initialize()
+	. = ..()
+	icon_state = "palm[rand(1,2)]"
 
 /obj/structure/flora/roguetree/stump/palm
 	name = "tree stump"
 	desc = "Shade no more."
-	icon_state = "palmstump"
+	icon_state = "palmstump1"
 	icon = 'modular/DesertTown/icons/bigpalm.dmi'
 	stump_type = null
 	pixel_x = -32
@@ -402,3 +406,7 @@
 
 /obj/structure/flora/roguegrass/bush/wall/tall/desert
 	icon = 'modular/DesertTown/icons/alt/foliagetall.dmi'
+
+// /obj/structure/flora/roguegrass/bush/wall/tall/desert/Initialize()
+// 	. = ..()
+// 	icon_state = "tallbush[pick(1,2)]"
