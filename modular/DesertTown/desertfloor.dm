@@ -190,6 +190,11 @@
 	. = ..()
 	src.ChangeTurf(/turf/open/floor/rogue/dirt, flags = CHANGETURF_INHERIT_AIR)
 
+/turf/open/floor/rogue/dirt/desert
+	icon = 'modular/DesertTown/icons/alt/roguefloor.dmi'
+/turf/open/floor/rogue/dirt/road/desert
+	icon = 'modular/DesertTown/icons/alt/roguefloor.dmi'
+
 
 ///.
 
