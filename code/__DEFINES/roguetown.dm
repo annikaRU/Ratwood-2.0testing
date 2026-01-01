@@ -300,6 +300,7 @@ GLOBAL_LIST_EMPTY(round_join_times)
 #define CTAG_MAMLUK			"CTAG_MAMLUK"		// Alt for desert town
 #define CTAG_SERGEANT		"CAT_SERGEANT"		// Sergeant class - Handles Sergeant class selector (weapons selection)
 #define CTAG_ROYALGUARD		"CAT_ROYALGUARD"	// Royal Guard class - Handles Royal Guard class selector
+#define CTAG_CATAPHRACT		"CAT_CATAPHRACT"	// Desert alt
 #define CTAG_CONSORT		"CAT_CONSORT"		// Consort/Suitor subclasses
 #define CTAG_MERCENARY		"CAT_MERCENARY"		// Mercenary class - Handles Mercenary class selector
 #define CTAG_HAND			"CAT_HAND"			// Hand class - Handles Hand class selector

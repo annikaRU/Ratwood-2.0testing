@@ -14,7 +14,7 @@
 	display_order = JDO_KNIGHT
 	whitelist_req = TRUE
 	outfit = /datum/outfit/job/roguetown/cataphract
-	advclass_cat_rolls = list(CTAG_ROYALGUARD = 20)
+	advclass_cat_rolls = list(CTAG_CATAPHRACT = 20)
 	job_traits = list(TRAIT_NOBLE, TRAIT_STEELHEARTED, TRAIT_GUARDSMAN)
 	give_bank_account = 22
 	noble_income = 10
@@ -63,11 +63,10 @@
 
 /datum/advclass/cataphract/greatweapon
 	name = "Heavy Knight"
-	tutorial = "You've trained thoroughly and hit far harder than most - masterfully proficient in swords, axes, maces or polearms. \
-	People may fear the mounted knights, but they should truly fear those who come off their mount..."
+	tutorial = "You've trained thoroughly and hit far harder than most - masterfully proficient in mighty swords, axes, maces or polearms."
 	outfit = /datum/outfit/job/roguetown/cataphract/greatweapon
 
-	category_tags = list(CTAG_ROYALGUARD)
+	category_tags = list(CTAG_CATAPHRACT)
 	traits_applied = list(TRAIT_HEAVYARMOR)
 	subclass_stats = list(
 		STATKEY_STR = 3,//Heavy hitters. Less con/end, high strength.
@@ -82,13 +81,13 @@
 		/datum/skill/combat/axes = SKILL_LEVEL_EXPERT,
 		/datum/skill/combat/maces = SKILL_LEVEL_EXPERT,
 		/datum/skill/combat/whipsflails = SKILL_LEVEL_JOURNEYMAN,
-		/datum/skill/misc/riding = SKILL_LEVEL_NOVICE,
 		/datum/skill/combat/wrestling = SKILL_LEVEL_EXPERT,
 		/datum/skill/combat/unarmed = SKILL_LEVEL_JOURNEYMAN,
+		/datum/skill/combat/knives = SKILL_LEVEL_JOURNEYMAN,
+		/datum/skill/misc/riding = SKILL_LEVEL_EXPERT,
 		/datum/skill/misc/climbing = SKILL_LEVEL_JOURNEYMAN,
 		/datum/skill/misc/reading = SKILL_LEVEL_APPRENTICE,
 		/datum/skill/misc/athletics = SKILL_LEVEL_JOURNEYMAN,
-		/datum/skill/combat/knives = SKILL_LEVEL_JOURNEYMAN,
 		/datum/skill/misc/tracking = SKILL_LEVEL_APPRENTICE,
 	)
 
@@ -154,7 +153,7 @@
 	Your fortitude and mastery with the versatile combination of a shield and weapon makes you a fearsome opponent to take down!"
 	outfit = /datum/outfit/job/roguetown/cataphract/shieldmaster
 
-	category_tags = list(CTAG_ROYALGUARD)
+	category_tags = list(CTAG_CATAPHRACT)
 	traits_applied = list(TRAIT_HEAVYARMOR)
 	subclass_stats = list(
 		STATKEY_STR = 1,//Tanky, less strength, but high con/end.
@@ -167,13 +166,14 @@
 		/datum/skill/combat/whipsflails = SKILL_LEVEL_EXPERT,
 		/datum/skill/combat/maces = SKILL_LEVEL_EXPERT,
 		/datum/skill/combat/shields = SKILL_LEVEL_EXPERT,
-		/datum/skill/misc/riding = SKILL_LEVEL_APPRENTICE,
 		/datum/skill/combat/wrestling = SKILL_LEVEL_EXPERT,
 		/datum/skill/combat/unarmed = SKILL_LEVEL_JOURNEYMAN,
+		/datum/skill/combat/knives = SKILL_LEVEL_JOURNEYMAN,
+
+		/datum/skill/misc/riding = SKILL_EXP_EXPERT,
 		/datum/skill/misc/climbing = SKILL_LEVEL_JOURNEYMAN,
 		/datum/skill/misc/reading = SKILL_LEVEL_APPRENTICE,
 		/datum/skill/misc/athletics = SKILL_LEVEL_JOURNEYMAN,
-		/datum/skill/combat/knives = SKILL_LEVEL_JOURNEYMAN,
 		/datum/skill/misc/tracking = SKILL_LEVEL_APPRENTICE,
 	)
 
@@ -231,7 +231,7 @@
 // 	outfit = /datum/outfit/job/roguetown/knight/mountedknight
 // 	horse = /mob/living/simple_animal/hostile/retaliate/rogue/saiga/saigabuck/tame/saddled
 
-// 	category_tags = list(CTAG_ROYALGUARD)
+// 	category_tags = list(CTAG_CATAPHRACT)
 
 // 	traits_applied = list(TRAIT_HEAVYARMOR, TRAIT_EQUESTRIAN)
 // 	//Decent all-around stats. Nothing spectacular. Ranged/melee hybrid class on horseback.
@@ -350,7 +350,7 @@
 // 	outfit = /datum/outfit/job/roguetown/knight/irregularknight
 
 // 	traits_applied = list(TRAIT_MEDIUMARMOR, TRAIT_DODGEEXPERT)
-// 	category_tags = list(CTAG_ROYALGUARD)
+// 	category_tags = list(CTAG_CATAPHRACT)
 // 	subclass_stats = list(
 // 		STATKEY_STR = 1,
 // 		STATKEY_INT = 1,
