@@ -5,7 +5,7 @@
 	//allowed_maps = list("Desert Town")
 	outfit = /datum/outfit/job/roguetown/mamluk/zephyr
 
-	category_tags = list(CTAG_MENATARMS)
+	category_tags = list(CTAG_MAMLUK)
 	//Garrison ranged/speed class. Time to go wild
 	subclass_stats = list(
 		STATKEY_SPD = 2,// seems kinda lame but remember guardsman bonus!!

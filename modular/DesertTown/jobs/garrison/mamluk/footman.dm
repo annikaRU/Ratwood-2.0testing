@@ -5,7 +5,7 @@
 	outfit = /datum/outfit/job/roguetown/mamluk/footman
 	//allowed_maps = list("Desert Town")
 
-	category_tags = list(CTAG_MENATARMS)
+	category_tags = list(CTAG_MAMLUK)
 	traits_applied = list(TRAIT_MEDIUMARMOR)
 	subclass_stats = list(
 		STATKEY_STR = 2,// seems kinda lame but remember guardsman bonus!!
