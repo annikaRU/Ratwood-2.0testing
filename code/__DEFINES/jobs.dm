@@ -182,6 +182,7 @@
 #define ADVENTURER      (1<<3)
 #define BANDIT		    (1<<4)
 #define COURTAGENT	    (1<<5)
+#define COURTSLAVE	    (1<<5) //desert
 #define WRETCH          (1<<6)
 #define TRADER			(1<<7)
 
