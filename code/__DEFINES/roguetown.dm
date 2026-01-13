@@ -323,7 +323,6 @@ GLOBAL_LIST_EMPTY(round_join_times)
 #define CTAG_NIGHTMAIDEN	"CAT_NIGHTMAIDEN"	// Bathhouse Attendant's aesthetic choices.
 #define CTAG_PRISONER 		"CAT_PRISONER"
 
-
 #define CTAG_VIZIER			"CAT_VIZIER"		// Hand class alt
 #define CTAG_SHEIKH			"CAT_SHEIKH"		// Hand class alt
 #define CTAG_SULTAN			"CAT_SULTAN"		// Lord alt
