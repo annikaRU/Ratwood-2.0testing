@@ -8,7 +8,6 @@
 #define CTAG_MAMLUK			"CAT_MAMLUK"		// Menatarms alt
 #define CTAG_SLAVEMASTER	"CAT_SLAVEMASTER"
 #define CTAG_DTTOWNER		"CAT_DTTOWNER"
-#define CTAG_NOMAD		"CAT_NOMAD"
 #define CTAG_PSLAVE			"CAT_PSLAVE"
 #define CTAG_DTCOURTMAGE	"CAT_DTCOURTMAGE"
 #define CTAG_HEADSLAVE		"CAT_HEADSLAVE"		// Seneschal's aesthetic choices.
@@ -79,7 +78,6 @@
 // #define NITEMASTER	(1<<9)
 // #define WENCH		(1<<10)
 // #define BEGGAR		(1<<11)
-#define NOMAD		(1<<13)
 // #define VILLAGER	(1<<14)
 // #define PRISONERR	(1<<15)
 // #define PRISONERB	(1<<16)

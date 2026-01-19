@@ -392,7 +392,6 @@
 
 #define WANDERER_ROLES \
 	/datum/job/roguetown/pilgrim,\
-	/datum/job/roguetown/nomad,\
 	/datum/job/roguetown/adventurer,\
 	/datum/job/roguetown/mercenary/desert_rider,\
 	/datum/job/roguetown/mercenary/grenzelhoft,\

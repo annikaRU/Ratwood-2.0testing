@@ -57,50 +57,50 @@
 	for(var/X in GLOB.noble_positions)
 		peopleiknow += X*/
 
+//We don't need to reskin the foreigners - they're foreign!
+// /datum/job/roguetown/nomad
+// 	title = "Nomad"
+// 	flag = NOMAD
+// 	department_flag = PEASANTS
+// 	faction = "Station"
+// 	total_positions = 40
+// 	spawn_positions = 40 //brings back round-start spawn of pilgrims!!!
+// 	allowed_races = RACES_ALL_KINDS
+// 	allowed_maps = list("Desert Town")
+// 	tutorial = "Fleeing misfortune you head your way towards Al-Ashur. You're not a soldier or an explorer, but a humble migrant trying to look for a better life, if you get to survive the trip that is."
 
-/datum/job/roguetown/nomad
-	title = "Nomad"
-	flag = NOMAD
-	department_flag = PEASANTS
-	faction = "Station"
-	total_positions = 40
-	spawn_positions = 40 //brings back round-start spawn of pilgrims!!!
-	allowed_races = RACES_ALL_KINDS
-	allowed_maps = list("Desert Town")
-	tutorial = "Fleeing misfortune you head your way towards Al-Ashur. You're not a soldier or an explorer, but a humble migrant trying to look for a better life, if you get to survive the trip that is."
+// 	outfit = null
+// 	outfit_female = null
+// 	bypass_lastclass = TRUE
+// 	bypass_jobban = FALSE
 
-	outfit = null
-	outfit_female = null
-	bypass_lastclass = TRUE
-	bypass_jobban = FALSE
-
-	job_subclasses = list(
-		/datum/advclass/dtbarbersurgeon,
-		/datum/advclass/dtblacksmith,
-		/datum/advclass/dtcheesemaker,
-		/datum/advclass/dtdrunkard,
-		/datum/advclass/dtfisher,
-		/datum/advclass/dthunter,
-		/datum/advclass/dthunter/spear,
-		/datum/advclass/dtminer,
-		/datum/advclass/dtminstrel,
-		/datum/advclass/dtpeasant,
-		/datum/advclass/dtpotter,
-		/datum/advclass/dtseamstress,
-		/datum/advclass/thug,
-		/datum/advclass/witch,
-		/datum/advclass/dtwoodworker
-	)
+// 	job_subclasses = list(
+// 		/datum/advclass/dtbarbersurgeon,
+// 		/datum/advclass/dtblacksmith,
+// 		/datum/advclass/dtcheesemaker,
+// 		/datum/advclass/dtdrunkard,
+// 		/datum/advclass/dtfisher,
+// 		/datum/advclass/dthunter,
+// 		/datum/advclass/dthunter/spear,
+// 		/datum/advclass/dtminer,
+// 		/datum/advclass/dtminstrel,
+// 		/datum/advclass/dtpeasant,
+// 		/datum/advclass/dtpotter,
+// 		/datum/advclass/dtseamstress,
+// 		/datum/advclass/thug,
+// 		/datum/advclass/witch,
+// 		/datum/advclass/dtwoodworker
+// 	)
 
 
-	advclass_cat_rolls = list(CTAG_NOMAD = 20)
-	PQ_boost_divider = 10
+// 	advclass_cat_rolls = list(CTAG_NOMAD = 20)
+// 	PQ_boost_divider = 10
 
-	announce_latejoin = FALSE
-	display_order = JDO_PILGRIM
-	min_pq = -20
-	max_pq = null
-	wanderer_examine = TRUE
-	advjob_examine = TRUE
-	always_show_on_latechoices = TRUE
-	same_job_respawn_delay = 0
+// 	announce_latejoin = FALSE
+// 	display_order = JDO_PILGRIM
+// 	min_pq = -20
+// 	max_pq = null
+// 	wanderer_examine = TRUE
+// 	advjob_examine = TRUE
+// 	always_show_on_latechoices = TRUE
+// 	same_job_respawn_delay = 0
