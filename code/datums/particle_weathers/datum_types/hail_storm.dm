@@ -18,7 +18,7 @@
 	name = "Hail"
 	desc = "Hailstorm"
 	particleEffectType = /particles/weather/hail
-
+	warning_message = span_danger("The upper air chills and freezes as clouds gather above.")
 	scale_vol_with_severity = TRUE
 	weather_sounds = list(/datum/looping_sound/hail)
 	indoor_weather_sounds = list(/datum/looping_sound/indoor_hail)

@@ -24,7 +24,7 @@
 	name = "Sandstorm"
 	desc = "A dry wind kicks sand through the air."
 	particleEffectType = /particles/weather/sand/gentle
-
+	warning_message = span_danger("Dry gusts winds their way across the realm, pulling at loose ground.")
 	scale_vol_with_severity = TRUE
 	weather_sounds = list(/datum/looping_sound/sandstorm)
 	indoor_weather_sounds = list(/datum/looping_sound/wind)
@@ -41,17 +41,11 @@
 	if(HAS_TRAIT(L, TRAIT_SANDSTORM_IMMUNE))
 		return
 
-//	if(!HAS_TRAIT(L, TRAIT_SANDSTORMED))
-//		ADD_TRAIT(L, TRAIT_SANDSTORMED, TRAIT_GENERIC)
-
 	if(!HAS_TRAIT(L, TRAIT_SANDSTORM_GOGGLES) && prob(5))
 		L.adjust_blurriness(rand(1,3))
 
 /datum/particle_weather/sand_gentle/stop_weather_sound_effect(mob/living/L)
 	..() // stop sounds normally
-
-	if(HAS_TRAIT(L, TRAIT_SANDSTORMED))
-		REMOVE_TRAIT(L, TRAIT_SANDSTORMED, TRAIT_GENERIC)
 
 /datum/particle_weather/sand_gentle/end()
 	running = FALSE
@@ -66,7 +60,7 @@
 	name = "Sandstorm"
 	desc = "A howling wall of sand scours the land."
 	particleEffectType = /particles/weather/sand
-
+	warning_message = span_danger("Ferocious winds howl their way across the realm, building thick clouds close to the earth.")
 	scale_vol_with_severity = TRUE
 	weather_sounds = list(/datum/looping_sound/sandstorm)
 	indoor_weather_sounds = list(/datum/looping_sound/wind)

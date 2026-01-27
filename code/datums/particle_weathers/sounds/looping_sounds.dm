@@ -69,3 +69,15 @@
 
 /datum/looping_sound/drythunder/indoors
 	volume = 50
+
+/datum/looping_sound/ash
+	mid_sounds = 'sound/weather/ashstorm/weather_ashstorm.ogg'
+	mid_length = 48 SECONDS
+	volume = 110
+	direct = TRUE
+
+/datum/looping_sound/indoor_ash
+	mid_sounds = 'sound/weather/ashstorm/weather_ashstorm_indoors.ogg'
+	mid_length = 44 SECONDS
+	volume = 175
+	direct = TRUE

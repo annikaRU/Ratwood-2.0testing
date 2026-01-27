@@ -1,7 +1,7 @@
 /particles/weather/static_spark
 	icon_state = "spark"
 
-	color = "#dfefff"
+	color = "#add8e6"
 
 	position = generator("box", list(-400, -300, 0), list(400, 300, 0))
 
@@ -10,7 +10,7 @@
 
 	scale = generator("num", 0.4, 0.7)
 
-	lifespan = generator("num", 6, 10)
+	lifespan = generator("num", 20, 50)
 
 	maxSpawning = 3
 	minSpawning = 1
@@ -19,7 +19,7 @@
 	name = "Dry Thunderstorm"
 	desc = "Lightning without rain, la la description."
 	particleEffectType = /particles/weather/static_spark
-
+	warning_message = span_danger("Dark clouds roll across the sky, echo's of thunder rumbling across the dry realm.")
 	scale_vol_with_severity = TRUE
 	weather_sounds = list(/datum/looping_sound/drythunder)
 	indoor_weather_sounds = list(/datum/looping_sound/drythunder/indoors)

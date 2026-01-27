@@ -39,10 +39,16 @@ SUBSYSTEM_DEF(ParticleWeather)
 			LAZYINITLIST(elligble_weather)
 			elligble_weather[W] = probability
 	switch(SSmapping.config.map_name)
-		if("Rosewood")
+		if("Rockhill")
 			selected_forecast = new /datum/forecast/rockhill()
+
+		else if("Dunworld")
+			selected_forecast = new /datum/forecast/dunworld()
+
+		else if("Alashur")//placeholder, update with desertmap
+			selected_forecast = new /datum/forecast/alashur()
 		else
-			selected_forecast = new /datum/forecast/vanderlin()
+			selected_forecast = new /datum/forecast/rockhill()	//Default to rockhill if no configs match so we have some weather
 	return ..()
 
 /datum/controller/subsystem/ParticleWeather/proc/run_weather(datum/particle_weather/weather_datum_type, force = 0, color)
@@ -66,6 +72,7 @@ SUBSYSTEM_DEF(ParticleWeather)
 		runningWeather.start(color)
 	else
 		var/randTime = rand(0, 6000) + initial(runningWeather.weather_duration_upper)
+		runningWeather.send_warning()
 		addtimer(CALLBACK(runningWeather, /datum/particle_weather/proc/start), randTime, TIMER_UNIQUE|TIMER_STOPPABLE) //Around 0-10 minutes between weathers
 
 

@@ -1,3 +1,4 @@
+//Rockhill is meant to be Sandy, dry thunderstorm sort of weather. On occasion, ash storms from mountdecap and fireflies.
 /datum/forecast/alashur
 	day_weather = list(/datum/particle_weather/sand_gentle = 10,/datum/particle_weather/rain_gentle = 1)
 	dawn_weather = list(/datum/particle_weather/sand_gentle = 10)

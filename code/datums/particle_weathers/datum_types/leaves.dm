@@ -30,7 +30,7 @@
 	name = "Rain"
 	desc = "Gentle Rain, la la description."
 	particleEffectType = /particles/weather/leaves
-
+	warning_message = span_danger("Light winds blow in through the forests across the realm.")
 	scale_vol_with_severity = TRUE
 
 	minSeverity = 1
@@ -45,7 +45,7 @@
 	name = "Rain"
 	desc = "Gentle Rain, la la description."
 	particleEffectType = /particles/weather/leaves
-
+	warning_message = span_danger("Heavy winds blow in through the forests across the realm.")
 	scale_vol_with_severity = TRUE
 
 	minSeverity = 4
@@ -60,7 +60,7 @@
 	name = "Rain"
 	desc = "Gentle Rain, la la description."
 	particleEffectType = /particles/weather/leaves/sakura
-
+	warning_message = span_danger("Love reigns and a calm wind runs through floral trees")
 	scale_vol_with_severity = TRUE
 
 	minSeverity = 1
@@ -75,7 +75,7 @@
 	name = "Rain"
 	desc = "Gentle Rain, la la description."
 	particleEffectType = /particles/weather/leaves/sakura
-
+	warning_message = span_danger("Love reigns and a heavy wind runs through floral trees")
 	scale_vol_with_severity = TRUE
 
 	minSeverity = 4

@@ -9,6 +9,7 @@
 #define PARTICLEWEATHER_SAKURA "weather_sakura"
 #define PARTICLEWEATHER_SAND "weather_sand"
 #define PARTICLEWEATHER_FIREFLY "weather_firefly"
+#define PARTICLEWEATHER_ASH "weather_ashstorm"
 GLOBAL_LIST_EMPTY(weather_act_upon_list)
 
 /// Weather immunities, also protect mobs inside them.

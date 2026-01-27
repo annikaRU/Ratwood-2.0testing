@@ -18,7 +18,7 @@
 	name = "Rain"
 	desc = "Gentle Rain, la la description."
 	particleEffectType = /particles/weather/blood_rain
-
+	warning_message = span_danger("The air grows heavy- something is very wrong.")
 	scale_vol_with_severity = TRUE
 	weather_sounds = list(/datum/looping_sound/rain)
 	indoor_weather_sounds = list(/datum/looping_sound/indoor_rain)

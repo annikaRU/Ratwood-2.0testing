@@ -14,10 +14,10 @@
 	wind                  = 2
 
 /datum/particle_weather/snow_gentle
-	name = "Rain"
-	desc = "Gentle Rain, la la description."
+	name = "Snow"
+	desc = "Gentle Snow, la la description."
 	particleEffectType = /particles/weather/snow
-
+	warning_message = span_danger("The air chills across the realm, soft white specs appearing near warm breaths.")
 	scale_vol_with_severity = TRUE
 	weather_sounds = list(/datum/looping_sound/snow)
 
@@ -36,10 +36,10 @@
 
 
 /datum/particle_weather/snow_storm
-	name = "Rain"
-	desc = "Gentle Rain, la la description."
+	name = "Snow storm"
+	desc = "Snow storm, la la description."
 	particleEffectType = /particles/weather/snow
-
+	warning_message = span_danger("Heavy clouds build in the sky as the air chills across the realm, soft white specs appearing near warm breaths.")
 	scale_vol_with_severity = TRUE
 	weather_sounds = list(/datum/looping_sound/snow)
 

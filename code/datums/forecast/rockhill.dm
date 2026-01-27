@@ -1,3 +1,4 @@
+//Rockhill is meant to be wet, foggy sort of weather. On occasion, snow, leafs and fireflies.
 /datum/forecast/rockhill
 	day_weather = list(/datum/particle_weather/rain_gentle = 2, /datum/particle_weather/snow_gentle = 10)
 	dawn_weather = list(/datum/particle_weather/rain_gentle = 2, /datum/particle_weather/snow_gentle = 10, /datum/particle_weather/fog = 4)

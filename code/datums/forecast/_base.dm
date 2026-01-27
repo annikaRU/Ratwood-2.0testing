@@ -12,20 +12,38 @@
 	var/dusk_prob = 33
 
 /datum/forecast/proc/pick_weather(time_of_day)
+	var/list/weather_pool	//Needed so that if the storytellers change we don't still keep eoran/zizo/graggar unique weathers
+
 	switch(time_of_day)
 		if("dusk")
 			if(!prob(dusk_prob))
 				return
-			return pickweight(dusk_weather)
+			weather_pool = dusk_weather
+
 		if("night")
 			if(!prob(night_prob))
 				return
-			return pickweight(night_weather)
+			weather_pool = night_weather.Copy()
+			if(SSgamemode.current_storyteller?.name == "Zizo" || SSgamemode.current_storyteller?.name == "Graggar")
+				weather_pool[/datum/particle_weather/blood_rain_storm] = 40
+
 		if("dawn")
 			if(!prob(dawn_prob))
 				return
-			return pickweight(dawn_weather)
+			weather_pool = dawn_weather.Copy()
+
+			if(SSgamemode.current_storyteller?.name == "Eora")
+				weather_pool[/datum/particle_weather/sakura_gentle] = 20
+
 		if("day")
 			if(!prob(day_prob))
 				return
-			return pickweight(day_weather)
+			weather_pool = day_weather.Copy()
+
+			if(SSgamemode.current_storyteller?.name == "Eora")
+				weather_pool[/datum/particle_weather/sakura_gentle] = 20
+
+	if(!weather_pool || !length(weather_pool))
+		return
+
+	return pickweight(weather_pool)

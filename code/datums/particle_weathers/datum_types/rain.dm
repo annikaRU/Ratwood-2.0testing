@@ -18,7 +18,7 @@
 	name = "Rain"
 	desc = "Gentle Rain, la la description."
 	particleEffectType = /particles/weather/rain
-
+	warning_message = span_danger("Grey clouds gather up above the realm, beholding the gift of life.")
 	scale_vol_with_severity = TRUE
 	weather_sounds = list(/datum/looping_sound/rain)
 	indoor_weather_sounds = list(/datum/looping_sound/indoor_rain)
@@ -43,7 +43,7 @@
 	name = "Rain"
 	desc = "Gentle Rain, la la description."
 	particleEffectType = /particles/weather/rain
-
+	warning_message = span_danger("Dark clouds gather up above the realm, sparks arcing between heavenly reaches.")
 	scale_vol_with_severity = TRUE
 	weather_sounds = list(/datum/looping_sound/storm)
 	indoor_weather_sounds = list(/datum/looping_sound/indoor_rain)

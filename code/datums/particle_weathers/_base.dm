@@ -58,7 +58,8 @@
 
 	//messages to send at different severities
 	var/list/weather_messages = list()
-
+	//warning message that plays when weather is picked
+	var/warning_message
 	// Sounds to play at different severities - order from lowest to highest
 	var/list/weather_sounds = list()
 	var/list/indoor_weather_sounds = list()
@@ -423,3 +424,13 @@
 		istype(next_turfarea, /area/rogue/indoors) && istype(current_turfarea, /area/rogue/outdoors)
 	)
 		SSParticleWeather.runningWeather.stop_weather_sound_effect(victim)
+
+/datum/particle_weather/proc/send_warning()
+	if(!warning_message)
+		return
+
+	for(var/mob/living/M in GLOB.player_list)
+		if(!M.client)
+			continue
+		if(can_weather(M))
+			to_chat(M, warning_message)
