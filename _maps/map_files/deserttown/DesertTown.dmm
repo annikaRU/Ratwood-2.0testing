@@ -110,7 +110,7 @@
 	},
 /obj/effect/decal/carpet/square/black{
 	pixel_x = -1;
-	step_y = 5
+	pixel_y = 5
 	},
 /obj/effect/spawner/lootdrop/valuable_candle_spawner,
 /turf/open/floor/rogue/tile/brownbrick{
@@ -960,7 +960,7 @@
 	},
 /obj/effect/decal/carpet/square/black{
 	pixel_x = -1;
-	step_y = 5
+	pixel_y = 5
 	},
 /obj/item/reagent_containers/glass/cup/silver/small{
 	pixel_x = 8;
@@ -35989,7 +35989,7 @@
 "unJ" = (
 /obj/effect/decal/carpet/square/black{
 	pixel_x = -1;
-	step_y = 5
+	pixel_y = 5
 	},
 /mob/living/simple_animal/hostile/retaliate/rogue/lamia,
 /turf/open/floor/rogue/tile/brownbrick{
