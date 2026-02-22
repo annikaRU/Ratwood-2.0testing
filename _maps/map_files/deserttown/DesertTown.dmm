@@ -18409,7 +18409,8 @@
 /area/rogue/indoors/deserttown/academy)
 "jVv" = (
 /obj/structure/mineral_door/wood{
-	name = "Kitchen"
+	name = "Kitchen";
+	lockid = "inquisition"
 	},
 /turf/open/floor/rogue/tile{
 	icon = 'modular/DesertTown/icons/alt/roguefloor.dmi'
@@ -30290,7 +30291,8 @@
 /area/rogue/under/town/basement)
 "qyq" = (
 /obj/structure/mineral_door/wood/fancywood{
-	lockid = "inquisition;"locked=1;
+	lockid = "inquisition";
+	locked = 1;
 	name = "Inquisitorial Manor"
 	},
 /turf/open/floor/rogue/tile/harem2{
@@ -39101,7 +39103,6 @@
 /area/rogue/outdoors/deserttown/manor/roofs)
 "vff" = (
 /obj/structure/mineral_door/wood/donjon/stone{
-	locked = 1;
 	lockid = "inquisition";
 	name = "Wine Cabinet"
 	},
