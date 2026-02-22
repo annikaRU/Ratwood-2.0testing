@@ -3150,6 +3150,10 @@
 /obj/item/reagent_containers/food/snacks/grown/potato/rogue,
 /turf/open/floor/rogue/tile/bath,
 /area/rogue/indoors/deserttown/manor)
+"bMn" = (
+/obj/machinery/light/roguestreet/orange/walllamp,
+/turf/open/floor/rogue/tile/harem1,
+/area/rogue/indoors/deserttown/shop)
 "bMr" = (
 /obj/structure/bed/rogue/inn/wool,
 /obj/item/bedsheet/rogue/cloth,
@@ -10658,6 +10662,7 @@
 /obj/structure/rack/rogue,
 /obj/item/natural/bundle/stick,
 /obj/item/natural/bundle/fibers/full,
+/obj/item/natural/bundle/stick,
 /turf/open/floor/rogue/blocks/stonered/tiny,
 /area/rogue/indoors/town/church/basement)
 "fGv" = (
@@ -11258,7 +11263,6 @@
 	icon_state = "tablewood1"
 	},
 /obj/item/reagent_containers/glass/cup/silver,
-/obj/machinery/light/roguestreet/orange/walllamp,
 /turf/open/floor/rogue/carpet,
 /area/rogue/indoors/deserttown/shop)
 "fVx" = (
@@ -21295,9 +21299,26 @@
 /turf/open/floor/carpet/royalblack,
 /area/rogue/indoors/deserttown)
 "lBZ" = (
-/obj/structure/rack/rogue,
-/obj/effect/spawner/lootdrop/roguetown/dungeon/clothing,
-/obj/effect/spawner/lootdrop/roguetown/dungeon/clothing,
+/obj/structure/lever/wall{
+	dir = 4;
+	name = "Merchant Inner Shutters";
+	pixel_x = null;
+	pixel_y = 6;
+	redstone_id = "shutter_merchant"
+	},
+/obj/structure/lever/wall{
+	dir = 4;
+	name = "Merchant Outer Shutters";
+	pixel_x = null;
+	pixel_y = -9;
+	redstone_id = "shutter_merchant2"
+	},
+/obj/machinery/light/roguestreet/orange/walllamp{
+	dir = 8
+	},
+/obj/structure/fluff/walldeco/church/line{
+	dir = 8
+	},
 /turf/open/floor/rogue/tile/harem,
 /area/rogue/indoors/deserttown/shop)
 "lCd" = (
@@ -27611,12 +27632,9 @@
 	},
 /area/rogue/under/cave)
 "pcy" = (
-/obj/structure/roguemachine/scomm,
-/obj/effect/decal/cobbleedge{
-	icon_state = "borderfall";
-	dir = 1;
-	pixel_y = 8
-	},
+/obj/item/reagent_containers/glass/bottle/waterskin,
+/obj/machinery/light/roguestreet/orange/walllamp,
+/obj/structure/rack/rogue/shelf/biggest,
 /turf/open/floor/rogue/carpet,
 /area/rogue/indoors/deserttown/shop)
 "pcR" = (
@@ -28540,6 +28558,8 @@
 "pAS" = (
 /obj/structure/rack/rogue,
 /obj/item/natural/bundle/stick,
+/obj/item/natural/bundle/stick,
+/obj/item/natural/bundle/stick,
 /turf/open/floor/rogue/blocks/stonered/tiny,
 /area/rogue/indoors/town/church/basement)
 "pBm" = (
@@ -29433,24 +29453,13 @@
 /turf/open/floor/rogue/sandbrick,
 /area/rogue/indoors/deserttown/warden)
 "qcd" = (
-/obj/structure/lever/wall{
-	dir = 4;
-	name = "Merchant Inner Shutters";
-	pixel_x = null;
-	pixel_y = 6;
-	redstone_id = "shutter_merchant"
-	},
-/obj/structure/lever/wall{
-	dir = 4;
-	name = "Merchant Outer Shutters";
-	pixel_x = null;
-	pixel_y = -9;
-	redstone_id = "shutter_merchant2"
-	},
 /obj/machinery/light/roguestreet/orange/walllamp{
+	dir = 1
+	},
+/obj/structure/fluff/walldeco/church/line{
 	dir = 8
 	},
-/turf/open/floor/rogue/carpet,
+/turf/open/floor/rogue/tile/harem,
 /area/rogue/indoors/deserttown/shop)
 "qcl" = (
 /obj/effect/decal/cleanable/dirt/cobweb,
@@ -30080,6 +30089,8 @@
 /obj/effect/spawner/lootdrop/roguetown/dungeon/clothing,
 /obj/effect/spawner/lootdrop/roguetown/dungeon/clothing,
 /obj/effect/spawner/lootdrop/roguetown/dungeon/clothing,
+/obj/effect/spawner/lootdrop/roguetown/dungeon/clothing,
+/obj/effect/spawner/lootdrop/roguetown/dungeon/clothing,
 /turf/open/floor/rogue/tile/brownbrick{
 	icon = 'modular/DesertTown/icons/alt/roguefloor.dmi'
 	},
@@ -30166,10 +30177,16 @@
 /turf/open/floor/carpet/stellar,
 /area/rogue/indoors/deserttown/magician)
 "quZ" = (
-/obj/structure/rack/rogue,
-/obj/item/reagent_containers/glass/bottle/waterskin,
-/obj/machinery/light/roguestreet/orange/walllamp,
-/turf/open/floor/rogue/tile/harem1,
+/obj/structure/roguemachine/scomm,
+/obj/effect/decal/cobbleedge{
+	icon_state = "borderfall";
+	dir = 1;
+	pixel_y = 8
+	},
+/obj/structure/fluff/walldeco/church/line{
+	dir = 8
+	},
+/turf/open/floor/rogue/tile/harem,
 /area/rogue/indoors/deserttown/shop)
 "qvs" = (
 /obj/structure/table/wood{
@@ -37230,10 +37247,10 @@
 /turf/open/floor/rogue/woodturned/nosmooth,
 /area/rogue/outdoors/town/roofs)
 "uca" = (
-/obj/machinery/light/roguestreet/orange/walllamp{
-	dir = 1
+/obj/structure/fluff/walldeco/church/line{
+	dir = 8
 	},
-/turf/open/floor/rogue/carpet,
+/turf/open/floor/rogue/tile/harem,
 /area/rogue/indoors/deserttown/shop)
 "uce" = (
 /obj/item/natural/rock/desert,
@@ -206898,9 +206915,9 @@ mxD
 mxD
 mxD
 mxD
-sno
-sno
-sno
+mxD
+mxD
+mxD
 sno
 sno
 sno
@@ -207201,8 +207218,8 @@ mxD
 mxD
 mxD
 sno
-wBa
-wBa
+sno
+sno
 sno
 sUX
 txS
@@ -207503,8 +207520,8 @@ sno
 sno
 sno
 sno
-ioR
-ioR
+wBa
+wBa
 sno
 wFs
 fSM
@@ -209923,7 +209940,7 @@ ioR
 tuo
 lsz
 tuo
-ioR
+cvE
 sno
 fFu
 wFs
@@ -210221,9 +210238,9 @@ mxD
 mxD
 mxD
 sno
-ioR
-ioR
-cvE
+sno
+sno
+sno
 sno
 sno
 sno
@@ -210522,13 +210539,13 @@ mxD
 mxD
 mxD
 mxD
+mxD
+mxD
+mxD
+mxD
+mxD
 sno
 sno
-sno
-sno
-sno
-sno
-wFs
 wFs
 wFs
 wFs
@@ -210828,7 +210845,7 @@ mxD
 mxD
 mxD
 mxD
-sno
+mxD
 sno
 pIG
 wFs
@@ -214767,10 +214784,10 @@ sno
 sno
 sno
 sno
+sBu
 kNI
-kNI
-kNI
-kNI
+sBu
+sBu
 kNI
 kNI
 kNI
@@ -215374,7 +215391,7 @@ dvf
 sIk
 sIk
 sIk
-sIk
+xoy
 sIk
 sIk
 sIk
@@ -346162,8 +346179,8 @@ qzQ
 dAM
 pcy
 ygN
-qcd
-uca
+ygN
+ygN
 xRi
 fPc
 qzQ
@@ -346462,10 +346479,10 @@ wgb
 wgb
 qzQ
 dAM
-dYP
-jPS
-dAM
-gzB
+quZ
+uca
+lBZ
+qcd
 dAM
 tTM
 eBC
@@ -346764,11 +346781,11 @@ wgb
 wgb
 qzQ
 dAM
-quZ
-oqJ
+dYP
+jPS
 dAM
-kNJ
-lBZ
+gzB
+dAM
 dAM
 dlt
 dlt
@@ -347369,7 +347386,7 @@ wgb
 qzQ
 dAM
 hMd
-oqJ
+bMn
 gzB
 kNJ
 kNJ
@@ -391017,7 +391034,7 @@ mfq
 mfq
 mfq
 mfq
-mfq
+ntv
 mfq
 mfq
 mfq
@@ -511818,7 +511835,7 @@ qdj
 qdj
 qdj
 qdj
-qdj
+eGX
 qdj
 qdj
 qdj
