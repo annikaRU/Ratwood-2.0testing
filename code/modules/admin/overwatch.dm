@@ -17,6 +17,18 @@ GLOBAL_LIST_EMPTY(overwatch_events) // List of lists, keyed by ckey
 	var/z_coord
 	var/location_text  // Cached location string matching LOGS output
 
+/datum/overwatch_event/Destroy()
+	if(GLOB.overwatch_events)
+		for(var/key in GLOB.overwatch_events)
+			var/list/L = GLOB.overwatch_events[key]
+			if(!L)
+				continue
+			if(src in L)
+				L -= src
+				if(!L.len)
+					GLOB.overwatch_events -= key
+	. = ..()
+
 /datum/overwatch_event/New(mob/target)
 	timestamp = world.time
 	if(target && target.client)

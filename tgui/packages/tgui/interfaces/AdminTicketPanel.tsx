@@ -502,11 +502,19 @@ export const AdminTicketPanel = (props) => {
                                   <Box
                                     backgroundColor={
                                       msg.is_admin
-                                        ? 'rgba(0, 100, 200, 0.1)'
-                                        : 'rgba(50, 50, 50, 0.3)'
+                                        ? 'rgba(0, 100, 200, 0.12)'
+                                        : 'rgba(40, 40, 40, 0.5)'
                                     }
                                     p={1}
-                                    mb={0.5}
+                                    mb={0.6}
+                                    style={{
+                                      borderRadius: '4px',
+                                      borderLeft: msg.is_admin
+                                        ? '3px solid #4a90e2'
+                                        : '3px solid #888',
+                                      wordBreak: 'break-word',
+                                      whiteSpace: 'pre-wrap',
+                                    }}
                                   >
                                     <Stack>
                                       <Stack.Item>
@@ -524,7 +532,7 @@ export const AdminTicketPanel = (props) => {
                                         </Box>
                                       </Stack.Item>
                                     </Stack>
-                                    <Box mt={0.5}>{msg.message}</Box>
+                                    <Box mt={0.4}>{msg.message}</Box>
                                   </Box>
                                 </Stack.Item>
                               ))

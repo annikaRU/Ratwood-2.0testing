@@ -257,6 +257,7 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 			if(ticket.initiator)
 				to_chat(ticket.initiator, span_adminhelp("<b>Admin PM from-<font color='red'>[user.client.holder.fakekey ? user.client.holder.fakekey : user.key]</font></b>: <span class='linkify'>[message]</span>"))
 				SEND_SOUND(ticket.initiator, sound('sound/adminhelp.ogg'))
+				window_flash(ticket.initiator, ignorepref = TRUE)
 			
 			// Log it
 			log_admin_private("Ticket #[ticket.id]: [key_name(user)] -> [ticket.initiator_key_name]: [message]")
@@ -399,11 +400,27 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 		if("ticket_flw")
 			var/ticket_id = params["ticket_id"]
 			var/datum/admin_help/ticket = TicketByID(ticket_id)
-			if(!ticket || !ticket.initiator || !ticket.initiator.mob || !user.client?.holder)
+			if(!ticket || !ticket.initiator || !ticket.initiator.mob || !user.client)
 				return FALSE
+			// Only allow non-observers with proper admin rights to follow
+			var/client/C = user.client
+			if(!isobserver(user) && !check_rights_for(C, R_ADMIN))
+				return FALSE
+
 			// Let the player know an admin is observing them
 			admin_ticket_log(ticket.initiator.mob, "<font color='green'>[key_name_admin(user)] is now observing you.</font>")
-			user.client.holder.Topic(null, list("adminplayerobservefollow" = "[REF(ticket.initiator.mob)]", "_src_" = "holder"))
+
+			// Mirror the behaviour of the adminplayerobservefollow href
+			var/can_ghost = TRUE
+			if(!isobserver(user))
+				can_ghost = C.admin_ghost()
+			if(!can_ghost)
+				return FALSE
+
+			var/mob/dead/observer/A = C.mob
+			if(!istype(A))
+				return FALSE
+			A.ManualFollow(ticket.initiator.mob)
 			return TRUE
 
 		if("ticket_tp")
@@ -787,10 +804,13 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 
 //Show the ticket panel
 /datum/admin_help/proc/TicketPanel()
-	// Redirect to TGUI admin panel
+	// Redirect to TGUI admin panel and pre-select this ticket
 	if(usr?.client)
+		// Remember this ticket as selected for this admin so that
+		// "Show Ticket" links in chat focus the correct entry.
+		GLOB.ahelp_tickets.selected_tickets[usr.ckey] = id
 		GLOB.ahelp_tickets.ui_interact(usr)
-		// The TGUI will handle selecting this ticket
+		// The TGUI will handle rendering the selected ticket
 
 /datum/admin_help/proc/Retitle()
 	var/new_title = input(usr, "Enter a title for the ticket", "Rename Ticket", name) as text|null
