@@ -335,7 +335,11 @@
 /datum/sex_controller/proc/cum_onto(mob/living/carbon/human/splashed_user = null)
 	log_combat(user, target, "Came onto the target")
 	playsound(target, 'sound/misc/mat/endout.ogg', 50, TRUE, ignore_walls = FALSE)
-	add_cum_floor(get_turf(target))
+	var/obj/item/organ/testicles/testes = user.getorganslot(ORGAN_SLOT_TESTICLES)
+	if(testes && testes.ball_size > DEFAULT_TESTICLES_SIZE)
+		add_cum_floor_big(get_turf(target))
+	else
+		add_cum_floor(get_turf(target))
 	if(splashed_user)
 		var/datum/status_effect/facial/facial = splashed_user.has_status_effect(/datum/status_effect/facial)
 		if(!facial)
@@ -402,7 +406,11 @@
 	log_combat(user, user, "Ejaculated")
 	user.visible_message(span_love("[user] makes a mess!"))
 	playsound(user, 'sound/misc/mat/endout.ogg', 50, TRUE, ignore_walls = FALSE)
-	add_cum_floor(get_turf(user))
+	var/obj/item/organ/testicles/testes = user.getorganslot(ORGAN_SLOT_TESTICLES)
+	if(testes && testes.ball_size > DEFAULT_TESTICLES_SIZE)
+		add_cum_floor_big(get_turf(user))
+	else
+		add_cum_floor(get_turf(user))
 	after_ejaculation()
 
 /datum/sex_controller/proc/ejaculate_container(obj/item/reagent_containers/glass/C)

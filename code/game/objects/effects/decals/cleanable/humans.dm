@@ -9,11 +9,22 @@
 	alpha = 150
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 	appearance_flags = NO_CLIENT_COLOR
+	mergeable_decal = FALSE
+	var/bigger_puddle = FALSE
+
+/obj/effect/decal/cleanable/coom/big
+	bigger_puddle = TRUE
 
 /obj/effect/decal/cleanable/coom/Initialize(mapload)
 	. = ..()
 	pixel_x = rand(-8, 8)
 	pixel_y = rand(-8, 8)
+	var/matrix/M = new
+	if(prob(75))
+		M.Turn(90 * rand(1, 3)) // turn by 90 degrees
+	if(bigger_puddle)
+		M.Scale(1.5, 1.5)
+	transform = M
 
 /obj/effect/decal/cleanable/blood
 	name = "blood"
