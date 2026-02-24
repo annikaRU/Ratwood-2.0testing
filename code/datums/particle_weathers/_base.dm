@@ -136,6 +136,19 @@
 	return
 
 /datum/particle_weather/Destroy()
+
+	// Remove particle effect if it exists
+	if(SSParticleWeather?.particleEffect)
+		qdel(SSParticleWeather.particleEffect)
+		SSParticleWeather.particleEffect = null
+
+	// Clear subsystem references
+	if(SSParticleWeather?.runningWeather == src)
+		SSParticleWeather.runningWeather = null
+
+	if(SSParticleWeather?.queued_weather == src)
+		SSParticleWeather.queued_weather = null
+
 	for(var/S in currentSounds)
 		var/datum/looping_sound/looping_sound = currentSounds[S]
 		if(istype(looping_sound))
@@ -203,6 +216,8 @@
  *
  */
 /datum/particle_weather/proc/wind_down()
+	if(QDELETED(src))
+		return
 	severity = 0
 	if(SSParticleWeather.particleEffect)
 		SSParticleWeather.particleEffect.animateSeverity(severityMod())
