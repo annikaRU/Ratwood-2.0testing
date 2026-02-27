@@ -125,8 +125,8 @@
 			H.adjust_hydration(hydration)
 			if(M.blood_volume < BLOOD_VOLUME_NORMAL)
 				M.blood_volume = min(M.blood_volume+WATER_BLOOD_RESTORE, BLOOD_VOLUME_NORMAL)
-		if(M.bodytemperature > BODYTEMP_NORMAL_MIN + 1)	//drinking water lowers a persons temperature up to the 'normal' minimum
-			M.adjust_bodytemperature(-1)
+		if(M.bodytemperature > BODYTEMP_NORMAL_MIN + 5)	//drinking water lowers a persons temperature up to the 'normal' minimum
+			M.adjust_bodytemperature(-5)
 	..()
 #undef WATER_BLOOD_RESTORE
 
