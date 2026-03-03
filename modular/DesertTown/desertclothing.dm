@@ -80,7 +80,7 @@
 	desc = "A helmet with too much style."
 	icon_state = "atgervi_raider"
 	item_state = "atgervi_raider"
-	mob_overlay_icon = 'icons/roguetown/clothing/onmob/head32x48.dmi'
+	mob_overlay_icon = 'modular/DesertTown/icons/clothing/onmob/head32x48.dmi'
 	max_integrity = 250
 	body_parts_covered = HEAD|HAIR|EARS|NOSE
 	flags_inv = HIDEEARS|HIDEHAIR|HIDEFACE|HIDEFACIALHAIR
@@ -349,18 +349,21 @@
 	item_state = "sultan"
 	dynamic_hair_suffix = "+generic"
 	flags_inv = HIDEEARS
+	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_HEAD
 
 /obj/item/clothing/head/roguetown/sultan/merchant
 	name = "merchant's turban"
 	desc = "A turban, large and elaborate, made of the finest silk money can buy."
 	icon_state = "merchant"
 	item_state = "merchant"
+	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_HEAD
 
 /obj/item/clothing/head/roguetown/sultan/amir
 	name = "amir's turban"
 	desc = "Soft, decadent, grandiouse, but above all - princely."
 	icon_state = "amir"
 	item_state = "amir"
+	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_HEAD
 
 /obj/item/clothing/head/roguetown/sultana
 	name = "sultana's headdress"
@@ -371,6 +374,7 @@
 	item_state = "sultana"
 	dynamic_hair_suffix = "+generic"
 	flags_inv = HIDEEARS|HIDEHAIR
+	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_HEAD
 
 /obj/item/clothing/head/roguetown/jafar
 	name = "zybantine magos hat"
@@ -381,12 +385,13 @@
 	item_state = "jafar"
 	dynamic_hair_suffix = "+generic"
 	flags_inv = HIDEEARS|HIDEHAIR	
+	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_HEAD
 //pants
 
 
 /obj/item/clothing/under/roguetown/sirwal
 	name = "sirwal"
-	desc = "Long, baggy trousers from Zybantine."
+	desc = "Long, baggy trousers from Zybantium."
 	color = null
 	icon = 'modular/DesertTown/icons/clothing/pants.dmi'
 	mob_overlay_icon = 'modular/DesertTown/icons/clothing/onmob/pants.dmi'

@@ -159,14 +159,14 @@
 	shirt = /obj/item/clothing/suit/roguetown/armor/gambeson
 	cloak = /obj/item/clothing/cloak/half/shadowcloak
 	shoes = /obj/item/clothing/shoes/roguetown/shalal
-	gloves = /obj/item/clothing/gloves/roguetown/leather/black
+	gloves = /obj/item/clothing/gloves/roguetown/leather
 	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
 	belt = /obj/item/storage/belt/rogue/leather
 	neck = /obj/item/clothing/neck/roguetown/chaincoif/iron
 	armor = /obj/item/clothing/suit/roguetown/armor/chainmail/janissary
 	pants = /obj/item/clothing/under/roguetown/chainlegs/iron
 	backl = /obj/item/rogueweapon/scabbard/gwstrap
-	beltr = /obj/item/rogueweapon/sword/short/falchion
+	beltr = /obj/item/rogueweapon/sword/saber/iron
 	beltl = /obj/item/rogueweapon/huntingknife
 	r_hand = /obj/item/rogueweapon/halberd/bardiche
 	backpack_contents = list(

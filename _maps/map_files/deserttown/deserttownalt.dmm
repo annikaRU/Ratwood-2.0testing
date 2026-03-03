@@ -121,6 +121,7 @@
 "vi" = (/turf/open/floor/rogue/lightpath,/area/rogue/outdoors/desertdeep/safe)
 "vG" = (/obj/structure/mineral_door/wood/deadbolt{dir = 1},/turf/open/floor/rogue/darkpath,/area/rogue)
 "wk" = (/obj/structure/fluff/nest,/turf/open/floor/rogue/hay,/area/rogue/indoors/banditcamp/desert)
+"wy" = (/obj/structure/closet/crate/roguecloset{name = "odd closet"; desc = "do you hear it... breathing? Squeaking..?"},/mob/living/simple_animal/hostile/retaliate/rogue/bigrat,/turf/open/floor/rogue/lightpath,/area/rogue/indoors/banditcamp/desert)
 "wE" = (/turf/open/floor/carpet/purple,/area/rogue/indoors/banditcamp/desert)
 "wM" = (/obj/machinery/light/rogue/firebowl/standing,/turf/open/floor/rogue/darkpath,/area/rogue/indoors/banditcamp/desert)
 "xd" = (/obj/structure/table/wood{dir = 1; icon_state = "largetable"},/turf/open/floor/carpet/purple,/area/rogue/indoors/banditcamp/desert)
@@ -212,6 +213,7 @@
 "QZ" = (/obj/structure/fluff/grindwheel,/turf/open/floor/rogue/tile/brownbrick,/area/rogue/indoors/banditcamp/desert)
 "Ro" = (/obj/structure/rack/rogue,/obj/item/cooking/platter/aalloy,/obj/item/cooking/platter/aalloy,/obj/item/cooking/platter/aalloy,/obj/item/cooking/platter/aalloy,/obj/machinery/light/rogue/wallfire/candle/blue,/turf/open/floor/rogue/tile/brownbrick,/area/rogue/indoors/banditcamp/desert)
 "RD" = (/obj/structure/stairs/stone{dir = 1; icon = 'modular/DesertTown/icons/stairs.dmi'},/turf/open/floor/rogue/darkpath,/area/rogue/indoors/banditcamp/desert)
+"RJ" = (/turf/open/floor/rogue/lightpath,/area/rogue/indoors/banditcamp/desert)
 "RV" = (/obj/structure/mineral_door/swing_door,/obj/structure/fluff/nest{pixel_x = -5; pixel_y = 5},/turf/open/floor/rogue/sandbrick,/area/rogue/indoors/banditcamp/desert)
 "RX" = (/obj/structure/rack/rogue,/obj/item/clothing/head/roguetown/helmet/leather/volfhelm,/turf/open/floor/rogue/tile/harem,/area/rogue/indoors/banditcamp/desert)
 "RZ" = (/turf/open/floor/rogue/tile/brownbrick,/area/rogue/indoors/banditcamp/desert)
@@ -333,8 +335,8 @@ WAWAWAWAWAWAWAWAWAWAWAWAWAWAWAWAWAWAWAWAWAWAWAWAWAWAWAWAWAWAWAWAWAWAWAWAWAWAWAWA
 "}
 (1,1,2) = {"
 VAVAVAVAVAVAVAVAVAVAVAVAVAVAVAVAVAVAVAVAVAVAVAVAVAVAVAVAVAVAVAVAVAVAVAVAVAVAVAVAVAVAVAVAVAVAVAVAVAVA
-VAVAVAVAVAsRsRsRsRsRsRsRsRsRsRsRsRsRsRsRsRsRsRsRsRsRsRsRsRsRsRsRsRsRVAVAVAVAVAVAVAVAVAVAVAVAVAVAVAVA
-VAVAVAVAsRsRsRsRsRsRsRsRsRsRsRsRsRsRsRsRsRsRsRsRsRsRsRsRsRsRsRsRsRTxVAVAVAVAeLeLeLeLVAVAeLVAVAVAVAVA
+VAVAVAVAVAsRsRsRsRsRsRsRsRsRwyRJsRsRsRsRsRsRsRsRsRsRsRsRsRsRsRsRsRsRVAVAVAVAVAVAVAVAVAVAVAVAVAVAVAVA
+VAVAVAVAsRsRsRsRsRsRsRsRsRsRRJRJsRsRsRsRsRsRsRsRsRsRsRsRsRsRsRsRsRTxVAVAVAVAeLeLeLeLVAVAeLVAVAVAVAVA
 VAVAVAVAsRsRsRsRsRsRsRsRsRsRsRsRsRsRsRsRsRsRsRsRsRsRsRsRsRsRsRsRsRsRVAeLeLeLeLmUmUeLeLeLeLeLVAVAVAVA
 VAVAVAVAsRsRsRsRsRsRsRsRsRsRsRsRsRsRsRsRsRsRsRsRsRsRsRsRsRsRsRsRsRVAVAVAeLeLhShShShShSeLeLeLVAVAVAVA
 VAVAVAVAsRsRsRsRsRsRsRsRsRsRsRsRsRsRsRsRsRsRsRsRsRsRsRsRsRsRsRsRsRVAVAeLmUhShShShShShShSeLVAVAVAVAVA

@@ -68,7 +68,7 @@
 /datum/outfit/job/roguetown/sultan
 	neck = /obj/item/storage/belt/rogue/pouch/coins/rich
 	beltl = /obj/item/storage/keyring/lord
-	backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger/steel/special = 1, /obj/item/storage/keyring/royal = 1)
+	backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger/steel/special = 1)
 	id = /obj/item/scomstone/garrison
 
 /datum/outfit/job/roguetown/sultan/pre_equip(mob/living/carbon/human/H)
@@ -81,7 +81,7 @@
 	if(should_wear_femme_clothes(H))
 		head = /obj/item/clothing/head/roguetown/sultana
 		mask = /obj/item/clothing/head/roguetown/crown/serpcrown
-		l_hand = /obj/item/rogueweapon/lordscepter
+		// l_hand = /obj/item/rogueweapon/lordscepter //currently aren't working on sultans
 		belt = /obj/item/storage/belt/rogue/leather/cloth/lady
 		gloves = /obj/item/clothing/gloves/roguetown/leather/black
 		armor = /obj/item/clothing/suit/roguetown/shirt/sultana
@@ -89,9 +89,8 @@
 	else if(should_wear_masc_clothes(H))
 		head = /obj/item/clothing/head/roguetown/sultan
 		mask = /obj/item/clothing/head/roguetown/crown/serpcrown
-		l_hand = /obj/item/rogueweapon/lordscepter
+		// l_hand = /obj/item/rogueweapon/lordscepter
 		belt = /obj/item/storage/belt/rogue/leather/sultbelt
-		backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger/steel/special = 1, /obj/item/storage/keyring/royal = 1)
 		pants = /obj/item/clothing/under/roguetown/tights/black
 		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/black
 		armor = /obj/item/clothing/suit/roguetown/shirt/sultan
@@ -152,7 +151,7 @@
 */
 /datum/advclass/sultan/dtmerchant
 	name = "Wise Dealer"
-	tutorial = "You were always talented with coins and trade. And your talents have brought you to the position of the Lord of Rotwood Vale. You could be a merchant who bought his way into nobility and power, or an exceptionally talented noble who were inclined to be good with coins. Fighting directly is not your forte\
+	tutorial = "You were always talented with coins and trade. And your talents have brought you to the position of the Sultan of Al-Ashur. You could be a merchant who bought his way into nobility and power, or an exceptionally talented noble who were inclined to be good with coins. Fighting directly is not your forte\
 	But you have plenty of wealth, keen ears, and know a good deal from a bad one."
 	outfit = /datum/outfit/job/roguetown/sultan/merchant
 	category_tags = list(CTAG_SULTAN)
@@ -218,7 +217,7 @@
 /datum/outfit/job/roguetown/sultan/wizard/pre_equip(mob/living/carbon/human/H)
 	..()
 	backr = /obj/item/storage/backpack/rogue/satchel
-	backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger/steel/special = 1, /obj/item/roguegem/amethyst = 1, /obj/item/spellbook_unfinished/pre_arcyne = 1, /obj/item/storage/keyring/royal = 1)
+	backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger/steel/special = 1, /obj/item/roguegem/amethyst = 1, /obj/item/spellbook_unfinished/pre_arcyne = 1)
 
 /**
 	Inbred Lord subclass. A joke class, evolution of the Inbred Wastrel.
