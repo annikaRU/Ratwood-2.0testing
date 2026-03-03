@@ -1,4 +1,3 @@
-
 /datum/sex_action/vaginal_ride_sex
 	name = "Ride them"
 	stamina_cost = 1.0

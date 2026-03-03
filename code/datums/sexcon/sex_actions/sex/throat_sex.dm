@@ -1,4 +1,3 @@
-
 /datum/sex_action/throat_sex
 	name = "Fuck their throat"
 	stamina_cost = 1.0

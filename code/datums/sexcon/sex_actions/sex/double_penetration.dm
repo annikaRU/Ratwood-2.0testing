@@ -1,4 +1,3 @@
-
 /datum/sex_action/double_penetration_sex
 	name = "Fuck both their holes"
 	stamina_cost = 1.0

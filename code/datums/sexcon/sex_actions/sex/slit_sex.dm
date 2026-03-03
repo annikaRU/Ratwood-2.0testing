@@ -1,4 +1,3 @@
-
 /datum/sex_action/slit_sex
 	name = "Fuck their slit"
 	stamina_cost = 1.0

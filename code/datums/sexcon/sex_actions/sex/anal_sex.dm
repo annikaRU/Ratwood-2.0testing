@@ -1,4 +1,3 @@
-
 /datum/sex_action/anal_sex
 	name = "Sodomize them"
 	stamina_cost = 1.0

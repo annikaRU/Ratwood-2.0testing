@@ -1,4 +1,3 @@
-
 /datum/sex_action/vaginal_sex
 	name = "Fuck their cunt"
 	stamina_cost = 1.0
