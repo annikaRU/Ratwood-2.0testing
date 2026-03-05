@@ -60,26 +60,34 @@
 			if("Estoc")
 				r_hand = /obj/item/rogueweapon/estoc
 				backr = /obj/item/rogueweapon/scabbard/gwstrap
+				H.adjust_skillrank_up_to(/datum/skill/combat/swords, SKILL_LEVEL_MASTER, TRUE)
 			if("Longsword + Shield")
 				beltr = /obj/item/rogueweapon/scabbard/sword
 				r_hand = /obj/item/rogueweapon/sword/long
 				backr = /obj/item/rogueweapon/shield/tower/metal
+				H.adjust_skillrank_up_to(/datum/skill/combat/swords, SKILL_LEVEL_MASTER, TRUE)
 			if("Mace + Shield")
 				beltr = /obj/item/rogueweapon/mace/steel
 				backr = /obj/item/rogueweapon/shield/tower/metal
+				H.adjust_skillrank_up_to(/datum/skill/combat/maces, SKILL_LEVEL_MASTER, TRUE)
 			if("Flail + Shield")
 				beltr = /obj/item/rogueweapon/flail/sflail
 				backr = /obj/item/rogueweapon/shield/tower/metal
+				H.adjust_skillrank_up_to(/datum/skill/combat/whipsflails, SKILL_LEVEL_MASTER, TRUE)
 			if("Lucerne")
 				r_hand = /obj/item/rogueweapon/eaglebeak/lucerne
 				backr = /obj/item/rogueweapon/scabbard/gwstrap
+				H.adjust_skillrank_up_to(/datum/skill/combat/polearms, SKILL_LEVEL_MASTER, TRUE)
 			if("Battle Axe")
 				backr = /obj/item/rogueweapon/stoneaxe/battle
+				H.adjust_skillrank_up_to(/datum/skill/combat/axes, SKILL_LEVEL_MASTER, TRUE)
 			if("Lance + Kite Shield")
 				r_hand = /obj/item/rogueweapon/spear/lance
 				backr = /obj/item/rogueweapon/shield/tower/metal
+				H.adjust_skillrank_up_to(/datum/skill/combat/polearms, SKILL_LEVEL_MASTER, TRUE)
 			if("Shamshir")
 				r_hand = /obj/item/rogueweapon/sword/sabre/shamshir
+				H.adjust_skillrank_up_to(/datum/skill/combat/swords, SKILL_LEVEL_MASTER, TRUE)
 		var/helmets = list(
 			"Pigface Bascinet" 	= /obj/item/clothing/head/roguetown/helmet/bascinet/pigface,
 			"Guard Helmet"		= /obj/item/clothing/head/roguetown/helmet/heavy/guard,
