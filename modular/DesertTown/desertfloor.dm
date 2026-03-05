@@ -113,7 +113,7 @@
 	icon_state = "light-path1"
 	icon = 'modular/DesertTown/icons/desertfloor.dmi'
 	canSmoothWith = list(/turf/open/floor/rogue, /turf/closed/mineral, /turf/closed/wall/mineral)
-	slowdown = 0
+	// slowdown = 0 //Could be due tweaking but turning it off for now for practical reasons
 	footstep = FOOTSTEP_SAND
 	//barefootstep = FOOTSTEP_SAND
 	//clawfootstep = FOOTSTEP_SAND
