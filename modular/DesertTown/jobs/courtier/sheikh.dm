@@ -3,8 +3,8 @@
 	flag = SHEIKH
 	department_flag = NOBLEMEN
 	faction = "Station"
-	total_positions = 3
-	spawn_positions = 3
+	total_positions = 4//more slots since they manage the steward/clerk roles for now as well
+	spawn_positions = 4
 	allowed_ages = ALL_AGES_LIST
 	allowed_races = RACES_TOLERATED_UP
 	allowed_sexes = list(MALE, FEMALE)
