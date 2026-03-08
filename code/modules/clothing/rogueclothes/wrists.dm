@@ -43,7 +43,7 @@
 	smeltresult = /obj/item/ingot/steel
 
 /obj/item/clothing/wrists/roguetown/bracers/citywatch
-	color = "#bde8ff"
+	color = "#afe0f0"
 
 /obj/item/clothing/wrists/roguetown/bracers/psythorns
 	name = "psydonic thorns"
