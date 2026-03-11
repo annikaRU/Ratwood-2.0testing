@@ -478,10 +478,10 @@
 /datum/status_effect/buff/order/heartfelt/forheartfelt/on_apply()
 	. = ..()
 	to_chat(owner, span_blue("I must stand and fight!"))
-    ADD_TRAIT(owner, TRAIT_NOPAIN, REF(src))
+    ADD_TRAIT(owner, TRAIT_NOPAIN, src)
 
 /datum/status_effect/buff/order/heartfelt/forheartfelt/on_remove()
-    REMOVE_TRAIT(owner, TRAIT_NOPAIN, REF(src))
+    REMOVE_TRAIT(owner, TRAIT_NOPAIN, src)
 	. = ..()
 
 /atom/movable/screen/alert/status_effect/buff/order/heartfelt/forheartfelt
