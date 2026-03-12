@@ -100,10 +100,10 @@
 			if("Sword and Shield")
 				beltr = /obj/item/rogueweapon/scabbard/sword
 				r_hand = /obj/item/rogueweapon/sword/short/iron
-				backl = /obj/item/rogueweapon/shield/heater
+				backl = /obj/item/rogueweapon/shield/iron
 			if("Cudgel and Shield")
 				r_hand = /obj/item/rogueweapon/mace/cudgel
-				backl = /obj/item/rogueweapon/shield/heater
+				backl = /obj/item/rogueweapon/shield/iron
 			if("Spear")
 				r_hand = /obj/item/rogueweapon/spear
 				backl = /obj/item/rogueweapon/scabbard/gwstrap
