@@ -97,7 +97,7 @@
 /obj/item/rogueweapon/scabbard/sheath/aavnik
 	name = "dagger sheath"
 
-/obj/item/rogueweapon/scabbard/sheath/aavnik/Initialize()
+/obj/item/rogueweapon/scabbard/sheath/aavnik/Initialize(mapload)
 	. = ..()
 	if(!sheathed)
 		var/obj/item/rogueweapon/huntingknife/D = new(src)
