@@ -2441,9 +2441,9 @@
 /area/rogue/under/cave/skeletoncrypt)
 "bpI" = (
 /obj/structure/rack/rogue,
-/obj/item/clothing/head/roguetown/helmet/sallet/raneshen,
-/obj/item/clothing/head/roguetown/helmet/sallet/raneshen,
-/obj/item/clothing/head/roguetown/helmet/sallet/raneshen,
+/obj/item/clothing/head/roguetown/helmet/sallet/zyb,
+/obj/item/clothing/head/roguetown/helmet/sallet/zyb,
+/obj/item/clothing/head/roguetown/helmet/sallet/zyb,
 /turf/open/floor/rogue/deserttile{
 	icon_state = "tiledrab2"
 	},
@@ -8764,8 +8764,8 @@
 /obj/structure/rack/rogue,
 /obj/item/clothing/head/roguetown/roguehood/shalal,
 /obj/item/clothing/head/roguetown/roguehood/shalal,
-/obj/item/clothing/head/roguetown/roguehood/shalal/hijab/raneshen,
-/obj/item/clothing/head/roguetown/roguehood/shalal/hijab/raneshen,
+/obj/item/clothing/head/roguetown/roguehood/shalal/hijab/zyb,
+/obj/item/clothing/head/roguetown/roguehood/shalal/hijab/zyb,
 /obj/machinery/light/rogue/wallfire/candle/r,
 /turf/open/floor/rogue/tile/brownbrick{
 	icon = 'modular/DesertTown/icons/alt/roguefloor.dmi'
@@ -9053,10 +9053,10 @@
 /area/rogue/indoors/deserttown)
 "eBN" = (
 /obj/structure/rack/rogue,
-/obj/item/clothing/under/roguetown/trou/leather/pontifex/raneshen,
-/obj/item/clothing/under/roguetown/trou/leather/pontifex/raneshen,
-/obj/item/clothing/under/roguetown/trou/leather/pontifex/raneshen,
-/obj/item/clothing/under/roguetown/trou/leather/pontifex/raneshen,
+/obj/item/clothing/under/roguetown/trou/leather/pontifex/zyb,
+/obj/item/clothing/under/roguetown/trou/leather/pontifex/zyb,
+/obj/item/clothing/under/roguetown/trou/leather/pontifex/zyb,
+/obj/item/clothing/under/roguetown/trou/leather/pontifex/zyb,
 /turf/open/floor/rogue/tile/brownbrick{
 	icon = 'modular/DesertTown/icons/alt/roguefloor.dmi'
 	},
@@ -16221,8 +16221,8 @@
 /area/rogue/under/deserttown/basement/town)
 "ijD" = (
 /obj/structure/rack/rogue,
-/obj/item/rogueweapon/shield/tower/raneshen,
-/obj/item/rogueweapon/shield/tower/raneshen,
+/obj/item/rogueweapon/shield/tower/zyb,
+/obj/item/rogueweapon/shield/tower/zyb,
 /obj/item/rogueweapon/shield/iron/zybantine,
 /obj/item/rogueweapon/shield/iron/zybantine,
 /turf/open/floor/rogue/deserttile{
@@ -24103,8 +24103,8 @@
 	},
 /obj/item/clothing/cloak/stabard/guard,
 /obj/item/clothing/cloak/stabard/guard,
-/obj/item/clothing/head/roguetown/roguehood/shalal/hijab/raneshen,
-/obj/item/clothing/head/roguetown/roguehood/shalal/hijab/raneshen,
+/obj/item/clothing/head/roguetown/roguehood/shalal/hijab/zyb,
+/obj/item/clothing/head/roguetown/roguehood/shalal/hijab/zyb,
 /turf/open/floor/rogue/woodturned,
 /area/rogue/indoors/deserttown/garrison)
 "mtd" = (
@@ -27547,9 +27547,9 @@
 /area/rogue/outdoors/town/grove)
 "ojW" = (
 /obj/structure/rack/rogue,
-/obj/item/clothing/suit/roguetown/armor/leather/heavy/coat/raneshen,
-/obj/item/clothing/suit/roguetown/armor/leather/heavy/coat/raneshen,
-/obj/item/clothing/suit/roguetown/armor/leather/heavy/coat/raneshen,
+/obj/item/clothing/suit/roguetown/armor/leather/heavy/coat/zyb,
+/obj/item/clothing/suit/roguetown/armor/leather/heavy/coat/zyb,
+/obj/item/clothing/suit/roguetown/armor/leather/heavy/coat/zyb,
 /turf/open/floor/rogue/tile/brownbrick{
 	icon = 'modular/DesertTown/icons/alt/roguefloor.dmi'
 	},
@@ -35807,8 +35807,8 @@
 /area/rogue/outdoors/deserttown)
 "shR" = (
 /obj/structure/rack/rogue,
-/obj/item/clothing/suit/roguetown/armor/leather/heavy/coat/raneshen,
-/obj/item/clothing/suit/roguetown/armor/leather/heavy/coat/raneshen,
+/obj/item/clothing/suit/roguetown/armor/leather/heavy/coat/zyb,
+/obj/item/clothing/suit/roguetown/armor/leather/heavy/coat/zyb,
 /turf/open/floor/rogue/woodturned,
 /area/rogue/indoors/deserttown/garrison)
 "shX" = (
@@ -38120,8 +38120,8 @@
 /turf/open/floor/rogue/darkpath,
 /area/rogue/indoors/town/church/basement)
 "tlh" = (
-/obj/item/clothing/head/roguetown/helmet/sallet/raneshen,
-/obj/item/clothing/head/roguetown/helmet/sallet/raneshen,
+/obj/item/clothing/head/roguetown/helmet/sallet/zyb,
+/obj/item/clothing/head/roguetown/helmet/sallet/zyb,
 /obj/structure/rack/rogue/shelf/biggest,
 /turf/open/floor/rogue/woodturned,
 /area/rogue/indoors/deserttown/garrison)
@@ -38873,10 +38873,10 @@
 /area/rogue/indoors/deserttown)
 "tGO" = (
 /obj/structure/rack/rogue,
-/obj/item/clothing/head/roguetown/helmet/sallet/raneshen,
-/obj/item/clothing/head/roguetown/helmet/sallet/raneshen,
-/obj/item/clothing/head/roguetown/helmet/sallet/raneshen,
-/obj/item/clothing/head/roguetown/helmet/sallet/raneshen,
+/obj/item/clothing/head/roguetown/helmet/sallet/zyb,
+/obj/item/clothing/head/roguetown/helmet/sallet/zyb,
+/obj/item/clothing/head/roguetown/helmet/sallet/zyb,
+/obj/item/clothing/head/roguetown/helmet/sallet/zyb,
 /turf/open/floor/rogue/concrete{
 	icon = 'modular/DesertTown/icons/alt/roguefloor.dmi'
 	},
@@ -41293,8 +41293,8 @@
 	},
 /obj/item/clothing/gloves/roguetown/angle,
 /obj/item/clothing/gloves/roguetown/angle,
-/obj/item/clothing/under/roguetown/trou/leather/pontifex/raneshen,
-/obj/item/clothing/under/roguetown/trou/leather/pontifex/raneshen,
+/obj/item/clothing/under/roguetown/trou/leather/pontifex/zyb,
+/obj/item/clothing/under/roguetown/trou/leather/pontifex/zyb,
 /obj/item/clothing/shoes/roguetown/shalal,
 /obj/item/clothing/shoes/roguetown/shalal,
 /obj/item/clothing/shoes/roguetown/shalal,
@@ -42354,9 +42354,9 @@
 /area/rogue/indoors/deserttown/garrison)
 "vvw" = (
 /obj/structure/rack/rogue,
-/obj/item/rogueweapon/shield/tower/raneshen,
-/obj/item/rogueweapon/shield/tower/raneshen,
-/obj/item/rogueweapon/shield/tower/raneshen,
+/obj/item/rogueweapon/shield/tower/zyb,
+/obj/item/rogueweapon/shield/tower/zyb,
+/obj/item/rogueweapon/shield/tower/zyb,
 /turf/open/floor/rogue/woodturned,
 /area/rogue/indoors/deserttown/garrison)
 "vvN" = (
