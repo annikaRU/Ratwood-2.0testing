@@ -100,10 +100,10 @@
 	cost = 30
 	contains = list(/obj/item/rogueweapon/huntingknife/idagger/steel/parrying)
 
-/datum/supply_pack/rogue/Pioneer/woodaxe
-	name = "Woodcutter's Axe"
-	cost = 30
-	contains = list(/obj/item/rogueweapon/stoneaxe/woodcut/steel/woodcutter)
+/datum/supply_pack/rogue/Pioneer/axepick
+	name = "Pulaski Axe"
+	cost = 25
+	contains = list(/obj/item/rogueweapon/stoneaxe/woodcut/pick)
 
 /datum/supply_pack/rogue/Pioneer/
 
