@@ -71,7 +71,7 @@
 	var/tugging_knot_blocked = FALSE
 	var/mob/living/carbon/knotted_owner = null // whom has the knot
 	var/mob/living/carbon/knotted_recipient = null // whom took the knot
-
+	/// Allow crotch to be exposed and bypass clothes check
 	var/bottom_exposed = FALSE
 
 /datum/sex_controller/New(mob/living/carbon/human/owner)
@@ -183,9 +183,9 @@
 // any new sex commands that target new locations, will need to be added here, and given a unique bitflag define
 /datum/sex_controller/proc/update_all_accessible_body_zones()
 	access_zone_bitfield = SEX_ZONE_NULL
-	if(get_location_accessible(user, BODY_ZONE_PRECISE_GROIN, grabs = FALSE, skipundies = TRUE))
+	if(bottom_exposed || get_location_accessible(user, BODY_ZONE_PRECISE_GROIN, grabs = FALSE, skipundies = TRUE))
 		access_zone_bitfield |= SEX_ZONE_GROIN
-	if(get_location_accessible(user, BODY_ZONE_PRECISE_GROIN, grabs = TRUE, skipundies = TRUE))
+	if(bottom_exposed || get_location_accessible(user, BODY_ZONE_PRECISE_GROIN, grabs = TRUE, skipundies = TRUE))
 		access_zone_bitfield |= SEX_ZONE_GROIN_GRAB
 	if(get_location_accessible(user, BODY_ZONE_PRECISE_L_FOOT, grabs = FALSE, skipundies = TRUE))
 		access_zone_bitfield |= SEX_ZONE_L_FOOT
@@ -203,9 +203,9 @@
 	switch(body_zone)
 		if(BODY_ZONE_PRECISE_GROIN)
 			if(grabs)
-				if((access_zone_bitfield&SEX_ZONE_GROIN_GRAB) && !get_location_accessible(user, BODY_ZONE_PRECISE_GROIN, grabs = TRUE, skipundies = TRUE))
+				if((access_zone_bitfield&SEX_ZONE_GROIN_GRAB) && !bottom_exposed && !get_location_accessible(user, BODY_ZONE_PRECISE_GROIN, grabs = TRUE, skipundies = TRUE))
 					access_zone_bitfield &= ~SEX_ZONE_GROIN_GRAB
-			else if((access_zone_bitfield&SEX_ZONE_GROIN) && !get_location_accessible(user, BODY_ZONE_PRECISE_GROIN, grabs = FALSE, skipundies = TRUE))
+			else if((access_zone_bitfield&SEX_ZONE_GROIN) && !bottom_exposed && !get_location_accessible(user, BODY_ZONE_PRECISE_GROIN, grabs = FALSE, skipundies = TRUE))
 				access_zone_bitfield &= ~SEX_ZONE_GROIN
 		if(BODY_ZONE_PRECISE_L_FOOT)
 			if((access_zone_bitfield&SEX_ZONE_L_FOOT) && !get_location_accessible(user, BODY_ZONE_PRECISE_L_FOOT, grabs = FALSE, skipundies = TRUE))
@@ -223,7 +223,7 @@
 			else if((access_zone_bitfield&SEX_ZONE_CHEST) && !get_location_accessible(user, BODY_ZONE_CHEST, grabs = FALSE, skipundies = TRUE))
 				access_zone_bitfield &= ~SEX_ZONE_CHEST
 		else
-		 	// hey YOU, add the new targeted zone to SEX_ZONE bitfield, and update update_all_accessible_body_zones()/get_accessible_body_zone()
+			// hey YOU, add the new targeted zone to SEX_ZONE bitfield, and update update_all_accessible_body_zones()/get_accessible_body_zone()
 			CRASH("sex_action: attempt to access non-existent bitfield for var body_zone_bitfield [body_zone]")
 
 /datum/sex_controller/proc/get_accessible_body_zone(body_zone_bitfield, body_zone, grabs)
@@ -265,7 +265,7 @@
 	if(!bodypart)
 		return FALSE
 
-	if(!(sigbitflags & SKIP_ADJACENCY_CHECK) && !user.Adjacent(target))
+	if(!(sigbitflags & SKIP_ADJACENCY_CHECK) && !user.sexcon.Adjacent_Or_Closet(target))
 		return FALSE
 
 	if(src.check_same_tile && (user != target || self_target) && !(sigbitflags & SKIP_TILE_CHECK))
@@ -351,6 +351,8 @@
 
 /datum/sex_controller/proc/cum_into(oral = FALSE, mob/living/carbon/human/splashed_user = null)
 	log_combat(user, target, "Came inside the target")
+	werewolf_sex_infect_attempt(user, target)
+	deadite_sex_infect_attempt(user, target)
 	if(oral)
 		playsound(user, pick(list('sound/misc/mat/mouthend (1).ogg','sound/misc/mat/mouthend (2).ogg')), 100, FALSE, ignore_walls = FALSE)
 	else
@@ -422,7 +424,7 @@
 		owner.remove_status_effect(src)
 
 /datum/status_effect/creampie_leak/tick()
-	if(!get_location_accessible(owner, BODY_ZONE_PRECISE_GROIN, skipundies = TRUE))
+	if(!owner?.sexcon?.bottom_exposed && !get_location_accessible(owner, BODY_ZONE_PRECISE_GROIN, skipundies = TRUE))
 		return
 	var/cur_loc = get_turf(owner)
 	if(!cur_loc || !isturf(cur_loc))
@@ -797,12 +799,18 @@
 	var/force_name = get_force_string()
 	var/speed_name = get_speed_string()
 	var/manual_arousal_name = get_manual_arousal_string()
+	var/obj/item/organ/penis/got_cock = user.getorganslot(ORGAN_SLOT_PENIS)
+	var/obj/item/organ/vagina/got_pussy = user.getorganslot(ORGAN_SLOT_VAGINA)
 	dat += "<center><a href='?src=[REF(src)];task=speed_down'>\<</a> [speed_name] <a href='?src=[REF(src)];task=speed_up'>\></a> ~|~ <a href='?src=[REF(src)];task=force_down'>\<</a> [force_name] <a href='?src=[REF(src)];task=force_up'>\></a>"
-	if(user.getorganslot(ORGAN_SLOT_PENIS))
+	if(got_cock)
 		dat += " ~|~ <a href='?src=[REF(src)];task=manual_arousal_down'>\<</a> [manual_arousal_name] <a href='?src=[REF(src)];task=manual_arousal_up'>\></a>"
 	dat += "</center><center><a href='?src=[REF(src)];task=toggle_finished'>[do_until_finished ? "UNTIL IM FINISHED" : "UNTIL I STOP"]</a>"
-	if(user.getorganslot(ORGAN_SLOT_PENIS))
+	if(got_cock && !got_pussy)
 		dat += "</center><center><a href='?src=[REF(src)];task=toggle_bottom_exposed'>[bottom_exposed ? "PINTLE EXPOSED" : "PINTLE CONCEALED"]</a>"
+	else if(!got_cock && got_pussy)
+		dat += "</center><center><a href='?src=[REF(src)];task=toggle_bottom_exposed'>[bottom_exposed ? "PUSSY EXPOSED" : "PUSSY CONCEALED"]</a>"
+	else
+		dat += "</center><center><a href='?src=[REF(src)];task=toggle_bottom_exposed'>[bottom_exposed ? "CROTCH EXPOSED" : "CROTCH CONCEALED"]</a>"
 	if(current_action && !desire_stop)
 		var/datum/sex_action/action = SEX_ACTION(current_action)
 		if(action.subtle_supported)
@@ -831,7 +839,7 @@
 	var/i = 0
 	var/user_is_incapacitated = user.incapacitated()
 	user.sexcon.update_all_accessible_body_zones()
-	if(target != user)
+	if(target && target != user)
 		target.sexcon.update_all_accessible_body_zones()
 	for(var/action_type in GLOB.sex_actions)
 		var/datum/sex_action/action = SEX_ACTION(action_type)
@@ -1003,6 +1011,9 @@
 
 /datum/sex_controller/proc/find_occupying_furniture()
 	if(bed || table_or_pillory)
+		return
+	if(istype(user.loc, /obj/structure/closet) || istype(user.loc, /obj/structure/handcart)) // tom cruise, come out of the closet
+		table_or_pillory = user.loc
 		return
 	if(target && isturf(target.loc)) // find target's bed/table
 		if(!(target.mobility_flags & MOBILITY_STAND)) // if target is lying down
@@ -1188,6 +1199,91 @@
 			if(prob(10))
 				var/obj/item/bodypart/groin = target.get_bodypart(check_zone(BODY_ZONE_PRECISE_GROIN))
 				groin.add_wound(/datum/wound/fracture)
+
+/datum/proc/werewolf_sex_infect_attempt(mob/living/carbon/human/top, mob/living/carbon/human/bottom)
+
+	if(!top || !bottom || !top.mind || !bottom.mind)
+		return
+
+	var/datum/antagonist/werewolf/WWtop
+	var/datum/antagonist/werewolf/WWbottom
+	var/infection_probability = 40
+	if(top.mind.has_antag_datum(/datum/antagonist/werewolf))
+		WWtop = top.mind.has_antag_datum(/datum/antagonist/werewolf/)
+	
+	if(bottom.mind.has_antag_datum(/datum/antagonist/werewolf))
+		WWbottom = bottom.mind.has_antag_datum(/datum/antagonist/werewolf/)
+
+	if(WWtop && WWbottom)
+		return
+	
+	if(WWtop && WWtop.transformed && !WWbottom)
+		if(prob(infection_probability))
+			var/answer = tgui_alert(top, "Infect your mate?", "Please answer in [DisplayTimeText(200)]!", list("Yae","Nae"),200)
+			if(!answer || answer == "Nae")
+				return
+			if(answer == "Yae")
+				bottom.werewolf_infect_attempt()
+		return
+
+
+	if(WWbottom && WWbottom.transformed && !WWtop)
+		if(prob(infection_probability))
+			var/answer = tgui_alert(bottom, "Infect your mate?", "Please answer in [DisplayTimeText(200)]!", list("Yae","Nae"),200)
+			if(!answer || answer == "Nae")
+				return
+			if(answer == "Yae")
+				top.werewolf_infect_attempt()
+		return
+
+/datum/proc/deadite_sex_infect_attempt(mob/living/carbon/human/top, mob/living/carbon/human/bottom)
+	
+	if(!top || !bottom || !top.mind || !bottom.mind)
+		return
+	var/datum/antagonist/zombie/ZMtop
+	var/datum/antagonist/zombie/ZMbottom
+	var/infection_probability = 40
+	if(top.mind.has_antag_datum(/datum/antagonist/zombie))
+		ZMtop = top.mind.has_antag_datum(/datum/antagonist/zombie/)
+	
+	if(bottom.mind.has_antag_datum(/datum/antagonist/zombie))
+		ZMbottom = bottom.mind.has_antag_datum(/datum/antagonist/zombie/)
+	
+	if(ZMtop && ZMbottom)
+		return
+	
+	if(ZMtop && ZMtop.has_turned && !ZMbottom)
+		if(prob(infection_probability))
+			var/answer = tgui_alert(top, "Spread HER gift?", "Please answer in [DisplayTimeText(200)]!", list("Yae","Nae"),200)
+			if(!answer || answer == "Nae")
+				return
+			if(answer == "Yae")
+				bottom.zaids_check()
+		return
+
+	if(ZMbottom && ZMbottom.has_turned && !ZMtop)
+		if(prob(infection_probability))
+			var/answer = tgui_alert(bottom, "Spread HER gift?", "Please answer in [DisplayTimeText(200)]!", list("Yae","Nae"),200)
+			if(!answer || answer == "Nae")
+				return
+			if(answer == "Yae")
+				top.zaids_check()
+		return
+///Making sure there're not any other antag or immune, then applies zombie infection
+/mob/living/carbon/human/proc/zaids_check() 
+	if(!mind)
+		return
+	if(mind.has_antag_datum(/datum/antagonist/vampire))
+		return
+	if(mind.has_antag_datum(/datum/antagonist/werewolf))
+		return
+	if(mind.has_antag_datum(/datum/antagonist/zombie))
+		return
+	if(mind.has_antag_datum(/datum/antagonist/skeleton))
+		return
+	if(HAS_TRAIT(src, TRAIT_ZOMBIE_IMMUNE))
+		return
+	return apply_status_effect(/datum/status_effect/zombie_infection)
 
 #undef SEX_ZONE_NULL
 #undef SEX_ZONE_GROIN
