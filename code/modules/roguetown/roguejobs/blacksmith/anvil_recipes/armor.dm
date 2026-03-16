@@ -446,6 +446,12 @@
 	req_blade = /obj/item/blade/iron_plate
 	created_item = /obj/item/clothing/head/roguetown/helmet/horned
 
+/datum/anvil_recipe/armor/iron/horseshoes
+	name = "Horseshoes, Iron"
+	req_bar = /obj/item/ingot/iron
+	req_blade = /obj/item/blade/iron_plate
+	created_item = /obj/item/clothing/shoes/roguetown/horseshoes
+
 // STEEL
 /datum/anvil_recipe/armor/steel/haubergeon
 	name = "Haubergeon, Steel"
@@ -858,6 +864,12 @@
 	req_blade = /obj/item/blade/steel_plate
 	additional_items = list(/obj/item/clothing/under/roguetown/trou/leather)//basically you just add a lot of iron bits to the pants
 	created_item = /obj/item/clothing/under/roguetown/splintlegs
+
+/datum/anvil_recipe/armor/steel/horseshoes
+	name = "Horseshoes, Steel"
+	req_bar = /obj/item/ingot/steel
+	req_blade = /obj/item/blade/steel_plate
+	created_item = /obj/item/clothing/shoes/roguetown/horseshoes/steel
 
 /datum/anvil_recipe/armor/steel/barding
 	name = "Saiga Barding, Chainmail (+1 Steel)"

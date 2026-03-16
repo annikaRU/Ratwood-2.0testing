@@ -110,17 +110,6 @@ GLOBAL_LIST_INIT(valid_fogbeast_colors, list("White" = COLOR_WHITE, "Gray" = COL
 	deaggroprob = 20
 	setup_mount_riding()
 
-/mob/living/simple_animal/hostile/retaliate/rogue/fogbeast/proc/setup_mount_riding()
-	if(!can_buckle)
-		return
-	var/datum/component/riding/D = LoadComponent(/datum/component/riding)
-	D.set_riding_offsets(RIDING_OFFSET_ALL, list(TEXT_NORTH = list(0, 8), TEXT_SOUTH = list(0, 8), TEXT_EAST = list(-2, 8), TEXT_WEST = list(2, 8)))
-	D.set_riding_offsets(2, list(TEXT_NORTH = list(0, 0), TEXT_SOUTH = list(0, 16), TEXT_EAST = list(-10, 8), TEXT_WEST = list(10, 8)))
-	D.set_vehicle_dir_layer(SOUTH, ABOVE_MOB_LAYER)
-	D.set_vehicle_dir_layer(NORTH, OBJ_LAYER)
-	D.set_vehicle_dir_layer(EAST, OBJ_LAYER)
-	D.set_vehicle_dir_layer(WEST, OBJ_LAYER)
-
 /mob/living/simple_animal/hostile/retaliate/rogue/fogbeast/death()
 	unbuckle_all_mobs()
 	return ..()

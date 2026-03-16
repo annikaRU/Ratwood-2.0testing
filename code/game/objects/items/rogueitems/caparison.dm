@@ -68,7 +68,7 @@
 		colors_to_pick["Primary Keep Color"] = GLOB.lordprimary
 	if(GLOB.lordsecondary)
 		colors_to_pick["Secondary Keep Color"] = GLOB.lordsecondary
-	var/list/color_map_list = GLOB.colorlist
+	var/list/color_map_list = COLOR_MAP
 	colors_to_pick += color_map_list.Copy()
 
 	var/primary_color = input(user, "Select a primary color.", "Caparison Design") as null|anything in colors_to_pick
