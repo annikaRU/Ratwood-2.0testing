@@ -65,7 +65,7 @@
 /// Cursed device override for has_chastity_penis().
 /// If the user's device is in cursed mode, evaluates cursed_front_mode directly (mode 1 or 3 = penis exposed).
 /// Falls through to ..() (trait check) for standard devices.
-/datum/sex_controller/proc/has_chastity_penis()
+/datum/sex_controller/has_chastity_penis()
 	var/obj/item/chastity/device = user?.chastity_device
 	if(istype(device) && device.chastity_cursed)
 		if(!user.getorganslot(ORGAN_SLOT_PENIS))
@@ -77,7 +77,7 @@
 /// Cursed device override for has_chastity_vagina().
 /// If the user's device is in cursed mode, evaluates cursed_front_mode directly (mode 2 or 3 = vagina exposed).
 /// Falls through to ..() (trait check) for standard devices.
-/datum/sex_controller/proc/has_chastity_vagina()
+/datum/sex_controller/has_chastity_vagina()
 	var/obj/item/chastity/device = user?.chastity_device
 	if(istype(device) && device.chastity_cursed)
 		if(!user.getorganslot(ORGAN_SLOT_VAGINA))
@@ -89,7 +89,7 @@
 /// Flat-cage override for has_chastity_flat().
 /// Returns TRUE only when the equipped device is /obj/item/chastity/chastity_cage/flat.
 /// Falls through to ..() (always FALSE) for all other device types.
-/datum/sex_controller/proc/has_chastity_flat()
+/datum/sex_controller/has_chastity_flat()
 	var/obj/item/chastity/device = user?.chastity_device
 	if(!istype(device, /obj/item/chastity/chastity_cage/flat))
 		return ..()
@@ -98,7 +98,7 @@
 /// Cursed device override for has_chastity_anal().
 /// If the user's device is in cursed mode, evaluates cursed_anal_open directly.
 /// Falls through to ..() (trait check) for standard devices.
-/datum/sex_controller/proc/has_chastity_anal()
+/datum/sex_controller/has_chastity_anal()
 	var/obj/item/chastity/device = user?.chastity_device
 	if(istype(device) && device.chastity_cursed)
 		return !device.cursed_anal_open
