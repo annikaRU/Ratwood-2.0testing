@@ -6981,6 +6981,13 @@
 /turf/open/floor/rogue/concrete,
 /area/rogue/indoors/town/church/basement)
 "dBM" = (
+/obj/effect/wisp/prestidigitation{
+	color = "#ffff00";
+	desc = "A small, fiery ball of light made up of mystical energy.";
+	light_color = "#33ff00";
+	name = "Will-o'-the-wisp";
+	pixel_x = 0
+	},
 /obj/effect/landmark/start/druid,
 /turf/open/floor/rogue/twig,
 /area/rogue/indoors/town/grove)
@@ -7010,7 +7017,7 @@
 /turf/open/floor/rogue/tile/harem1,
 /area/rogue/under/deserttown/basement/town)
 "dCe" = (
-/obj/structure/mannequin/male/decorative,
+/obj/structure/mannequin/male,
 /turf/open/floor/rogue/blocks/stonered,
 /area/rogue/indoors/deserttown/smithguild)
 "dCg" = (
@@ -8311,10 +8318,6 @@
 	},
 /turf/open/floor/rogue/citybrick/citybrick1,
 /area/rogue/under/deserttown/basement/town)
-"ekA" = (
-/obj/machinery/light/rogue/campfire/fireplace/inn,
-/turf/closed/wall/mineral/rogue/sandbrick,
-/area/rogue/indoors/deserttown/tavern)
 "ekQ" = (
 /obj/structure/stairs/desert,
 /turf/open/floor/rogue/naturalstone,
@@ -12453,6 +12456,10 @@
 	icon = 'modular/DesertTown/icons/alt/roguefloor.dmi'
 	},
 /area/rogue/under/deserttown/basement/town)
+"giR" = (
+/obj/machinery/light/rogue/campfire/fireplace/inn,
+/turf/closed/wall/mineral/rogue/sandbrick,
+/area/rogue/indoors/deserttown/tavern)
 "giU" = (
 /obj/machinery/light/rogue/torchholder/r,
 /turf/open/floor/rogue/naturalstone,
@@ -14979,13 +14986,13 @@
 	tavern_area = 1
 	})
 "hxo" = (
-/obj/structure/mannequin/male/decorative,
 /obj/item/clothing/suit/roguetown/shirt/dress/noble,
 /obj/effect/decal/cobbleedge{
 	icon_state = "borderfall";
 	dir = 1;
 	pixel_y = 8
 	},
+/obj/structure/mannequin/male,
 /turf/open/floor/rogue/tile/harem,
 /area/rogue/indoors/deserttown)
 "hxu" = (
@@ -25554,7 +25561,7 @@
 	},
 /area/rogue/under/deserttown/basement/town)
 "neC" = (
-/obj/structure/mannequin/male/decorative,
+/obj/structure/mannequin/male,
 /obj/effect/spawner/lootdrop/roguetown/dungeon/armor,
 /obj/machinery/light/roguestreet/orange/walllamp{
 	dir = 8;
@@ -29193,7 +29200,7 @@
 /turf/open/floor/rogue/cobble/mossy,
 /area/rogue/under/cave/dungeon1)
 "oWv" = (
-/obj/structure/mannequin/male/decorative,
+/obj/structure/mannequin/male,
 /obj/machinery/light/roguestreet/orange/walllamp{
 	dir = 4;
 	pixel_y = 16
@@ -31835,7 +31842,7 @@
 /turf/open/floor/rogue/wood/herringbone,
 /area/rogue/indoors/deserttown)
 "qmm" = (
-/obj/structure/mannequin/male/decorative,
+/obj/structure/mannequin/male,
 /turf/open/floor/rogue/tile/harem1,
 /area/rogue/indoors/deserttown)
 "qmo" = (
@@ -31905,7 +31912,7 @@
 /turf/open/floor/carpet/stellar,
 /area/rogue/indoors/deserttown/magician)
 "qnV" = (
-/obj/structure/mannequin/male/decorative,
+/obj/structure/mannequin/male,
 /obj/effect/spawner/lootdrop/roguetown/dungeon/armor,
 /obj/machinery/light/roguestreet/orange/walllamp{
 	dir = 4;
@@ -35414,13 +35421,6 @@
 	},
 /area/rogue/under/deserttown/basement/town)
 "rVV" = (
-/obj/effect/wisp/prestidigitation{
-	color = "#ffff00";
-	desc = "A small, fiery ball of light made up of mystical energy.";
-	light_color = "#33ff00";
-	name = "Will-o'-the-wisp";
-	pixel_x = 0
-	},
 /obj/effect/landmark/start/druid,
 /turf/open/floor/rogue/twig,
 /area/rogue/indoors/town/grove)
@@ -263682,7 +263682,7 @@ arI
 arI
 cUp
 eqC
-dBM
+rVV
 arI
 arI
 rYY
@@ -263981,7 +263981,7 @@ arI
 cUp
 arI
 arI
-dBM
+rVV
 arI
 kNx
 arI
@@ -264890,7 +264890,7 @@ arI
 arI
 arI
 arI
-dBM
+rVV
 oql
 arI
 arI
@@ -265190,7 +265190,7 @@ arI
 arI
 arI
 arI
-rVV
+dBM
 arI
 arI
 qNs
@@ -356920,7 +356920,7 @@ rkt
 rkt
 cXj
 hYi
-ekA
+giR
 jbh
 lEM
 lEM
