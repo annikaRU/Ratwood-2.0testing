@@ -27,13 +27,17 @@
 	pants = /obj/item/clothing/under/roguetown/tights/vagrant
 	gloves = /obj/item/clothing/gloves/roguetown/fingerless
 	shirt = /obj/item/clothing/suit/roguetown/shirt/shortshirt/random
-	shoes = /obj/item/clothing/shoes/roguetown/boots/leather
 	neck = /obj/item/storage/belt/rogue/pouch/coins/poor
 	armor = /obj/item/clothing/suit/roguetown/shirt/shortshirt/random
 	backl = /obj/item/storage/backpack/rogue/satchel
 	belt = /obj/item/storage/belt/rogue/leather
 	beltr = /obj/item/clothing/mask/cigarette/rollie/cannabis
 	beltl = /obj/item/flint
+	if(SSmapping.config.map_name == "Desert Town")
+		head = /obj/item/clothing/head/roguetown/turban/fancypurple
+		shoes = /obj/item/clothing/shoes/roguetown/shalal
+	else
+		shoes = /obj/item/clothing/shoes/roguetown/boots/leather
 	backpack_contents = list(
 						/obj/item/storage/pill_bottle/dice = 1,
 						/obj/item/storage/pill_bottle/dice/farkle = 1,

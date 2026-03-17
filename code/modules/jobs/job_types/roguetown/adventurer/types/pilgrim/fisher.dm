@@ -74,6 +74,11 @@
 		backr = /obj/item/fishingrod
 		beltr = /obj/item/cooking/pan
 		beltl = /obj/item/flint
+	if(SSmapping.config.map_name == "Desert Town")
+		shoes = /obj/item/clothing/shoes/roguetown/sandals
+		shirt = /obj/item/clothing/suit/roguetown/shirt/dress/thawb/random
+		armor = /obj/item/clothing/suit/roguetown/shirt/robe/bisht/random
+	else
 		backpack_contents = list(
 							/obj/item/natural/worms = 2,
 							/obj/item/rogueweapon/shovel/small = 1,

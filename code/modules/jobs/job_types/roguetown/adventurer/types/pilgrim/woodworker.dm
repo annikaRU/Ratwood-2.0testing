@@ -41,8 +41,6 @@
 /datum/outfit/job/roguetown/adventurer/woodworker/pre_equip(mob/living/carbon/human/H)
 	..()
 	belt = /obj/item/storage/belt/rogue/leather
-	head = /obj/item/clothing/head/roguetown/roguehood
-	shoes = /obj/item/clothing/shoes/roguetown/boots/leather
 	backr = /obj/item/storage/backpack/rogue/satchel
 	backl = /obj/item/rogueweapon/stoneaxe/woodcut/steel/woodcutter		//Unique axe, not craftable purposefully. Good axe, but not end-all be-all for combat.
 	neck = /obj/item/storage/belt/rogue/pouch/coins/poor
@@ -63,3 +61,12 @@
 		armor = /obj/item/clothing/suit/roguetown/armor/workervest
 		pants = /obj/item/clothing/under/roguetown/trou
 		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/random
+
+	if(SSmapping.config.map_name == "Desert Town")
+		shirt = /obj/item/clothing/suit/roguetown/shirt/dress/thawb
+		armor = /obj/item/clothing/suit/roguetown/shirt/robe/bisht
+		head = /obj/item/clothing/head/roguetown/turban/random
+		shoes = /obj/item/clothing/shoes/roguetown/sandals
+	else
+		head = /obj/item/clothing/head/roguetown/roguehood
+		shoes = /obj/item/clothing/shoes/roguetown/boots/leather
