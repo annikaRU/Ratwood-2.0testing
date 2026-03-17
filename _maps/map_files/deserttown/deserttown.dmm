@@ -39936,10 +39936,6 @@
 /obj/machinery/light/rogue/torchholder/c,
 /turf/open/floor/rogue/darkpath,
 /area/rogue/indoors/deserttown/manor)
-"ugA" = (
-/obj/machinery/light/rogue/torchholder/c,
-/turf/closed/wall/mineral/rogue/sandstone,
-/area/rogue/indoors/deserttown/manor)
 "ugF" = (
 /obj/structure/roguewindow/harem3,
 /turf/open/floor/rogue/concrete{
@@ -42463,6 +42459,7 @@
 /obj/structure/stairs{
 	dir = 4
 	},
+/obj/machinery/light/rogue/torchholder/c,
 /turf/open/floor/rogue/darkpath,
 /area/rogue/indoors/deserttown/manor)
 "vxi" = (
@@ -477922,7 +477919,7 @@ dKF
 dKF
 dKF
 dbH
-ugA
+dbH
 mOn
 dbH
 dbH
