@@ -417,9 +417,9 @@
 	return TRUE
 
 /datum/job/proc/map_check()
-    if(allowed_maps && !(SSmapping.config.map_name in allowed_maps))
-        return FALSE
-    return TRUE
+	if(allowed_maps && !(SSmapping.config.map_name in allowed_maps))
+		return FALSE
+	return TRUE
 
 /datum/outfit/job
 	name = "Standard Gear"
