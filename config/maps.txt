@@ -26,5 +26,4 @@ map rockhill
 endmap
 
 map deserttown
-	votable
 endmap
