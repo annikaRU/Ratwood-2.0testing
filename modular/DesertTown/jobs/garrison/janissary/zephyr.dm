@@ -40,7 +40,7 @@
 	pants = /obj/item/clothing/under/roguetown/splintlegs
 	wrists = /obj/item/clothing/wrists/roguetown/splintarms
 	gloves = /obj/item/clothing/gloves/roguetown/fingerless_leather
-	armor = /obj/item/clothing/suit/roguetown/armor/chainmail/janissary
+	armor = /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/janissary
 	shirt = /obj/item/clothing/suit/roguetown/armor/gambeson
 	head = /obj/item/clothing/head/roguetown/helmet/janissaryhelm
 	backpack_contents = list(

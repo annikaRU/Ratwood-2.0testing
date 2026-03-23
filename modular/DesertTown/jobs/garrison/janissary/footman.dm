@@ -37,7 +37,7 @@
 /datum/outfit/job/roguetown/janissary/footman/pre_equip(mob/living/carbon/human/H)
 	..()
 
-	armor = /obj/item/clothing/suit/roguetown/armor/chainmail/janissary
+	armor = /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/janissary
 	shirt = /obj/item/clothing/suit/roguetown/armor/gambeson
 	head = /obj/item/clothing/head/roguetown/helmet/janissaryhelm
 	neck = /obj/item/clothing/neck/roguetown/chaincoif/chainmantle

@@ -37,7 +37,7 @@
 
 //All skills/traits are on the loadouts. All are identical. Welcome to the stupid way we have to make sub-classes...
 /datum/outfit/job/roguetown/janissarysergeant
-	armor = /obj/item/clothing/suit/roguetown/armor/chainmail/janissary
+	armor = /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/janissary
 	pants = /obj/item/clothing/under/roguetown/chainlegs
 	neck = /obj/item/clothing/neck/roguetown/bevor
 	shoes = /obj/item/clothing/shoes/roguetown/shalal/reinforced

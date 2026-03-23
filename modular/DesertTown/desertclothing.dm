@@ -2,21 +2,16 @@
 
 //armor
 //Common workhorse armour for men at arms? Seems like it should be decent alround basic protection, like a hauberk (but not underarmour)
-/obj/item/clothing/suit/roguetown/armor/chainmail/janissary
+/obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/janissary
 	slot_flags = ITEM_SLOT_ARMOR
 	name = "janissary chainmail"
-	desc = "A longer steel maille that protects the legs, still doesn't protect against arrows though."
-	body_parts_covered = COVERAGE_FULL
+	desc = "A longer steel maille that protects the legs."
 	sleeved = null
 	sleevetype = null
 	icon = 'modular/DesertTown/icons/clothing/armor.dmi'
 	mob_overlay_icon = 'modular/DesertTown/icons/clothing/onmob/armor.dmi'
 	icon_state = "mamaluke"
 	item_state = "mamaluke"
-	// armor = ARMOR_MAILLE
-	// smeltresult = /obj/item/ingot/steel
-	// armor_class = ARMOR_CLASS_MEDIUM
-	smelt_bar_num = 2
 
 //I remember cataphracts were supposed to be knights and that this is supposed to be heavy armour.
 //Judging by the sprite it feels like the torso should be more heavily armoured but idk how to do that
