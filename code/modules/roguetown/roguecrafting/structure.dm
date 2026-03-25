@@ -760,7 +760,7 @@
 	craftdiff = 1
 
 /datum/crafting_recipe/roguetown/structure/doublebed
-	name = "bed, double"
+	name = "bed, double nice"
 	result = /obj/structure/bed/rogue/inn/double
 	reqs = list(/obj/item/grown/log/tree/small = 3,
 				/obj/item/natural/cloth = 4)
@@ -1533,3 +1533,68 @@
 	skillcraft = /datum/skill/craft/masonry
 	wallcraft = FALSE
 	craftdiff = 0
+
+// floor pillows
+
+/datum/crafting_recipe/roguetown/structure/redpillows
+	name = "red pillows (2 cloth)"
+	result = /obj/structure/fluff/pillow/red
+	reqs = list(/obj/item/natural/cloth = 2)
+	skillcraft = /datum/skill/craft/carpentry
+	verbage_simple = "construct"
+	verbage = "constructs"
+	craftdiff = 2
+
+/datum/crafting_recipe/roguetown/structure/bluepillows
+	name = "blue pillows (2 cloth)"
+	result = /obj/structure/fluff/pillow/blue
+	reqs = list(/obj/item/natural/cloth = 2)
+	skillcraft = /datum/skill/craft/carpentry
+	verbage_simple = "construct"
+	verbage = "constructs"
+	craftdiff = 2
+
+/datum/crafting_recipe/roguetown/structure/greenpillows
+	name = "green pillows (2 cloth)"
+	result = /obj/structure/fluff/pillow/green
+	reqs = list(/obj/item/natural/cloth = 2)
+	skillcraft = /datum/skill/craft/carpentry
+	verbage_simple = "construct"
+	verbage = "constructs"
+	craftdiff = 2
+
+/datum/crafting_recipe/roguetown/structure/brownpillows
+	name = "brown pillows (2 cloth)"
+	result = /obj/structure/fluff/pillow/brown
+	reqs = list(/obj/item/natural/cloth = 2)
+	skillcraft = /datum/skill/craft/carpentry
+	verbage_simple = "construct"
+	verbage = "constructs"
+	craftdiff = 2
+
+/datum/crafting_recipe/roguetown/structure/magentapillows
+	name = "magenta pillows (2 cloth)"
+	result = /obj/structure/fluff/pillow/magenta
+	reqs = list(/obj/item/natural/cloth = 2)
+	skillcraft = /datum/skill/craft/carpentry
+	verbage_simple = "construct"
+	verbage = "constructs"
+	craftdiff = 2
+
+/datum/crafting_recipe/roguetown/structure/purplepillows
+	name = "purple pillows (2 cloth)"
+	result = /obj/structure/fluff/pillow/purple
+	reqs = list(/obj/item/natural/cloth = 2)
+	skillcraft = /datum/skill/craft/carpentry
+	verbage_simple = "construct"
+	verbage = "constructs"
+	craftdiff = 2
+
+/datum/crafting_recipe/roguetown/structure/blackpillows
+	name = "black pillows (2 cloth)"
+	result = /obj/structure/fluff/pillow/black
+	reqs = list(/obj/item/natural/cloth = 2)
+	skillcraft = /datum/skill/craft/carpentry
+	verbage_simple = "construct"
+	verbage = "constructs"
+	craftdiff = 2
