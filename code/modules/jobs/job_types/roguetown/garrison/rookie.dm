@@ -85,6 +85,10 @@
 	if(SSmapping.config.map_name == "Rockhill")
 		cloak = /obj/item/clothing/cloak/citywatch
 		head = /obj/item/clothing/head/roguetown/helmet/kettle/citywatch
+	if(SSmapping.config.map_name == "Desert Town")
+		cloak = /obj/item/clothing/cloak/citywatch/janissary
+		head = /obj/item/clothing/head/roguetown/helmet/janissaryhelm
+		shoes = /obj/item/clothing/shoes/roguetown/shalal
 	else
 		cloak = /obj/item/clothing/cloak/stabard/surcoat/guard
 		head = /obj/item/clothing/head/roguetown/helmet/kettle/
@@ -153,6 +157,10 @@
 	if(SSmapping.config.map_name == "Rockhill")
 		cloak = /obj/item/clothing/cloak/citywatch
 		head = /obj/item/clothing/head/roguetown/helmet/kettle/citywatch
+	if(SSmapping.config.map_name == "Desert Town")
+		cloak = /obj/item/clothing/cloak/citywatch/janissary
+		head = /obj/item/clothing/head/roguetown/helmet/janissaryhelm
+		shoes = /obj/item/clothing/shoes/roguetown/shalal
 	else
 		cloak = /obj/item/clothing/cloak/stabard/surcoat/guard
 		head = /obj/item/clothing/head/roguetown/helmet/kettle/

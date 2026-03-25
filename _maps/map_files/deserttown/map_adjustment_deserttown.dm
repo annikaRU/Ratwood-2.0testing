@@ -59,7 +59,7 @@
 		// /datum/job/roguetown/physician,
 
 		/datum/job/roguetown/manorguard,//  mamaluk
-		/datum/job/roguetown/rookie,//  mamaluk
+		// /datum/job/roguetown/rookie,//  mamalukrookie!
 		/datum/job/roguetown/guardsman,//  mamaluk
 		/datum/job/roguetown/vanguard,//  jannissary
 		/datum/job/roguetown/warden,//  jannissary

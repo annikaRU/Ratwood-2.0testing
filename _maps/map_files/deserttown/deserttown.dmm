@@ -22885,6 +22885,10 @@
 "lEJ" = (
 /turf/open/floor/carpet/red,
 /area/rogue/indoors/deserttown/bath)
+"lFn" = (
+/obj/effect/landmark/start/rookie,
+/turf/open/floor/rogue/wood,
+/area/rogue/indoors/deserttown/garrison)
 "lFQ" = (
 /obj/structure/rack/rogue,
 /obj/machinery/light/rogue/torchholder/l,
@@ -24693,14 +24697,6 @@
 /area/rogue/indoors/deserttown/academy)
 "mwU" = (
 /obj/structure/rack/rogue/shelf,
-/obj/item/gun/ballistic/firearm/handgonne{
-	pixel_x = -20;
-	pixel_y = -16
-	},
-/obj/item/gun/ballistic/firearm/handgonne{
-	pixel_x = -9;
-	pixel_y = -18
-	},
 /obj/item/powderflask{
 	pixel_x = -4;
 	pixel_y = 34
@@ -24719,6 +24715,14 @@
 /obj/item/quiver/bullet/lead{
 	pixel_x = 0;
 	pixel_y = 34
+	},
+/obj/item/gun/ballistic/firearm/flintgonne{
+	pixel_x = -22;
+	pixel_y = -14
+	},
+/obj/item/gun/ballistic/firearm/flintgonne{
+	pixel_x = -9;
+	pixel_y = -16
 	},
 /turf/open/floor/rogue/woodturned,
 /area/rogue/indoors/deserttown/garrison)
@@ -486834,7 +486838,7 @@ wIU
 hNy
 cSk
 vYa
-xEm
+lFn
 xEm
 mjC
 lNo
