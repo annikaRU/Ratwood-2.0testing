@@ -39,7 +39,8 @@
 		"Vanguard" = TRUE,
 		"City Guard" = TRUE,
 		"Bandit" = TRUE
-
+		"Watch Captain" = TRUE,
+		"Master Warden" = TRUE
 	)
 	var/mob/living/tracked_target = null
 	var/shown_hunt_disclaimer = FALSE
