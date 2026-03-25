@@ -87,9 +87,9 @@
 	hitsound = 'sound/combat/hits/blunt/woodblunt (2).ogg'
 
 /obj/projectile/bullet/reusable/bolt/heavyblunt
-	damage = 75
+	damage = 70
 	armor_penetration = 50
-	embedchance = 5
+	embedchance = 2
 	woundclass = BCLASS_BLUNT
 	ammo_type = /obj/item/ammo_casing/caseless/rogue/bolt/heavyblunt
 	icon_state = "bolt_blunt_proj"
