@@ -7,6 +7,8 @@ SUBSYSTEM_DEF(gnoll_scaling)
 	var/desired_gnoll_slots = 1
 	var/gnoll_scaling_check_queued = FALSE
 	var/last_logged_target_slots = 1
+	var/last_storyteller_name = "Unknown"
+	var/last_mode_origin = "default"
 
 /datum/controller/subsystem/gnoll_scaling/proc/get_mode_name(mode)
 	switch(mode)
@@ -18,17 +20,25 @@ SUBSYSTEM_DEF(gnoll_scaling)
 			return "DYNAMIC"
 	return "UNKNOWN([mode])"
 
-/datum/controller/subsystem/gnoll_scaling/proc/resolve_preferred_mode(preferred_mode)
+//logging for admin notice around storyteller and gnoll scaling changes for bugfixing AND usefulness
+/datum/controller/subsystem/gnoll_scaling/proc/get_scaling_context(mode, players_amt)
+	return "mode=[get_mode_name(mode)], storyteller=[last_storyteller_name], origin=[last_mode_origin], active_humans=[players_amt]"
+
+/datum/controller/subsystem/gnoll_scaling/proc/resolve_preferred_mode(preferred_mode, storyteller_name = "Unknown")
+	last_storyteller_name = storyteller_name
+	last_mode_origin = "direct"
 	if(preferred_mode == GNOLL_SCALING_RANDOM)
+		last_mode_origin = "random"
 		preferred_mode = pick(GNOLL_SCALING_SINGLE, GNOLL_SCALING_FLAT, GNOLL_SCALING_DYNAMIC)
 
 	if(!(preferred_mode in list(GNOLL_SCALING_SINGLE, GNOLL_SCALING_FLAT, GNOLL_SCALING_DYNAMIC)))
+		last_mode_origin = "fallback"
 		preferred_mode = GNOLL_SCALING_SINGLE
 
 	return preferred_mode
 
-/datum/controller/subsystem/gnoll_scaling/proc/apply_storyteller_mode(preferred_mode)
-	gnoll_scaling_mode = resolve_preferred_mode(preferred_mode)
+/datum/controller/subsystem/gnoll_scaling/proc/apply_storyteller_mode(preferred_mode, storyteller_name = "Unknown")
+	gnoll_scaling_mode = resolve_preferred_mode(preferred_mode, storyteller_name)
 	return gnoll_scaling_mode
 
 /datum/controller/subsystem/gnoll_scaling/proc/queue_scaling_recheck()
@@ -59,7 +69,7 @@ SUBSYSTEM_DEF(gnoll_scaling)
 	gnoll_playercount_lock = (target_slots <= 1)
 	if(target_slots != previous_target_slots && target_slots != last_logged_target_slots)
 		last_logged_target_slots = target_slots
-		var/log_msg = "GNOLL SCALING: target changed to [target_slots] (mode=[get_mode_name(mode)], active_humans=[players_amt])."
+		var/log_msg = "GNOLL SCALING: target changed to [target_slots] ([get_scaling_context(mode, players_amt)])."
 		log_game(log_msg)
 		message_admins(log_msg)
 
@@ -77,7 +87,7 @@ SUBSYSTEM_DEF(gnoll_scaling)
 	gnoll_job.spawn_positions = new_spawn
 
 	if(new_total != old_total || new_spawn != old_spawn)
-		var/slot_log_msg = "GNOLL SCALING: slots changed from [old_total]/[old_spawn] to [new_total]/[new_spawn] (mode=[get_mode_name(mode)], active_humans=[players_amt])."
+		var/slot_log_msg = "GNOLL SCALING: slots changed from [old_total]/[old_spawn] to [new_total]/[new_spawn] ([get_scaling_context(mode, players_amt)])."
 		log_game(slot_log_msg)
 		message_admins(slot_log_msg)
 
@@ -94,12 +104,15 @@ SUBSYSTEM_DEF(gnoll_scaling)
 		return gnoll_scaling_mode
 
 	var/preferred_mode = GNOLL_SCALING_SINGLE
+	var/storyteller_name = "Unknown"
 	if(SSgamemode?.current_storyteller)
 		preferred_mode = SSgamemode.current_storyteller.preferred_gnoll_mode
+		storyteller_name = SSgamemode.current_storyteller.name
 	else if(SSgamemode?.selected_storyteller)
 		var/datum/storyteller/selected_storyteller = SSgamemode.storytellers[SSgamemode.selected_storyteller]
 		if(selected_storyteller)
 			preferred_mode = selected_storyteller.preferred_gnoll_mode
+			storyteller_name = selected_storyteller.name
 
-	gnoll_scaling_mode = resolve_preferred_mode(preferred_mode)
+	gnoll_scaling_mode = resolve_preferred_mode(preferred_mode, storyteller_name)
 	return gnoll_scaling_mode
