@@ -72,6 +72,10 @@
 	stress_desc = span_red("Gods above... a Gnoll!!")
 	examine_stress_event = /datum/stressevent/gnoll_examine
 	examine_stress_event_xenophobic = /datum/stressevent/gnoll_examine
+	examine_stress_always = TRUE
+	examine_stress_ignores_tolerant = TRUE
+	examine_relief_patron = /datum/patron/inhumen/graggar
+	examine_relief_event = /datum/stressevent/gnoll_graggar
 	var/gnoll_armor_icon = "beserker"
 
 /datum/species/gnoll/send_voice(mob/living/carbon/human/H)

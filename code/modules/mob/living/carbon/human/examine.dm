@@ -887,15 +887,22 @@
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
 		var/stress = H.get_stress_amount()//stress check for racism
-		if(H.has_flaw(/datum/charflaw/paranoid) || stress >= 4)//Paranoid or stressed, for basic examine.
-			if(H.dna.species.name != dna.species.name)
-				if(dna.species.stress_examine)//some species don't have a stress desc
+		if(H.dna.species.name != dna.species.name && dna.species.stress_examine)
+			var/should_apply_species_reaction = dna.species.examine_stress_always
+			if(!should_apply_species_reaction)
+				should_apply_species_reaction = H.has_flaw(/datum/charflaw/paranoid) || stress >= 4
+			if(should_apply_species_reaction)
+				var/is_graggar_follower = (H.patron?.type == dna.species.examine_relief_patron)
+				if(is_graggar_follower)
+					if(dna.species.examine_relief_event)
+						user.add_stress(dna.species.examine_relief_event)
+				else
 					. += dna.species.stress_desc
-				if(!HAS_TRAIT(user, TRAIT_TOLERANT))//They're given the stress event if they qualify for racism and aren't tolerant.
-					var/stress_type = dna.species.examine_stress_event
-					if(HAS_TRAIT(user, TRAIT_XENOPHOBIC))//Xenophobic are hit worse. By a bit.
-						stress_type = dna.species.examine_stress_event_xenophobic
-					user.add_stress(stress_type)
+					if(dna.species.examine_stress_ignores_tolerant || !HAS_TRAIT(user, TRAIT_TOLERANT))//They're given the stress event if they qualify for racism and aren't tolerant.
+						var/stress_type = dna.species.examine_stress_event
+						if(HAS_TRAIT(user, TRAIT_XENOPHOBIC))//Xenophobic are hit worse. By a bit.
+							stress_type = dna.species.examine_stress_event_xenophobic
+						user.add_stress(stress_type)
 
 	if((user != src) && isliving(user))
 		var/mob/living/L = user
