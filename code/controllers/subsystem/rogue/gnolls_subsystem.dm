@@ -18,6 +18,19 @@ SUBSYSTEM_DEF(gnoll_scaling)
 			return "DYNAMIC"
 	return "UNKNOWN([mode])"
 
+/datum/controller/subsystem/gnoll_scaling/proc/resolve_preferred_mode(preferred_mode)
+	if(preferred_mode == GNOLL_SCALING_RANDOM)
+		preferred_mode = pick(GNOLL_SCALING_SINGLE, GNOLL_SCALING_FLAT, GNOLL_SCALING_DYNAMIC)
+
+	if(!(preferred_mode in list(GNOLL_SCALING_SINGLE, GNOLL_SCALING_FLAT, GNOLL_SCALING_DYNAMIC)))
+		preferred_mode = GNOLL_SCALING_SINGLE
+
+	return preferred_mode
+
+/datum/controller/subsystem/gnoll_scaling/proc/apply_storyteller_mode(preferred_mode)
+	gnoll_scaling_mode = resolve_preferred_mode(preferred_mode)
+	return gnoll_scaling_mode
+
 /datum/controller/subsystem/gnoll_scaling/proc/queue_scaling_recheck()
 	if(gnoll_scaling_check_queued)
 		return
@@ -57,15 +70,18 @@ SUBSYSTEM_DEF(gnoll_scaling)
 
 	var/old_total = gnoll_job.total_positions
 	var/old_spawn = gnoll_job.spawn_positions
-	var/new_total = clamp(max(gnoll_job.total_positions, target_slots), 1, 6)
-	var/new_spawn = clamp(max(gnoll_job.spawn_positions, target_slots), 1, 6)
+	var/capped_target_slots = clamp(target_slots, 1, 6)
+	var/new_total = max(gnoll_job.current_positions, capped_target_slots)
+	var/new_spawn = max(gnoll_job.current_positions, capped_target_slots)
 	gnoll_job.total_positions = new_total
 	gnoll_job.spawn_positions = new_spawn
 
-	if(new_total > old_total || new_spawn > old_spawn)
-		var/slot_log_msg = "GNOLL SCALING: slots increased from [old_total]/[old_spawn] to [new_total]/[new_spawn] (mode=[get_mode_name(mode)], active_humans=[players_amt])."
+	if(new_total != old_total || new_spawn != old_spawn)
+		var/slot_log_msg = "GNOLL SCALING: slots changed from [old_total]/[old_spawn] to [new_total]/[new_spawn] (mode=[get_mode_name(mode)], active_humans=[players_amt])."
 		log_game(slot_log_msg)
 		message_admins(slot_log_msg)
+
+	if(new_total > old_total || new_spawn > old_spawn)
 		for(var/mob/dead/new_player/player as anything in GLOB.new_player_list)
 			if(player.client)
 				to_chat(player, span_alert("Graggar demands blood, gnolls flock to the Vale!"))
@@ -85,11 +101,5 @@ SUBSYSTEM_DEF(gnoll_scaling)
 		if(selected_storyteller)
 			preferred_mode = selected_storyteller.preferred_gnoll_mode
 
-	if(preferred_mode == GNOLL_SCALING_RANDOM)
-		preferred_mode = pick(GNOLL_SCALING_SINGLE, GNOLL_SCALING_FLAT, GNOLL_SCALING_DYNAMIC)
-
-	if(!(preferred_mode in list(GNOLL_SCALING_SINGLE, GNOLL_SCALING_FLAT, GNOLL_SCALING_DYNAMIC)))
-		preferred_mode = GNOLL_SCALING_SINGLE
-
-	gnoll_scaling_mode = preferred_mode
+	gnoll_scaling_mode = resolve_preferred_mode(preferred_mode)
 	return gnoll_scaling_mode
