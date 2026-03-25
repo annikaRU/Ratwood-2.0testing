@@ -8,7 +8,7 @@
 	outfit = /datum/outfit/job/roguetown/gnoll_impure
 	traits_applied = list(TRAIT_DODGEEXPERT, TRAIT_UNLYCKERABLE) // Surely this won't be broken.
 	subclass_stats = list(
-		STATKEY_STR = -1,
+		STATKEY_STR = 3,
 		STATKEY_CON = 5,
 		STATKEY_WIL = 2,
 		STATKEY_SPD = 2
