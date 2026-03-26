@@ -276,6 +276,7 @@ LICH SKELETONS
 	neck = /obj/item/clothing/neck/roguetown/coif
 	shoes = /obj/item/clothing/shoes/roguetown/sandals/aalloy
 	backl = /obj/item/storage/backpack/rogue/satchel
+	gloves = /obj/item/clothing/gloves/roguetown/chain/paalloy
 
 	beltr = /obj/item/rogueweapon/stoneaxe/woodcut
 	beltl = /obj/item/rogueweapon/pick/copper
