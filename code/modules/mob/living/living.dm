@@ -114,10 +114,8 @@
 	if(now_pushing)
 		return TRUE
 
-	var/they_can_move = TRUE
 	if(isliving(M))
 		var/mob/living/L = M
-		they_can_move = L.mobility_flags & MOBILITY_MOVE
 
 		//Should stop you pushing a restrained person out of the way
 		if(L.pulledby && L.pulledby != src && L.pulledby != L && L.restrained())
@@ -136,29 +134,11 @@
 		return TRUE
 
 	if(!M.buckled && !M.has_buckled_mobs())
-		var/mob_swap = FALSE
-		var/too_strong = (M.move_resist > move_force) //can't swap with immovable objects unless they help us
-		if(istype(M,/mob/living/simple_animal/hostile/retaliate))
-			if(!M:aggressive)
-				mob_swap = TRUE
-		if(!they_can_move) //we have to physically move them
-			if(!too_strong)
-				mob_swap = FALSE
-		else
-			//You can swap with the person you are dragging on grab intent, and restrained people in most cases
-			if(M.pulledby == src && !too_strong)
-				mob_swap = FALSE
-			else if(
-				!( HAS_TRAIT(M, TRAIT_NOMOBSWAP) || HAS_TRAIT(src, TRAIT_NOMOBSWAP) ) &&\
-				( (M.restrained() && !too_strong) ) &&\
-				( restrained() )
-				)
-				mob_swap = FALSE
-		if(mob_swap)
+		if(can_mobswap_with(M))
 			//switch our position with M
 			if(loc && !loc.Adjacent(M.loc))
 				return TRUE
-			now_pushing = 1
+			now_pushing = TRUE
 			var/oldloc = loc
 			var/oldMloc = M.loc
 
@@ -177,7 +157,7 @@
 			if(!M_passmob)
 				M.pass_flags &= ~PASSMOB
 
-			now_pushing = 0
+			now_pushing = FALSE
 
 			if(!move_failed)
 				return TRUE
@@ -283,6 +263,51 @@
 		if(!istype(M, /obj/item/clothing))
 			if(prob(I.block_chance*2))
 				return
+
+/// Checks to see if you can mobswap with another mob
+/mob/living/proc/can_mobswap_with(mob/other)
+	if(HAS_TRAIT(other, TRAIT_NOMOBSWAP) || HAS_TRAIT(src, TRAIT_NOMOBSWAP))
+		return FALSE
+
+	if(istype(other, /mob/living/simple_animal/hostile/retaliate))
+		if(other:aggressive)
+			return FALSE
+
+	var/they_can_move = TRUE
+	var/their_cmode = FALSE
+
+	if(isliving(other))
+		var/mob/living/other_living = other
+		their_cmode = other_living.cmode
+		they_can_move = other_living.mobility_flags & MOBILITY_MOVE
+
+	var/too_strong = other.move_resist > move_force
+
+	// They cannot move, see if we can push through them
+	if(!they_can_move)
+		return !too_strong
+
+	// We are pulling them and can move through
+	if (other.pulledby == src && !too_strong)
+		return TRUE
+
+	// If we're in combat mode and not restrained we don't try to pass through people
+	if (cmode && !restrained())
+		return FALSE
+
+	// Nor can we pass through non-restrained people in combat mode (or if they're restrained but still too strong for us)
+	if (their_cmode && (!other.restrained() || too_strong))
+		return FALSE
+
+	if (isnull(other.client) || isnull(client))
+		return TRUE
+
+	// If both of us are trying to move in the same direction, let the fastest one through first
+	if (client.intended_direction == REVERSE_DIR(other.client.intended_direction))
+		return TRUE
+
+	// Else, sure, let us pass
+	return TRUE
 
 //Called when we bump onto an obj
 /mob/living/proc/ObjBump(obj/O)

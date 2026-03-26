@@ -121,6 +121,7 @@
 #include "code\__DEFINES\rust_g.dm"
 #include "code\__DEFINES\say.dm"
 #include "code\__DEFINES\sexcon_defines.dm"
+#include "code\__DEFINES\dcs\signals\signals_atom\signals_atom_movement.dm"
 #include "code\_globalvars\tgui.dm"
 #include "code\datums\changelog\changelog.dm"
 #include "modular\code\__DEFINES\roguetown\chastity.dm"
