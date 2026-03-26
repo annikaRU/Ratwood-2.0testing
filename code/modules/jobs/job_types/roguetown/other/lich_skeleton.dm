@@ -15,7 +15,6 @@ LICH SKELETONS
 	belt = /obj/item/storage/belt/rogue/leather/black
 	wrists = /obj/item/clothing/wrists/roguetown/bracers/paalloy
 	backl = /obj/item/storage/backpack/rogue/satchel
-	gloves = /obj/item/clothing/gloves/roguetown/chain/paalloy
 
 /datum/outfit/job/roguetown/greater_skeleton/lich/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -62,6 +61,7 @@ LICH SKELETONS
 	armor = /obj/item/clothing/suit/roguetown/armor/leather/studded
 	neck = /obj/item/clothing/neck/roguetown/chaincoif/paalloy
 	shoes = /obj/item/clothing/shoes/roguetown/sandals/aalloy
+	gloves = /obj/item/clothing/gloves/roguetown/chain/paalloy
 
 	backr = /obj/item/rogueweapon/shield/wood
 	beltl = /obj/item/quiver/javelin/paalloy
@@ -129,6 +129,7 @@ LICH SKELETONS
 	armor = /obj/item/clothing/suit/roguetown/armor/leather/studded
 	neck = /obj/item/clothing/neck/roguetown/chaincoif/paalloy
 	shoes = /obj/item/clothing/shoes/roguetown/sandals/aalloy
+	gloves = /obj/item/clothing/gloves/roguetown/chain/paalloy
 
 	beltr = /obj/item/rogueweapon/huntingknife/idagger/steel/padagger
 	H.adjust_blindness(-3)
@@ -195,6 +196,7 @@ LICH SKELETONS
 	armor = /obj/item/clothing/suit/roguetown/armor/plate/half/paalloy
 	neck = /obj/item/clothing/neck/roguetown/gorget/paalloy
 	shoes = /obj/item/clothing/shoes/roguetown/boots/aalloy
+	gloves = /obj/item/clothing/gloves/roguetown/chain/paalloy
 
 	H.adjust_blindness(-3)
 	var/weapons = list("Greatsword", "Bardiche", "Grand Mace", "Mace + Shield","Spear", "Warhammer + Shield")
