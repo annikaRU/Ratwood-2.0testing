@@ -266,6 +266,9 @@
 
 /// Checks to see if you can mobswap with another mob
 /mob/living/proc/can_mobswap_with(mob/other)
+	if(src == other) // XANTODO Figure out why the fuck you can tileswap yourself on live server
+		return FALSE
+
 	if(HAS_TRAIT(other, TRAIT_NOMOBSWAP) || HAS_TRAIT(src, TRAIT_NOMOBSWAP))
 		return FALSE
 
@@ -299,12 +302,13 @@
 	if (their_cmode && (!other.restrained() || too_strong))
 		return FALSE
 
+	// Allow free passage to the clientless
 	if (isnull(other.client) || isnull(client))
 		return TRUE
 
-	// If both of us are trying to move in the same direction, let the fastest one through first
-	if (client.intended_direction == REVERSE_DIR(other.client.intended_direction))
-		return TRUE
+	// Both clients have to be moving into each other to tile swap
+	if (client.intended_direction != REVERSE_DIR(other.client.intended_direction))
+		return FALSE
 
 	// Else, sure, let us pass
 	return TRUE
