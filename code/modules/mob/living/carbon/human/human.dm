@@ -795,7 +795,13 @@
 			return
 		if(!client || !client.prefs)
 			return
-		client.prefs.copy_to(src, TRUE, FALSE)
+		//make reapply prefs work for gnolls
+		if(dna?.species?.id == "gnoll")
+			apply_gnoll_preferences()
+			set_blindness(0)
+			regenerate_icons()
+		else
+			client.prefs.copy_to(src, TRUE, FALSE)
 	if(href_list[VV_HK_SET_SPECIES])
 		if(!check_rights(R_SPAWN))
 			return
