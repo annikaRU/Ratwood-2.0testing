@@ -113,7 +113,7 @@
 			"Coat of Plates"	= /obj/item/clothing/suit/roguetown/armor/brigandine/coatplates,
 			"Steel Cuirass"		= /obj/item/clothing/suit/roguetown/armor/plate/half,
 			"Fluted Cuirass"	= /obj/item/clothing/suit/roguetown/armor/plate/half/fluted,
-			"Scalemail"		= /obj/item/clothing/suit/roguetown/armor/plate/scale
+			"Scalemail"		= /obj/item/clothing/suit/roguetown/armor/plate/scale,
 		)
 		var/armorchoice = input(H, "Choose your armor.", "TAKE UP ARMOR") as anything in armors
 		armor = armors[armorchoice]
@@ -124,7 +124,7 @@
 	shirt = /obj/item/clothing/suit/roguetown/armor/chainmail
 	wrists = /obj/item/clothing/wrists/roguetown/bracers
 	shoes = /obj/item/clothing/shoes/roguetown/boots/armor
-	belt = /obj/item/storage/belt/rogue/leather
+	belt = /obj/item/storage/belt/rogue/leather/steel
 	beltl = /obj/item/storage/belt/rogue/pouch/coins/poor
 	backl = /obj/item/storage/backpack/rogue/satchel //gwstraps landing on backr asyncs with backpack_contents
 	backpack_contents = list(
@@ -302,7 +302,7 @@
 				wrists = /obj/item/clothing/wrists/roguetown/bracers
 				shoes = /obj/item/clothing/shoes/roguetown/boots/otavan
 				gloves = /obj/item/clothing/gloves/roguetown/otavan
-	belt = /obj/item/storage/belt/rogue/leather/
+	belt = /obj/item/storage/belt/rogue/leather
 	beltl = /obj/item/rogueweapon/mace/cudgel
 	backr = /obj/item/storage/backpack/rogue/satchel
 	if(H.mind)
