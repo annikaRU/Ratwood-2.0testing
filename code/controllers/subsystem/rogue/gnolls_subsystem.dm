@@ -9,6 +9,21 @@ SUBSYSTEM_DEF(gnoll_scaling)
 	var/last_logged_target_slots = 1
 	var/last_storyteller_name = "Unknown"
 	var/last_mode_origin = "default"
+	var/admin_scaling_override = FALSE
+	var/last_applied_total_positions = null
+	var/last_applied_spawn_positions = null
+
+	// Tuning values for each scaling mode.
+	var/max_gnoll_slots = 6
+	var/single_mode_slots = 1
+	var/flat_mode_threshold_players = 75
+	var/flat_mode_low_slots = 1
+	var/flat_mode_high_slots = 3
+	var/flat_mode_recheck_below_players = 75
+	var/dynamic_mode_base_slots = 2
+	var/dynamic_mode_start_players = 75
+	var/dynamic_mode_players_per_extra_slot = 15
+	var/dynamic_mode_recheck_below_players = 90
 
 /datum/controller/subsystem/gnoll_scaling/proc/get_mode_name(mode)
 	switch(mode)
@@ -47,23 +62,35 @@ SUBSYSTEM_DEF(gnoll_scaling)
 	gnoll_scaling_check_queued = TRUE
 	addtimer(CALLBACK(src, PROC_REF(unlock_gnoll_scaling)), 6000)
 
+// Scaling tuning quick reference:
+// - SINGLE: set single_mode_slots.
+// - FLAT: below flat_mode_threshold_players uses flat_mode_low_slots, otherwise flat_mode_high_slots.
+// - DYNAMIC: starts at dynamic_mode_base_slots, then adds using ((active_players - dynamic_mode_start_players) / dynamic_mode_players_per_extra_slot, 1)
+//   once active_players is above dynamic_mode_start_players.
+// - max_gnoll_slots clamps final slot count.
+// - recheck_below_players controls when another scaling check is queued.
 /datum/controller/subsystem/gnoll_scaling/proc/unlock_gnoll_scaling()
 	gnoll_scaling_check_queued = FALSE
+	if(admin_scaling_override)
+		return
 	var/players_amt = get_active_player_count(alive_check = 1, afk_check = 1, human_check = 1)
 
 	var/mode = get_gnoll_scaling()
 	var/target_slots = 1
 	var/previous_target_slots = desired_gnoll_slots
+	var/recheck_below_players = 0
 
 	switch(mode)
 		if(GNOLL_SCALING_SINGLE)
-			target_slots = 1
+			target_slots = single_mode_slots
 		if(GNOLL_SCALING_FLAT)
-			target_slots = (players_amt >= 50) ? 3 : 1
+			target_slots = (players_amt >= flat_mode_threshold_players) ? flat_mode_high_slots : flat_mode_low_slots
+			recheck_below_players = flat_mode_recheck_below_players
 		if(GNOLL_SCALING_DYNAMIC)
-			target_slots = 2
-			if(players_amt > 80)
-				target_slots += (players_amt - 80)
+			target_slots = dynamic_mode_base_slots
+			if(players_amt > dynamic_mode_start_players)
+				target_slots += FLOOR((players_amt - dynamic_mode_start_players) / dynamic_mode_players_per_extra_slot, 1)
+			recheck_below_players = dynamic_mode_recheck_below_players
 
 	desired_gnoll_slots = target_slots
 	gnoll_playercount_lock = (target_slots <= 1)
@@ -80,11 +107,20 @@ SUBSYSTEM_DEF(gnoll_scaling)
 
 	var/old_total = gnoll_job.total_positions
 	var/old_spawn = gnoll_job.spawn_positions
-	var/capped_target_slots = clamp(target_slots, 1, 6)
+	if(!isnull(last_applied_total_positions) && !isnull(last_applied_spawn_positions))
+		if(old_total != last_applied_total_positions || old_spawn != last_applied_spawn_positions)
+			admin_scaling_override = TRUE
+			var/override_msg = "GNOLL SCALING: external slot change detected ([old_total]/[old_spawn] vs last scaling [last_applied_total_positions]/[last_applied_spawn_positions]); disabling gnoll auto-scaling until round restart."
+			log_game(override_msg)
+			message_admins(override_msg)
+			return
+	var/capped_target_slots = clamp(target_slots, 1, max_gnoll_slots)
 	var/new_total = max(gnoll_job.current_positions, capped_target_slots)
 	var/new_spawn = max(gnoll_job.current_positions, capped_target_slots)
 	gnoll_job.total_positions = new_total
 	gnoll_job.spawn_positions = new_spawn
+	last_applied_total_positions = new_total
+	last_applied_spawn_positions = new_spawn
 
 	if(new_total != old_total || new_spawn != old_spawn)
 		var/slot_log_msg = "GNOLL SCALING: slots changed from [old_total]/[old_spawn] to [new_total]/[new_spawn] ([get_scaling_context(mode, players_amt)])."
@@ -96,7 +132,7 @@ SUBSYSTEM_DEF(gnoll_scaling)
 			if(player.client)
 				to_chat(player, span_alert("Graggar demands blood, gnolls flock to the Vale!"))
 
-	if((mode == GNOLL_SCALING_FLAT && players_amt < 50) || (mode == GNOLL_SCALING_DYNAMIC && players_amt < 84))
+	if(recheck_below_players > 0 && players_amt < recheck_below_players)
 		queue_scaling_recheck()
 
 /datum/controller/subsystem/gnoll_scaling/proc/get_gnoll_scaling()
