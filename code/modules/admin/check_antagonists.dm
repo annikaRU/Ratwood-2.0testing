@@ -255,18 +255,21 @@
 		slot_open_display = "[gnoll_open_slots]/[gnoll_total_slots]"
 
 		subclass_slot_lines = list()
-		for(var/adv in gnoll_job.job_subclasses)
-			var/datum/advclass/advpath = adv
-			var/datum/advclass/subclass = SSrole_class_handler.get_advclass_by_name(initial(advpath.name))
-			if(!subclass)
-				continue
+		if(!SSrole_class_handler)
+			subclass_slot_lines += "Unavailable (class handler not initialized)"
+		else
+			for(var/adv in gnoll_job.job_subclasses)
+				var/datum/advclass/advpath = adv
+				var/datum/advclass/subclass = SSrole_class_handler.get_advclass_by_name(initial(advpath.name))
+				if(!subclass)
+					continue
 
-			if(subclass.maximum_possible_slots == -1)
-				subclass_slot_lines += "[subclass.name]: unlimited"
-				continue
+				if(subclass.maximum_possible_slots == -1)
+					subclass_slot_lines += "[subclass.name]: unlimited"
+					continue
 
-			var/subclass_open_slots = max(subclass.maximum_possible_slots - subclass.total_slots_occupied, 0)
-			subclass_slot_lines += "[subclass.name]: [subclass_open_slots]/[subclass.maximum_possible_slots]"
+				var/subclass_open_slots = max(subclass.maximum_possible_slots - subclass.total_slots_occupied, 0)
+				subclass_slot_lines += "[subclass.name]: [subclass_open_slots]/[subclass.maximum_possible_slots]"
 
 		if(!length(subclass_slot_lines))
 			subclass_slot_lines += "(none)"

@@ -1413,12 +1413,12 @@
 		Secrets_topic(href_list["secrets"],href_list)
 
 	else if(href_list["check_antagonist"])
-		if(!check_rights(R_BAN))
+		if(!check_rights(R_ADMIN))
 			return
 		usr.client.check_antagonists()
 
 	else if(href_list["check_hunted_targets"])
-		if(!check_rights(R_BAN))
+		if(!check_rights(R_ADMIN))
 			return
 		if(!SSticker.HasRoundStarted())
 			alert("The game hasn't started yet!")
