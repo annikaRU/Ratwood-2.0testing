@@ -63,6 +63,7 @@
 						/obj/item/rogueweapon/chisel,
 						/obj/item/dye_brush = 1,
 						/obj/item/rogueweapon/scabbard/sheath = 1,
+						/obj/item/rogueweapon/stoneaxe/handaxe,
 						/obj/item/natural/stone = 4
 						)
 	if(H.pronouns == SHE_HER || H.pronouns == THEY_THEM_F)
