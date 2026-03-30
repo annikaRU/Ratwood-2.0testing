@@ -42,16 +42,12 @@
 		"Inquisitor" = TRUE
 	)
 	var/datum/weakref/tracked_target_ref = null
-	var/list/target_warning_cooldown_end = list()
-	var/list/target_warning_seen = list()
+	var/list/target_warning_next_by_ref = list()
 	var/shown_hunt_disclaimer = FALSE
 
 /obj/effect/proc_holder/spell/invoked/gnoll_sniff/cast(list/targets, mob/user)
 	var/mob/living/target = targets[1]
 	var/mob/living/tracked_target = tracked_target_ref?.resolve()
-
-	if(tracked_target_ref && (!tracked_target || QDELETED(tracked_target) || tracked_target.stat == DEAD))
-		clear_target_warning_state(tracked_target_ref)
 
 	if(!tracked_target || QDELETED(tracked_target) || tracked_target.stat == DEAD || target == user)
 		select_new_target(user)
@@ -97,7 +93,6 @@
 	if(!selection)
 		return
 
-	
 	if(!shown_hunt_disclaimer)
 		to_chat(user, span_boldnotice("You have chosen your first prey. Remember to judge whether or not your target is a worthy foe. Graggar does not reward spilling the blood of the meek when you have this much to prove."))
 		to_chat(user, span_boldwarning("(RP expectations are still valid as a Gnoll. You can always still do other gnoll things if targets are too difficult. Remember the rule of Interesting!)"))
@@ -117,8 +112,6 @@
 	var/mob/living/tracked_target = tracked_target_ref?.resolve()
 	if(!tracked_target || QDELETED(tracked_target) || tracked_target.stat == DEAD)
 		to_chat(user, span_warning("The scent has gone cold... your target is no more."))
-		if(tracked_target_ref)
-			clear_target_warning_state(tracked_target_ref)
 		tracked_target_ref = null
 		return
 
@@ -142,24 +135,18 @@
 	if(!is_valid_hunted(target))
 		return
 
-	var/datum/weakref/target_ref = WEAKREF(target)
-	if(!target_warning_seen[target_ref])
-		target_warning_seen[target_ref] = TRUE
-		target_warning_cooldown_end[target_ref] = world.time + 10 MINUTES
+	var/target_ref = "\ref[target]"
+	var/next_warning_time = target_warning_next_by_ref[target_ref]
+	if(isnull(next_warning_time))
+		target_warning_next_by_ref[target_ref] = world.time + 10 MINUTES
 		to_chat(target, span_warning("Faint cackles ride the wind. I need to be careful which shadows I tread through lest I find myself hunted!"))
 		return
 
-	if(world.time < (target_warning_cooldown_end[target_ref] || 0))
+	if(world.time < next_warning_time)
 		return
 
-	target_warning_cooldown_end[target_ref] = world.time + 10 MINUTES
+	target_warning_next_by_ref[target_ref] = world.time + 10 MINUTES
 	to_chat(target, span_warning("I feel the gaze of a hunter, they are after me!"))
-
-/obj/effect/proc_holder/spell/invoked/gnoll_sniff/proc/clear_target_warning_state(datum/weakref/target_ref)
-	if(!target_ref)
-		return
-	target_warning_seen -= target_ref
-	target_warning_cooldown_end -= target_ref
 
 /obj/effect/proc_holder/spell/invoked/gnoll_sniff/proc/is_valid_hunted(atom/A)
 	if(!isliving(A))
