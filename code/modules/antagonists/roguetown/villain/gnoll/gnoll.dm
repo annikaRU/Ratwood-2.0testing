@@ -21,6 +21,7 @@
 	roundend_category = "Gnolls"
 	antagpanel_category = "Gnolls"
 	job_rank = ROLE_GNOLL
+	var/datum/weakref/tracked_target_ref = null
 
 /proc/get_gnoll_tracking_combat_roles()
 	var/static/list/combat_roles = list(
@@ -54,40 +55,61 @@
 	. = ..()
 	if(owner)
 		owner.special_role = null
+	tracked_target_ref = null
+
+/datum/antagonist/gnoll/proc/set_tracked_target(mob/living/target)
+	if(!target || QDELETED(target) || target.stat == DEAD)
+		tracked_target_ref = null
+		return
+
+	tracked_target_ref = WEAKREF(target)
 
 /datum/antagonist/gnoll/proc/get_sniff_spell()
 	var/mob/living/current_mob = owner?.current
 	if(!current_mob)
 		return null
 
-	for(var/obj/effect/proc_holder/spell/invoked/gnoll_sniff/S as anything in current_mob.mob_spell_list)
+	for(var/obj/effect/proc_holder/spell/S as anything in current_mob.mob_spell_list)
+		if(!istype(S, /obj/effect/proc_holder/spell/invoked/gnoll_sniff))
+			continue
 		return S
 
 	if(current_mob.mind)
-		var/obj/effect/proc_holder/spell/invoked/gnoll_sniff/S = current_mob.mind.get_spell(/obj/effect/proc_holder/spell/invoked/gnoll_sniff)
-		if(S)
-			return S
+		var/obj/effect/proc_holder/spell/mind_spell = current_mob.mind.get_spell(/obj/effect/proc_holder/spell/invoked/gnoll_sniff)
+		if(istype(mind_spell, /obj/effect/proc_holder/spell/invoked/gnoll_sniff))
+			return mind_spell
 
 	return null
 
 /datum/antagonist/gnoll/proc/get_tracked_target()
+	var/mob/living/cached_target = tracked_target_ref?.resolve()
+	if(cached_target && !QDELETED(cached_target) && cached_target.stat != DEAD)
+		return cached_target
+	tracked_target_ref = null
+
 	var/mob/living/current_mob = owner?.current
 	if(!current_mob)
 		return null
 
 	var/list/sniff_spells = list()
-	for(var/obj/effect/proc_holder/spell/invoked/gnoll_sniff/S as anything in current_mob.mob_spell_list)
+	for(var/obj/effect/proc_holder/spell/S as anything in current_mob.mob_spell_list)
+		if(!istype(S, /obj/effect/proc_holder/spell/invoked/gnoll_sniff))
+			continue
 		if(!(S in sniff_spells))
 			sniff_spells += S
 
 	if(current_mob.mind)
-		var/obj/effect/proc_holder/spell/invoked/gnoll_sniff/mind_sniff_spell = current_mob.mind.get_spell(/obj/effect/proc_holder/spell/invoked/gnoll_sniff)
-		if(mind_sniff_spell && !(mind_sniff_spell in sniff_spells))
+		var/obj/effect/proc_holder/spell/mind_sniff_spell = current_mob.mind.get_spell(/obj/effect/proc_holder/spell/invoked/gnoll_sniff)
+		if(istype(mind_sniff_spell, /obj/effect/proc_holder/spell/invoked/gnoll_sniff) && !(mind_sniff_spell in sniff_spells))
 			sniff_spells += mind_sniff_spell
 
-	for(var/obj/effect/proc_holder/spell/invoked/gnoll_sniff/sniff_spell as anything in sniff_spells)
+	for(var/obj/effect/proc_holder/spell/sniff_spell_candidate as anything in sniff_spells)
+		if(!istype(sniff_spell_candidate, /obj/effect/proc_holder/spell/invoked/gnoll_sniff))
+			continue
+		var/obj/effect/proc_holder/spell/invoked/gnoll_sniff/sniff_spell = sniff_spell_candidate
 		var/mob/living/target = sniff_spell.tracked_target_ref?.resolve()
 		if(target && sniff_spell.is_valid_hunted(target))
+			tracked_target_ref = WEAKREF(target)
 			return target
 
 	return null

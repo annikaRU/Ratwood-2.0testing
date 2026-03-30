@@ -28,6 +28,12 @@
 	var/list/target_warning_next_by_ref = list()
 	var/shown_hunt_disclaimer = FALSE
 
+/obj/effect/proc_holder/spell/invoked/gnoll_sniff/proc/sync_antag_tracked_target(mob/user, mob/living/target)
+	var/datum/antagonist/gnoll/gnoll_antag = user?.mind?.has_antag_datum(/datum/antagonist/gnoll)
+	if(!gnoll_antag)
+		return
+	gnoll_antag.set_tracked_target(target)
+
 /obj/effect/proc_holder/spell/invoked/gnoll_sniff/cast(list/targets, mob/user)
 	var/mob/living/target = targets[1]
 	var/mob/living/tracked_target = tracked_target_ref?.resolve()
@@ -39,10 +45,12 @@
 
 	if(is_valid_hunted(target) && target != user)
 		tracked_target_ref = WEAKREF(target)
+		sync_antag_tracked_target(user, target)
 		to_chat(user, span_notice("You catch the scent of [target.real_name]. The hunt begins!"))
 		notify_tracked_target(target)
 		user.playsound_local(get_turf(user), 'sound/vo/mobs/wwolf/sniff.ogg', 50, TRUE)
 	else if(!tracked_target_ref?.resolve())
+		sync_antag_tracked_target(user, null)
 		to_chat(user, span_warning("[target] isn't something you can hunt."))
 		revert_cast()
 		return FALSE
@@ -88,6 +96,7 @@
 		return
 
 	tracked_target_ref = WEAKREF(selected_target)
+	sync_antag_tracked_target(user, selected_target)
 	notify_tracked_target(selected_target)
 	to_chat(user, span_notice("You focus your senses on [selected_target.real_name]."))
 	give_tracking_directions(user)
@@ -97,6 +106,7 @@
 	if(!tracked_target || QDELETED(tracked_target) || tracked_target.stat == DEAD)
 		to_chat(user, span_warning("The scent has gone cold... your target is no more."))
 		tracked_target_ref = null
+		sync_antag_tracked_target(user, null)
 		return
 
 	var/turf/user_turf = get_turf(user)
