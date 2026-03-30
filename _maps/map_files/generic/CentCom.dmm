@@ -1922,12 +1922,20 @@
 /turf/open/floor/carpet/inn,
 /area/rogue/indoors/vampire_manor)
 "gT" = (
-/obj/structure/rack/rogue,
+/obj/structure/closet/crate/chest,
 /obj/item/leash/chain,
 /obj/item/leash/chain,
 /obj/item/clothing/neck/roguetown/collar/leather,
 /obj/item/clothing/neck/roguetown/collar/leather,
 /obj/item/rogueweapon/surgery/cautery/branding/slave,
+/obj/item/clothing/neck/roguetown/cursed_collar,
+/obj/item/clothing/neck/roguetown/cursed_collar,
+/obj/item/chastity/cursed,
+/obj/item/chastity/cursed,
+/obj/item/chastity/chastity_cage/flat,
+/obj/item/chastity/chastity_cage,
+/obj/item/chastity/chastity_cage/flat/spiked,
+/obj/item/chastity/chastity_cage/anal,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/under/cave/inhumen/wretch/gnollcavern)
 "gV" = (
@@ -4577,12 +4585,20 @@
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/banditcamp)
 "tn" = (
-/obj/structure/rack/rogue,
+/obj/structure/closet/crate/chest,
 /obj/item/leash/chain,
 /obj/item/leash/chain,
 /obj/item/clothing/neck/roguetown/collar/leather,
 /obj/item/clothing/neck/roguetown/collar/leather,
 /obj/item/rogueweapon/surgery/cautery/branding/slave,
+/obj/item/clothing/neck/roguetown/cursed_collar,
+/obj/item/clothing/neck/roguetown/cursed_collar,
+/obj/item/chastity/cursed,
+/obj/item/chastity/cursed,
+/obj/item/chastity/chastity_cage/flat,
+/obj/item/chastity/chastity_cage,
+/obj/item/chastity/chastity_cage/flat/spiked,
+/obj/item/chastity/chastity_cage/anal,
 /turf/open/floor/rogue/cobble/mossy,
 /area/rogue/under/cave/inhumen/wretch/gnollcavern)
 "to" = (
