@@ -45,34 +45,37 @@
 			H.mind.add_antag_datum(new_antag)
 			H.verbs |= /mob/living/carbon/human/proc/gnoll_inspect_skin
 
-/mob/living/carbon/human/proc/apply_gnoll_preferences()
+
+/mob/living/carbon/human/proc/apply_gnoll_preferences(initial_setup = TRUE)
 	if(!client?.prefs?.gnoll_prefs)
-		return
+		return FALSE
 
-	// Gnolls should be a blank slate; strip inherited vice/virtue state from base character prefs.
-	if(length(vices))
-		for(var/datum/charflaw/vice as anything in vices)
-			vice.on_removal(src)
-	if(charflaw && !(charflaw in vices))
-		charflaw.on_removal(src)
-	vices = list()
-	charflaw = null
-	statpack = null
-	headshot_link = null
+	if(initial_setup)
+		// Gnolls should be a blank slate at spawn; strip inherited vice/virtue state from base character prefs.
+		if(length(vices))
+			for(var/datum/charflaw/vice as anything in vices)
+				vice.on_removal(src)
+		if(charflaw && !(charflaw in vices))
+			charflaw.on_removal(src)
+		vices = list()
+		charflaw = null
+		statpack = null
+		headshot_link = null
 
-	if(status_traits)
+	if(initial_setup && status_traits)
 		for(var/trait in status_traits.Copy())
 			if(HAS_TRAIT_FROM(src, trait, TRAIT_VIRTUE))
 				REMOVE_TRAIT(src, trait, TRAIT_VIRTUE)
 
 	var/datum/gnoll_prefs/prefs = client.prefs.gnoll_prefs
 
-	// Gnolls are assigned their own subclass statlines later in equip flow; wipe any inherited statpack roll now.
-	roll_stats()
+	// Gnolls are assigned their own subclass statlines later in equip flow; wipe inherited statpack roll during initial setup only.
+	if(initial_setup)
+		roll_stats()
 	refresh_live_vocal_preferences()
 
 	if(prefs.gnoll_name)
-		real_name = prefs.gnoll_name
+		fully_replace_character_name(real_name, prefs.gnoll_name)
 
 	if(prefs.gnoll_pronouns)
 		pronouns = prefs.gnoll_pronouns
@@ -121,6 +124,7 @@
 		qdel(breasts)
 
 	update_body()
+	ambushable = FALSE
 	clear_mob_descriptors()
 	add_mob_descriptor(/datum/mob_descriptor/stature/gnoll)
 	add_mob_descriptor(prefs.descriptor_height || /datum/mob_descriptor/height/moderate)
@@ -129,6 +133,7 @@
 	add_mob_descriptor(prefs.descriptor_voice || /datum/mob_descriptor/voice/growly)
 	add_mob_descriptor(prefs.descriptor_muzzle || /datum/mob_descriptor/face/gnoll/long_muzzle)
 	add_mob_descriptor(prefs.descriptor_expression || /datum/mob_descriptor/face_exp/gnoll/alert)
+	return TRUE
 
 /datum/outfit/job/roguetown/gnoll/proc/don_pelt(mob/living/carbon/human/H)
 	if(H.mind)
