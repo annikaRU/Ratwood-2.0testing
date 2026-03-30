@@ -16,10 +16,10 @@ SUBSYSTEM_DEF(gnoll_scaling)
 	// Tuning values for each scaling mode.
 	var/max_gnoll_slots = 6
 	var/single_mode_slots = 1
-	var/flat_mode_threshold_players = 75
-	var/flat_mode_low_slots = 1
-	var/flat_mode_high_slots = 3
-	var/flat_mode_recheck_below_players = 75
+	var/flat_mode_threshold_players = 125
+	var/flat_mode_low_slots = 2
+	var/flat_mode_high_slots = 4
+	var/flat_mode_recheck_below_players = 125
 	var/dynamic_mode_base_slots = 2
 	var/dynamic_mode_start_players = 75
 	var/dynamic_mode_players_per_extra_slot = 25
