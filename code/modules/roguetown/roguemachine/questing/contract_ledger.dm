@@ -244,7 +244,7 @@
 		reward += deposit_return
 		original_reward += deposit_return
 
-		var/mob/quester = quester_ref.resolve()
+		var/mob/quester = scroll.quester_ref.resolve()
 		if(quester?.mind?.active_quest >= 1)
 			quester.mind.active_quest -= 1
 			to_chat(quester, span_notice("You now have [quester.mind.active_quest] active quests."))
