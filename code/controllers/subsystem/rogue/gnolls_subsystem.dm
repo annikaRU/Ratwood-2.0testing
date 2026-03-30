@@ -44,7 +44,13 @@ SUBSYSTEM_DEF(gnoll_scaling)
 		"mode_name" = "Unavailable",
 		"is_non_single" = FALSE,
 		"pop_remaining" = "N/A",
+		"auto_scaling_disabled" = FALSE,
+		"auto_scaling_status" = "Enabled",
 	)
+
+	if(admin_scaling_override)
+		snapshot["auto_scaling_disabled"] = TRUE
+		snapshot["auto_scaling_status"] = "Disabled for this round (manual slot override detected)"
 
 	var/mode = get_gnoll_scaling()
 	snapshot["mode_name"] = get_mode_name(mode)

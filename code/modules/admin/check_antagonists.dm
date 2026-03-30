@@ -244,6 +244,7 @@
 		selection_mode_description += " Active direct-scent targets already being tracked by gnolls are also shown below."
 	var/gnoll_mode_name = "Unavailable"
 	var/is_non_single_scaling = FALSE
+	var/auto_scaling_status = "Unavailable"
 	var/slot_open_display = "Unavailable"
 	var/pop_remaining_display = "N/A"
 	var/list/subclass_slot_lines = list("Unavailable")
@@ -279,6 +280,7 @@
 		if(length(scaling_snapshot))
 			gnoll_mode_name = scaling_snapshot["mode_name"] || gnoll_mode_name
 			is_non_single_scaling = scaling_snapshot["is_non_single"]
+			auto_scaling_status = scaling_snapshot["auto_scaling_status"] || auto_scaling_status
 			pop_remaining_display = scaling_snapshot["pop_remaining"] || pop_remaining_display
 
 	var/subclass_slots_display = subclass_slot_lines.Join("<br>")
@@ -288,6 +290,8 @@
 	dat += "<br><b>Selection mode:</b> [active_source]"
 	dat += "<br><b>Current gnoll scaling mode:</b> "
 	dat += gnoll_mode_name
+	dat += "<br><b>Automated gnoll scaling:</b> "
+	dat += auto_scaling_status
 	dat += "<br><b>Gnoll slots open:</b> "
 	dat += slot_open_display
 	dat += "<br><b>Subclass slots (open/total):</b><br>"
