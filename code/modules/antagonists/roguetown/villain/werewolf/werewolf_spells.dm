@@ -11,10 +11,14 @@
 	var/wolf_antag_type = /datum/antagonist/werewolf
 	var/howl_spies_allowed = TRUE
 	var/howl_distance_limit = 500
+	var/howl_distance_volume = 50
+	var/howl_prompt_text = "Howl at the hidden moon..."
+	var/howl_prompt_title = "MOONCURSED"
+	var/howl_announcement_target = "hidden moon"
 
 /obj/effect/proc_holder/spell/self/howl/cast(mob/user = usr)
 	..()
-	var/message = input("Howl at the hidden moon...", "MOONCURSED") as text|null
+	var/message = input(howl_prompt_text, howl_prompt_title) as text|null
 	if(!message) return
 
 	var/datum/antagonist/antag_data = user.mind.has_antag_datum(wolf_antag_type)
@@ -26,23 +30,22 @@
 
 		if(!player.mind) continue
 		if(isbrain(player)) continue
+		var/speaker_name = (antag_data && hasvar(antag_data, "wolfname")) ? antag_data:wolfname : user.real_name
 
 		// Admin ghost visibility
-		if(player.stat == DEAD)
-			var/speaker_name = (antag_data && hasvar(antag_data, "wolfname")) ? antag_data:wolfname : user.real_name
-			to_chat(player, span_notice("[speaker_name] (howl, distant): [message]"))
+		if(IsAdminGhost(player))
+			to_chat(player, span_notice("[speaker_name] howls to the [howl_announcement_target]: [message]"))
 			continue
 
 		// Announcement to other werewolves (and anyone else who has beast language somehow)
 		if(player.mind.has_antag_datum(wolf_antag_type) || (player.has_language(/datum/language/beast)) && howl_spies_allowed)
-			var/speaker_name = (antag_data && hasvar(antag_data, "wolfname")) ? antag_data:wolfname : user.real_name
-			to_chat(player, span_boldannounce("[speaker_name] howls to the hidden moon: [message]"))
+			to_chat(player, span_boldannounce("[speaker_name] howls to the [howl_announcement_target]: [message]"))
 
 		//sound played for other players
 		if(player == user) continue
 		var/player_distance = get_dist(player, user)
 		if(player_distance > 7 && player_distance <= howl_distance_limit)
-			player.playsound_local(get_turf(player), pick(howl_sounds_far), 50, FALSE, pressure_affected = FALSE)
+			player.playsound_local(get_turf(player), pick(howl_sounds_far), howl_distance_volume, FALSE, pressure_affected = FALSE)
 
 	user.log_message("howls: [message] ([wolf_antag_type])", LOG_GAME)
 

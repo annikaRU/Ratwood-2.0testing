@@ -7,14 +7,12 @@
 	icon_state = "berserker"
 	body_parts_covered = FULL_BODY
 	body_parts_inherent = FULL_BODY
-	//slot_flags = ITEM_SLOT_SHIRT|ITEM_SLOT_ARMOR
 	armor = ARMOR_GNOLL_STANDARD
 	blocksound = SOFTHIT
 	blade_dulling = DULLING_BASHCHOP
 	sewrepair = FALSE
 	max_integrity = 475
 	item_flags = DROPDEL
-
 	repair_time = 14 SECONDS
 	interrupt_damount = 15
 
@@ -42,7 +40,7 @@
 	return TRUE
 
 /mob/living/carbon/human/proc/gnoll_feed(mob/living/carbon/human/target, healing_amount = 10)
-	if(!istype(target))
+	if(!target)
 		return
 	if(!gnoll_can_feed_heal())
 		return
