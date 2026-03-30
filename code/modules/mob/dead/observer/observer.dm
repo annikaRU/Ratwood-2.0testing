@@ -616,9 +616,9 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 			var/mob/current_mob = all_mobs[current_name]
 
 			if(current_mob.client)
-				// check if the player is afraid of ghosts
+				// check if the player is has ghost protection
 				var/datum/preferences/current_prefs = current_mob.client.prefs
-				if(!current_prefs.afraid_of_ghosts)
+				if(!current_prefs.ghost_protection)
 					allowed_mobs[current_name] = current_mob
 	else
 		allowed_mobs += all_mobs
@@ -626,8 +626,6 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	var/input = input("Who?!", "Haunt", null, null) as null|anything in allowed_mobs
 	var/mob/target = allowed_mobs[input]
 
-	var/input = input("Who?!", "Haunt", null, null) as null|anything in mobs
-	var/mob/target = mobs[input]
 	ManualFollow(target)
 
 /datum/mind
@@ -636,6 +634,8 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 // This is the ghost's follow verb with an argument
 /mob/dead/observer/proc/ManualFollow(atom/movable/target)
 	if (!istype(target))
+		return
+	if(is_hidden_from_ghosts(target, src))
 		return
 
 	var/icon/I = icon(target.icon,target.icon_state,target.dir)
