@@ -34,24 +34,33 @@
 	hides_breasts = TRUE
 
 /datum/sprite_accessory/underwear/bikini/get_icon_state(obj/item/organ/organ, obj/item/bodypart/bodypart, mob/living/carbon/owner)
-	if(owner.getorganslot(ORGAN_SLOT_BREASTS))
-		var/obj/item/organ/breasts/breasts = owner.getorganslot(ORGAN_SLOT_BREASTS)
-		var/tag = "bikini_f"
-		if(breasts.breast_size == 0)
-			tag = tag + "_0"
-		if(breasts.breast_size == 1)
-			tag = tag + "_1"
-		if(breasts.breast_size == 2)
-			tag = tag + "_2"
-		if(breasts.breast_size == 3)
-			tag = tag + "_3"
-		if(breasts.breast_size == 4)
-			tag = tag + "_4"
-		if(breasts.breast_size == 5)
-			tag = tag + "_5"
-		return tag
-	else
-		return "bikini_f_0"
+    if(owner.getorganslot(ORGAN_SLOT_BREASTS))
+        var/obj/item/organ/breasts/breasts = owner.getorganslot(ORGAN_SLOT_BREASTS)
+        var/tag = "bikini_f"
+        switch(breasts.breast_size)
+            if(0)
+                tag = tag + "_0"
+            if(1)
+                tag = tag + "_1"
+            if(2)
+                tag = tag + "_2"
+            if(3)
+                tag = tag + "_3"
+            if(4)
+                tag = tag + "_4"
+            if(5)
+                tag = tag + "_5"
+            if(6)
+                tag = tag + "_6"
+            if(7)
+                tag = tag + "_7"
+            if(8)
+                tag = tag + "_8"
+            if(9)
+                tag = tag + "_9"
+        return tag
+    else
+        return "bikini_f_0" //The if-else list format used in the other procs did not work for sizes 6 through 9 for an unknown reason, therefore this proc is formatted differently
 
 /datum/sprite_accessory/underwear/panties
 	name = "Panties"
