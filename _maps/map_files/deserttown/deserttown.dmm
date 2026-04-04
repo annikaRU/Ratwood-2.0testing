@@ -32207,7 +32207,6 @@
 "pSG" = (
 /obj/structure/mineral_door/wood/donjon{
 	dir = 8;
-	lockdiff = 4;
 	locked = 1;
 	lockid = "steward";
 	name = "Stewardry"
