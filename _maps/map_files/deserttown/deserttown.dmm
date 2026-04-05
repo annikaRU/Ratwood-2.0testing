@@ -2367,6 +2367,21 @@
 	icon = 'modular/DesertTown/icons/alt/roguefloor.dmi'
 	},
 /area/rogue/indoors/deserttown/manor)
+"bmu" = (
+/obj/machinery/light/rogue/candle/blue,
+/obj/item/roguekey/vault{
+	pixel_x = -3;
+	pixel_y = 4
+	},
+/obj/structure/rack/rogue/shelf/biggest{
+	pixel_x = 0;
+	pixel_y = 10
+	},
+/obj/item/storage/keyring,
+/obj/item/storage/keyring,
+/obj/item/storage/keyring,
+/turf/open/floor/carpet/royalblack,
+/area/rogue/indoors/deserttown/manor)
 "bmM" = (
 /obj/structure/toilet,
 /mob/living/carbon/human/species/human/northern/bum/ambush,
@@ -476176,7 +476191,7 @@ kIL
 hhI
 hhI
 hhI
-xYE
+bmu
 jAg
 nVW
 nVW
