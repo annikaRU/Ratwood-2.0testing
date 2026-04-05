@@ -39,6 +39,7 @@
 /datum/outfit/job/roguetown/adventurer/miner/pre_equip(mob/living/carbon/human/H)
 	..()
 	head = /obj/item/clothing/head/roguetown/armingcap
+	shoes = /obj/item/clothing/shoes/roguetown/boots/leather
 	belt = /obj/item/storage/belt/rogue/leather
 	neck = /obj/item/storage/belt/rogue/pouch/coins/poor
 	beltl = /obj/item/rogueweapon/pick
@@ -69,5 +70,3 @@
 		shirt = /obj/item/clothing/suit/roguetown/shirt/dress/thawb/random
 		armor = /obj/item/clothing/suit/roguetown/shirt/robe/bisht/bluegrey
 		head = /obj/item/clothing/head/roguetown/tagelmust
-	else
-		shoes = /obj/item/clothing/shoes/roguetown/boots/leather

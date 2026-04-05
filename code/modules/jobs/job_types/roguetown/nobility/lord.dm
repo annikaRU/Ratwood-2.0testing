@@ -16,9 +16,9 @@ GLOBAL_LIST_EMPTY(lord_titles)
 
 	spells = list(
 		/obj/effect/proc_holder/spell/self/grant_title,
+		/obj/effect/proc_holder/spell/self/convertrole/servant,
 		/obj/effect/proc_holder/spell/self/convertrole/guard,
 		/obj/effect/proc_holder/spell/self/grant_nobility,
-		/obj/effect/proc_holder/spell/self/convertrole/servant,
 		/obj/effect/proc_holder/spell/self/convertrole/bog,
 	)
 	outfit = /datum/outfit/job/roguetown/lord
@@ -451,10 +451,3 @@ GLOBAL_LIST_EMPTY(lord_titles)
 	recruitment_message = "Serve the Wardens, %RECRUIT!"
 	accept_message = "FOR THE GROVE!"
 	refuse_message = "I refuse."
-
-// /datum/job/roguetown/lord/after_spawn(mob/living/L, mob/M, latejoin = TRUE)
-// 	if(SSmapping.config.map_name == "Desert Town")
-// 		spells = list(/obj/effect/proc_holder/spell/self/convertrole/slave, obj/effect/proc_holder/spell/self/convertrole/azeb)
-// 	else
-// 		spells = list(/obj/effect/proc_holder/spell/self/convertrole/servant, /obj/effect/proc_holder/spell/self/convertrole/bog)
-// 	..()

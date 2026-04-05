@@ -167,7 +167,7 @@
 				revert_cast()
 				return
 		if(user.job == "Janissary Sergeant")
-			if(!(target.job in list("Janissary")))
+			if(!(target.job in list("Janissary", "Rookie")))
 				to_chat(user, span_alert("I cannot order one not of my ranks!"))
 				revert_cast()
 				return
@@ -243,7 +243,7 @@
 				revert_cast()
 				return
 		if(user.job == "Janissary Sergeant")
-			if(!(target.job in list("Janissary")))
+			if(!(target.job in list("Janissary", "Rookie")))
 				to_chat(user, span_alert("I cannot order one not of my ranks!"))
 				revert_cast()
 				return
@@ -288,7 +288,7 @@
 				revert_cast()
 				return
 		if(user.job == "Janissary Sergeant")
-			if(!(target.job in list("Janissary")))
+			if(!(target.job in list("Janissary", "Rookie")))
 				to_chat(user, span_alert("I cannot order one not of my ranks!"))
 				revert_cast()
 				return
@@ -370,7 +370,7 @@
 				revert_cast()
 				return
 		if(user.job == "Janissary Sergeant")
-			if(!(target.job in list("Janissary")))
+			if(!(target.job in list("Janissary", "Rookie")))
 				to_chat(user, span_alert("I cannot order one not of my ranks!"))
 				revert_cast()
 				return

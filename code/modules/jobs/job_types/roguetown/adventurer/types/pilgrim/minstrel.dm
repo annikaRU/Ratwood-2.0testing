@@ -9,26 +9,18 @@
 	traits_applied = list(TRAIT_EMPATH, TRAIT_GOODLOVER, TRAIT_HOMESTEAD_EXPERT)
 	maximum_possible_slots = 20 // Should never fill, for the purpose of players to know what types towners are in round at the menu
 	subclass_stats = list(
-		STATKEY_SPD = 2,
-		STATKEY_INT = 2,
-		STATKEY_PER = 2,
-		STATKEY_LCK = 2
+		STATKEY_SPD = 1,
+		STATKEY_LCK = 1
 	)
 	subclass_skills = list(
-		/datum/skill/misc/music = SKILL_LEVEL_MASTER,
-		/datum/skill/misc/reading = SKILL_LEVEL_EXPERT,
+		/datum/skill/misc/music = SKILL_LEVEL_EXPERT,
+		/datum/skill/misc/reading = SKILL_LEVEL_APPRENTICE,
 		/datum/skill/combat/unarmed = SKILL_LEVEL_NOVICE,
-		/datum/skill/combat/wrestling = SKILL_LEVEL_NOVICE,
-		/datum/skill/combat/knives = SKILL_LEVEL_JOURNEYMAN,
-		/datum/skill/combat/swords = SKILL_LEVEL_APPRENTICE,
+		/datum/skill/combat/knives = SKILL_LEVEL_APPRENTICE,
 		/datum/skill/misc/athletics = SKILL_LEVEL_NOVICE,
 		/datum/skill/craft/crafting = SKILL_LEVEL_NOVICE,
-		/datum/skill/combat/unarmed = SKILL_LEVEL_NOVICE,
-		/datum/skill/misc/swimming = SKILL_LEVEL_APPRENTICE,
-		/datum/skill/misc/climbing = SKILL_LEVEL_JOURNEYMAN,
-		/datum/skill/misc/sneaking = SKILL_LEVEL_JOURNEYMAN,
-		/datum/skill/misc/stealing = SKILL_LEVEL_JOURNEYMAN,
-		/datum/skill/misc/lockpicking = SKILL_LEVEL_APPRENTICE,
+		/datum/skill/misc/sneaking = SKILL_LEVEL_APPRENTICE,
+		/datum/skill/misc/stealing = SKILL_LEVEL_APPRENTICE,
 	)
 
 /datum/outfit/job/roguetown/adventurer/minstrel/pre_equip(mob/living/carbon/human/H)
@@ -57,5 +49,3 @@
 		pants = /obj/item/clothing/under/roguetown/sirwal/fancy/random
 		shoes = /obj/item/clothing/shoes/roguetown/shalal
 		belt = /obj/item/storage/belt/rogue/leather/cloth/sash/random
-	else
-		shoes = /obj/item/clothing/shoes/roguetown/shortboots

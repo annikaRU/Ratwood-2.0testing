@@ -30,6 +30,9 @@
 	neck = /obj/item/storage/belt/rogue/pouch/coins/poor
 	cloak = /obj/item/clothing/cloak/raincloak/furcloak
 	armor = /obj/item/clothing/suit/roguetown/armor/armordress
+	shirt = /obj/item/clothing/suit/roguetown/shirt/tunic/white
+	pants = /obj/item/clothing/under/roguetown/tights/random
+	shoes = /obj/item/clothing/shoes/roguetown/simpleshoes
 	belt = /obj/item/storage/belt/rogue/leather/cloth/lady
 	beltl = /obj/item/needle
 	beltr = /obj/item/rogueweapon/huntingknife/scissors
@@ -51,7 +54,3 @@
 		armor = /obj/item/clothing/suit/roguetown/shirt/robe/bisht/purple
 		head = /obj/item/clothing/head/roguetown/turban/fancypurple
 		shoes = /obj/item/clothing/shoes/roguetown/gladiator
-	else
-		shoes = /obj/item/clothing/shoes/roguetown/simpleshoes
-		shirt = /obj/item/clothing/suit/roguetown/shirt/tunic/white
-		pants = /obj/item/clothing/under/roguetown/tights/random

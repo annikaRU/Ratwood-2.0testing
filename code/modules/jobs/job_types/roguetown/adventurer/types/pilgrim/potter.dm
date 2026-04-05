@@ -35,6 +35,9 @@
 		head = /obj/item/clothing/head/roguetown/hatblu
 
 	cloak = /obj/item/clothing/cloak/apron/blacksmith
+	pants = /obj/item/clothing/under/roguetown/trou
+	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/random
+	shoes = /obj/item/clothing/shoes/roguetown/simpleshoes
 	belt = /obj/item/storage/belt/rogue/leather
 	neck = /obj/item/storage/belt/rogue/pouch/coins/mid
 	beltl = /obj/item/rogueweapon/blowrod
@@ -59,9 +62,5 @@
 		shirt = /obj/item/clothing/suit/roguetown/shirt/dress/thawb/random
 		pants = /obj/item/clothing/under/roguetown/sirwal/plainrandom
 		shoes = /obj/item/clothing/shoes/roguetown/sandals
-	else
-		shoes = /obj/item/clothing/shoes/roguetown/simpleshoes
-		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/random
-		pants = /obj/item/clothing/under/roguetown/trou
 
 		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/takeapprentice)
