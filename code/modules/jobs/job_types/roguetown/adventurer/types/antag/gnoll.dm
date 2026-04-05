@@ -196,7 +196,7 @@
 			to_chat(H, span_bignotice("I can expect to be joined by my pack this week. I should wait for them and group up."))
 		else
 			to_chat(H, span_bignotice("My pack is small this week. I should regroup with the other gnoll and avoid reckless fights until we can hunt together."))
-		to_chat(H, span_bignotice("Graggar is patient, and values good strategy. I mustn't be hasty, especially if my marks prove difficult to isolate.\n Perhaps there is merit in forging alliances, or setting up camp."))
+		to_chat(H, span_bignotice("Graggar is patient, and values good strategy. I mustn't be hasty, especially if my marks prove difficult to isolate.\n Perhaps there is merit in forging alliances, or setting up camp.\n Graggar would look poorly upon me working with those he deems unworthy, such as the Brigand filth of Matthios."))
 
 /mob/living/carbon/human/proc/gnoll_inspect_skin()
 	set name = "Inspect Pelt"
