@@ -89,8 +89,9 @@
 		return
 
 	if(!shown_hunt_disclaimer)
-		to_chat(user, span_boldnotice("You have chosen your first prey. Remember to judge whether or not your target is a worthy foe. Graggar does not reward spilling the blood of the meek when you have this much to prove."))
-		to_chat(user, span_boldwarning("RP expectations are still valid as a Gnoll. You are not a mindless beast, but a cunning hunter. Don't just go for easy kills, seek out worthy prey and make the hunt exciting for everyone involved"))
+		to_chat(user, span_notice("You have chosen your first quarry. Go and see if this one is worthy of your attention. If not, you can always seek out another."))
+		to_chat(user, span_boldwarning("Roleplaying expectations still apply to you as a Gnoll. Gnolls are cunning hunters, not mindless beasts. You remain young and unproven in the eyes of the Darkstar, and there is little glory in slaughtering the meek."))
+		to_chat(user, span_boldnotice("You are not interested in easy kills; they are beneath you. Seek out the worthiest among your prey, and ensure a thrilling hunt for those involved."))
 		shown_hunt_disclaimer = TRUE
 
 	var/mob/living/selected_target = possible_targets[selection]
