@@ -278,6 +278,7 @@
 					wash_atom(user, CLEAN_STRONG)
 					user.remove_stress(/datum/stressevent/sewertouched)
 				playsound(user, pick(wash), 100, FALSE)
+				L.adjust_fire_stacks(-100)
 				if(temperature < 250 && L.bodytemperature > BODYTEMP_COLD_LEVEL_ONE_MAX + 75)	//washing yourself helps to cool you off.
 					L.adjust_bodytemperature(-75)
 					L.update_health_hud()
