@@ -46,6 +46,14 @@
 	turf_type = /turf/open/floor/rogue/naturalstone
 	baseturfs = /turf/open/floor/rogue/naturalstone
 
+/turf/closed/mineral/rogue/bedrock/sandstone
+	name = "sandstone"
+	desc = "Seems barren and nigh-indestructable"
+	icon = 'modular_deserttown/icons/rock.dmi'
+	icon_state = "bedrock"
+//	smooth_icon = 'icons/turf/walls/hardrock.dmi'
+	above_floor = /turf/closed/mineral/rogue/bedrock
+
 /turf/closed/mineral/random/rogue/sandstone
 	name = "sandstone"
 	desc = "Dusty, sand-blasted rock."

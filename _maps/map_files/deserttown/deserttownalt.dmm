@@ -54,7 +54,7 @@
 /turf/open/floor/rogue/darkpath,
 /area/rogue/outdoors/banditcamp/desert)
 "bC" = (
-/turf/closed/mineral/rogue/bedrock,
+/turf/closed/mineral/rogue/bedrock/sandstone,
 /area/rogue/indoors/banditcamp/hoardmaster)
 "bD" = (
 /obj/structure/bed/rogue/shit,
@@ -257,7 +257,7 @@
 /turf/open/floor/rogue/dirt/road/desert,
 /area/rogue/indoors/banditcamp/desert)
 "gQ" = (
-/turf/closed/mineral/random/rogue/med,
+/turf/closed/mineral/random/rogue/sandstone/med,
 /area/rogue/indoors/banditcamp/desert)
 "he" = (
 /obj/item/roguebin/water,
@@ -304,7 +304,7 @@
 /area/rogue/indoors/banditcamp/desert)
 "iz" = (
 /obj/structure/fluff/walldeco/med3,
-/turf/closed/mineral/rogue/bedrock,
+/turf/closed/mineral/rogue/bedrock/sandstone,
 /area/rogue/indoors/banditcamp/desert)
 "iG" = (
 /obj/structure/rack/rogue,
@@ -402,8 +402,11 @@
 /turf/open/floor/rogue/desert_grass,
 /area/rogue/outdoors/desertdeep/safe)
 "lN" = (
-/turf/closed/mineral/random/rogue/high,
+/turf/closed/mineral/random/rogue/sandstone/high,
 /area/rogue/indoors/banditcamp/desert)
+"lQ" = (
+/turf/open/floor/rogue/naturalstone/sandstone,
+/area/rogue/outdoors/desertdeep/safe)
 "lR" = (
 /turf/open/floor/rogue/lightpath,
 /area/rogue/indoors/banditcamp/desert)
@@ -516,7 +519,7 @@
 /turf/open/floor/rogue/dunes,
 /area/rogue/outdoors/banditcamp/desert)
 "pl" = (
-/turf/closed/mineral/rogue/bedrock,
+/turf/closed/mineral/rogue/bedrock/sandstone,
 /area/rogue/indoors/banditcamp/desert)
 "py" = (
 /obj/machinery/light/rogue/candle,
@@ -645,7 +648,7 @@
 /turf/open/floor/rogue/twig,
 /area/rogue/indoors/banditcamp/desert)
 "sS" = (
-/turf/closed/mineral/rogue,
+/turf/closed/mineral/rogue/sandstone,
 /area/rogue/outdoors/desertdeep/safe)
 "ts" = (
 /obj/item/reagent_containers/glass/bucket,
@@ -841,6 +844,9 @@
 /obj/structure/fluff/nest,
 /turf/open/floor/rogue/hay,
 /area/rogue/indoors/banditcamp/desert)
+"Bg" = (
+/turf/open/floor/rogue/naturalstone/sandstone,
+/area/rogue/outdoors/banditcamp/desert)
 "Bz" = (
 /obj/structure/fluff/railing/wood{
 	dir = 1
@@ -858,7 +864,7 @@
 /area/rogue/indoors/banditcamp/desert)
 "BJ" = (
 /obj/structure/fluff/walldeco/med5,
-/turf/closed/mineral/rogue/bedrock,
+/turf/closed/mineral/rogue/bedrock/sandstone,
 /area/rogue/indoors/banditcamp/desert)
 "BL" = (
 /obj/structure/bars{
@@ -895,7 +901,7 @@
 /turf/open/floor/rogue/tile/harem,
 /area/rogue/indoors/banditcamp/desert)
 "CT" = (
-/turf/closed/mineral/rogue/bedrock,
+/turf/closed/mineral/rogue/bedrock/sandstone,
 /area/rogue/outdoors/banditcamp/desert)
 "Dh" = (
 /obj/structure/drape/desert,
@@ -905,7 +911,7 @@
 /turf/open/floor/rogue/darkpath,
 /area/rogue/indoors/banditcamp/desert)
 "DE" = (
-/turf/closed/mineral/rogue/bedrock,
+/turf/closed/mineral/rogue/bedrock/sandstone,
 /area/rogue/outdoors/desertdeep/safe)
 "DF" = (
 /obj/structure/winch{
@@ -951,7 +957,7 @@
 /turf/open/floor/rogue/tile/brownbrick,
 /area/rogue/indoors/banditcamp/desert)
 "Fl" = (
-/turf/closed/mineral/rogue,
+/turf/closed/mineral/rogue/sandstone,
 /area/rogue/outdoors/banditcamp/desert)
 "Fn" = (
 /obj/structure/closet/crate/roguecloset{
@@ -1017,7 +1023,7 @@
 /turf/open/floor/rogue/tile/brownbrick,
 /area/rogue/indoors/banditcamp/desert)
 "GX" = (
-/turf/closed/mineral/rogue/bedrock,
+/turf/closed/mineral/rogue/bedrock/sandstone,
 /area/rogue)
 "Hc" = (
 /obj/structure/fermentation_keg/sandpot/random/water,
@@ -1330,7 +1336,7 @@
 /turf/open/floor/rogue/desert_grass,
 /area/rogue/outdoors/banditcamp/desert)
 "Sq" = (
-/turf/closed/mineral/rogue,
+/turf/closed/mineral/rogue/sandstone,
 /area/rogue/indoors/banditcamp/desert)
 "Sr" = (
 /obj/item/cushion/desert2,
@@ -1373,7 +1379,7 @@
 /turf/open/floor/rogue/darkpath,
 /area/rogue/indoors/banditcamp/desert)
 "SM" = (
-/turf/closed/mineral/random/rogue,
+/turf/closed/mineral/random/rogue/sandstone,
 /area/rogue/indoors/banditcamp/desert)
 "SS" = (
 /obj/structure/flora/roguegrass,
@@ -5451,7 +5457,7 @@ oP
 oP
 oP
 oP
-oP
+lQ
 DE
 DE
 DE
@@ -5586,7 +5592,7 @@ oP
 oP
 oP
 oP
-oP
+lQ
 DE
 DE
 DE
@@ -5653,13 +5659,13 @@ oP
 oP
 oP
 oP
-oP
+lQ
 DE
 DE
 DE
 DE
 DE
-oP
+lQ
 oP
 oP
 oP
@@ -5720,12 +5726,12 @@ oP
 oP
 oP
 oP
-oP
-oP
+lQ
+lQ
 In
 In
-oP
-oP
+lQ
+lQ
 oP
 oP
 oP
@@ -5786,12 +5792,12 @@ oP
 oP
 oP
 oP
-oP
-oP
+lQ
+lQ
 In
 In
 In
-oP
+lQ
 oP
 oP
 oP
@@ -5853,12 +5859,12 @@ oP
 oP
 oP
 oP
-oP
+lQ
 In
 In
 In
 In
-oP
+lQ
 oP
 oP
 oP
@@ -5919,13 +5925,13 @@ oP
 oP
 oP
 oP
-oP
-oP
+lQ
+lQ
 In
 In
 In
 In
-oP
+lQ
 oP
 oP
 oP
@@ -5986,13 +5992,13 @@ oP
 oP
 oP
 oP
-oP
-oP
+lQ
+lQ
 In
 In
 In
 In
-oP
+lQ
 oP
 oP
 oP
@@ -6053,14 +6059,14 @@ oP
 oP
 oP
 oP
-oP
-oP
+lQ
+lQ
 In
 In
 In
 In
-oP
-oP
+lQ
+lQ
 oP
 oP
 DE
@@ -6120,14 +6126,14 @@ oP
 oP
 oP
 oP
-oP
-oP
+lQ
+lQ
 In
 In
 In
 In
-oP
-oP
+lQ
+lQ
 oP
 oP
 oP
@@ -6186,15 +6192,15 @@ oP
 oP
 oP
 oP
-oP
-oP
-oP
+lQ
+lQ
+lQ
 In
 In
 In
 In
 In
-oP
+lQ
 oP
 oP
 oP
@@ -6253,16 +6259,16 @@ oP
 oP
 oP
 oP
-oP
-oP
-oP
+lQ
+lQ
+lQ
 In
 In
 In
 In
 In
-oP
-oP
+lQ
+lQ
 oP
 oP
 oP
@@ -6322,15 +6328,15 @@ oP
 oP
 oP
 oP
-oP
-oP
+lQ
+lQ
 In
 In
 In
 In
 In
-oP
-oP
+lQ
+lQ
 oP
 oP
 oP
@@ -6390,14 +6396,14 @@ oP
 oP
 oP
 oP
-oP
-oP
-oP
+lQ
+lQ
+lQ
 In
 In
 In
-oP
-oP
+lQ
+lQ
 oP
 oP
 oP
@@ -6458,13 +6464,13 @@ oP
 oP
 oP
 oP
-oP
-oP
-oP
+lQ
+lQ
+lQ
 In
 In
-oP
-oP
+lQ
+lQ
 oP
 oP
 oP
@@ -6526,11 +6532,11 @@ oP
 oP
 oP
 oP
-oP
-oP
-oP
-oP
-oP
+lQ
+lQ
+lQ
+lQ
+lQ
 oP
 oP
 oP
@@ -6594,8 +6600,8 @@ oP
 oP
 oP
 oP
-oP
-oP
+lQ
+lQ
 oP
 oP
 oP
@@ -6656,6 +6662,7 @@ oP
 oP
 oP
 oP
+lQ
 oP
 oP
 oP
@@ -6666,8 +6673,7 @@ oP
 oP
 oP
 oP
-oP
-oP
+lQ
 oP
 oP
 oP
@@ -6722,6 +6728,8 @@ oP
 oP
 oP
 oP
+lQ
+lQ
 oP
 oP
 oP
@@ -6731,10 +6739,8 @@ oP
 oP
 oP
 oP
-oP
-oP
-oP
-oP
+lQ
+lQ
 oP
 oP
 oP
@@ -6789,19 +6795,19 @@ oP
 oP
 oP
 oP
-oP
-oP
+lQ
+lQ
 In
+lQ
 oP
 oP
 oP
 oP
 oP
 oP
-oP
-oP
-oP
-oP
+lQ
+lQ
+lQ
 oP
 oP
 oP
@@ -6857,18 +6863,18 @@ oP
 oP
 oP
 oP
-oP
+lQ
 In
+lQ
+lQ
+lQ
 oP
 oP
-oP
-oP
-oP
-oP
-oP
-oP
+lQ
+lQ
+lQ
 In
-oP
+lQ
 oP
 oP
 DE
@@ -6924,18 +6930,18 @@ oP
 oP
 oP
 oP
-oP
-oP
+lQ
+lQ
 In
-oP
-oP
-oP
-oP
-oP
+lQ
+lQ
+lQ
+lQ
+lQ
 In
 In
 In
-oP
+lQ
 oP
 oP
 DE
@@ -6992,17 +6998,17 @@ oP
 oP
 oP
 oP
-oP
+lQ
 In
 In
-oP
-oP
-oP
+lQ
+lQ
+lQ
 In
 In
 In
 In
-oP
+lQ
 oP
 oP
 DE
@@ -7059,8 +7065,8 @@ oP
 oP
 oP
 oP
-oP
-oP
+lQ
+lQ
 DE
 DE
 DE
@@ -7069,7 +7075,7 @@ In
 In
 In
 In
-oP
+lQ
 oP
 oP
 DE
@@ -7135,8 +7141,8 @@ DE
 DE
 In
 In
-oP
-oP
+lQ
+lQ
 oP
 oP
 DE
@@ -7201,7 +7207,7 @@ DE
 DE
 DE
 DE
-oP
+lQ
 DE
 oP
 oP
@@ -7268,7 +7274,7 @@ DE
 DE
 DE
 DE
-oP
+lQ
 oP
 oP
 oP
@@ -8397,8 +8403,8 @@ BP
 BP
 BP
 BP
-BP
-BP
+Bg
+Bg
 CT
 CT
 CT
@@ -8465,12 +8471,12 @@ BP
 BP
 BP
 BP
-BP
-BP
-BP
-BP
+Bg
+Bg
+Bg
+Bg
 Pg
-BP
+Bg
 CT
 CT
 CT
@@ -8532,16 +8538,16 @@ BP
 BP
 BP
 BP
-BP
-BP
+Bg
+Bg
 Pg
 Pg
 Pg
 Pg
 Pg
 Pg
-BP
-BP
+Bg
+Bg
 CT
 CT
 CT
@@ -8599,9 +8605,9 @@ BP
 BP
 BP
 BP
-BP
-BP
-BP
+Bg
+Bg
+Bg
 Pg
 Pg
 Pg
@@ -8610,8 +8616,8 @@ Pg
 Pg
 Pg
 Pg
-BP
-BP
+Bg
+Bg
 CT
 CT
 CT
@@ -8667,9 +8673,9 @@ BP
 BP
 BP
 BP
-BP
-BP
-BP
+Bg
+Bg
+Bg
 Pg
 Pg
 Pg
@@ -8679,8 +8685,8 @@ Pg
 Pg
 Pg
 Pg
-BP
-BP
+Bg
+Bg
 CT
 CT
 CT
@@ -8735,8 +8741,8 @@ BP
 BP
 BP
 BP
-BP
-BP
+Bg
+Bg
 Pg
 Pg
 Pg
@@ -8746,9 +8752,9 @@ Pg
 Pg
 Pg
 Pg
-BP
-BP
-BP
+Bg
+Bg
+Bg
 CT
 CT
 CT
@@ -8803,8 +8809,8 @@ BP
 BP
 BP
 BP
-BP
-BP
+Bg
+Bg
 Pg
 Pg
 Pg
@@ -8812,11 +8818,11 @@ Pg
 Pg
 Pg
 Pg
-BP
-BP
-BP
-BP
-BP
+Bg
+Bg
+Bg
+Bg
+Bg
 CT
 CT
 "}
@@ -8870,18 +8876,18 @@ BP
 BP
 BP
 BP
-BP
-BP
+Bg
+Bg
 Pg
 Pg
 Pg
 Pg
 Pg
 Pg
-BP
-BP
-BP
-BP
+Bg
+Bg
+Bg
+Bg
 BP
 BP
 CT
@@ -8938,14 +8944,14 @@ BP
 BP
 BP
 BP
-BP
-BP
-BP
-BP
-BP
-BP
-BP
-BP
+Bg
+Bg
+Bg
+Bg
+Bg
+Bg
+Bg
+Bg
 BP
 BP
 BP
@@ -9005,11 +9011,11 @@ BP
 BP
 BP
 BP
-BP
-BP
-BP
-BP
-BP
+Bg
+Bg
+Bg
+Bg
+Bg
 BP
 BP
 BP
@@ -9147,12 +9153,12 @@ BP
 BP
 BP
 BP
+Bg
+Bg
 BP
 BP
 BP
-BP
-BP
-BP
+Bg
 CT
 "}
 (15,1,3) = {"
@@ -9213,13 +9219,13 @@ BP
 BP
 BP
 BP
+Bg
+Bg
+Bg
+Bg
 BP
 BP
-BP
-BP
-BP
-BP
-BP
+Bg
 CT
 "}
 (16,1,3) = {"
@@ -9280,12 +9286,12 @@ BP
 BP
 BP
 BP
-BP
-BP
+Bg
+Bg
 Pg
-BP
-BP
-BP
+Bg
+Bg
+Bg
 Pg
 CT
 "}
@@ -9347,8 +9353,8 @@ BP
 BP
 BP
 BP
-BP
-BP
+Bg
+Bg
 Pg
 Pg
 Pg
@@ -9414,8 +9420,8 @@ BP
 BP
 BP
 BP
-BP
-BP
+Bg
+Bg
 Pg
 Pg
 Pg
@@ -9482,13 +9488,13 @@ BP
 BP
 BP
 BP
-BP
-BP
+Bg
+Bg
 Pg
 Pg
 Pg
 Pg
-BP
+Bg
 "}
 (20,1,3) = {"
 CT
@@ -9550,12 +9556,12 @@ BP
 BP
 BP
 BP
-BP
-BP
-BP
+Bg
+Bg
+Bg
 Pg
 Pg
-BP
+Bg
 "}
 (21,1,3) = {"
 CT
@@ -9618,11 +9624,11 @@ BP
 BP
 BP
 BP
-BP
-BP
-BP
+Bg
+Bg
+Bg
 Pg
-BP
+Bg
 "}
 (22,1,3) = {"
 CT
@@ -9689,7 +9695,7 @@ BP
 BP
 BP
 BP
-BP
+Bg
 "}
 (23,1,3) = {"
 CT
@@ -9756,7 +9762,7 @@ BP
 BP
 BP
 BP
-BP
+Bg
 "}
 (24,1,3) = {"
 CT
@@ -9820,10 +9826,10 @@ BP
 BP
 BP
 BP
-BP
-BP
-BP
-BP
+Bg
+Bg
+Bg
+Bg
 "}
 (25,1,3) = {"
 CT
@@ -9887,10 +9893,10 @@ BP
 BP
 BP
 BP
-BP
-BP
-BP
-BP
+Bg
+Bg
+Bg
+Bg
 "}
 (26,1,3) = {"
 CT
@@ -9954,10 +9960,10 @@ BP
 BP
 BP
 BP
-BP
-BP
-BP
-BP
+Bg
+Bg
+Bg
+Bg
 "}
 (27,1,3) = {"
 CT
@@ -10022,9 +10028,9 @@ BP
 BP
 BP
 BP
-BP
-BP
-BP
+Bg
+Bg
+Bg
 "}
 (28,1,3) = {"
 CT
@@ -10089,9 +10095,9 @@ BP
 BP
 BP
 BP
-BP
-BP
-BP
+Bg
+Bg
+Bg
 "}
 (29,1,3) = {"
 CT
@@ -10156,9 +10162,9 @@ BP
 BP
 BP
 BP
-BP
-BP
-BP
+Bg
+Bg
+Bg
 "}
 (30,1,3) = {"
 CT
@@ -10222,9 +10228,9 @@ BP
 BP
 BP
 BP
-BP
-BP
-BP
+Bg
+Bg
+Bg
 Pg
 "}
 (31,1,3) = {"
@@ -10289,9 +10295,9 @@ BP
 BP
 BP
 BP
-BP
-BP
-BP
+Bg
+Bg
+Bg
 Pg
 "}
 (32,1,3) = {"
@@ -10356,9 +10362,9 @@ BP
 BP
 BP
 BP
-BP
-BP
-BP
+Bg
+Bg
+Bg
 Pg
 "}
 (33,1,3) = {"
@@ -10412,6 +10418,10 @@ BP
 BP
 BP
 BP
+Bg
+Bg
+Bg
+Bg
 BP
 BP
 BP
@@ -10419,13 +10429,9 @@ BP
 BP
 BP
 BP
-BP
-BP
-BP
-BP
-BP
-BP
-BP
+Bg
+Bg
+Bg
 Pg
 "}
 (34,1,3) = {"
@@ -10478,21 +10484,21 @@ BP
 BP
 BP
 BP
+Bg
+Bg
+Bg
+Bg
+Bg
+Bg
 BP
 BP
 BP
 BP
 BP
 BP
-BP
-BP
-BP
-BP
-BP
-BP
-BP
-BP
-BP
+Bg
+Bg
+Bg
 Pg
 "}
 (35,1,3) = {"
@@ -10545,21 +10551,21 @@ BP
 BP
 BP
 BP
+Bg
+Bg
+Bg
+Bg
+Bg
+Bg
+Bg
 BP
 BP
 BP
 BP
 BP
-BP
-BP
-BP
-BP
-BP
-BP
-BP
-BP
-BP
-BP
+Bg
+Bg
+Bg
 Pg
 "}
 (36,1,3) = {"
@@ -10611,23 +10617,23 @@ BP
 BP
 BP
 BP
-BP
-BP
-BP
+Bg
+Bg
+Bg
 Pg
 Pg
 Pg
+Bg
+Bg
 BP
 BP
 BP
 BP
 BP
 BP
-BP
-BP
-BP
-BP
-BP
+Bg
+Bg
+Bg
 "}
 (37,1,3) = {"
 CT
@@ -10668,6 +10674,8 @@ CT
 CT
 CT
 CT
+Bg
+Bg
 BP
 BP
 BP
@@ -10675,25 +10683,23 @@ BP
 BP
 BP
 BP
-BP
-BP
-BP
-BP
-BP
+Bg
+Bg
+Bg
 Pg
 Pg
 Pg
 Pg
+Bg
+Bg
+Bg
 BP
 BP
 BP
 BP
 BP
-BP
-BP
-BP
-BP
-BP
+Bg
+Bg
 Pg
 "}
 (38,1,3) = {"
@@ -10735,32 +10741,32 @@ CT
 CT
 CT
 CT
+Bg
+Bg
+Bg
 BP
 BP
 BP
 BP
 BP
 BP
-BP
-BP
-BP
-BP
-BP
-BP
+Bg
+Bg
+Bg
 Pg
 Pg
 Pg
 Pg
 Pg
+Bg
+Bg
 BP
 BP
 BP
 BP
 BP
-BP
-BP
-BP
-BP
+Bg
+Bg
 Pg
 "}
 (39,1,3) = {"
@@ -10803,31 +10809,31 @@ CT
 CT
 CT
 CT
+Bg
+Bg
+Bg
 BP
 BP
 BP
 BP
-BP
-BP
-BP
-BP
-BP
-BP
+Bg
+Bg
+Bg
 Pg
 Pg
 Pg
 Pg
 Pg
 Pg
+Bg
+Bg
+Bg
 BP
 BP
 BP
-BP
-BP
-BP
-BP
-BP
-BP
+Bg
+Bg
+Bg
 Pg
 "}
 (40,1,3) = {"
@@ -10871,15 +10877,15 @@ CT
 CT
 CT
 CT
-BP
-BP
-BP
-BP
-BP
-BP
-BP
-BP
-BP
+Bg
+Bg
+Bg
+Bg
+Bg
+Bg
+Bg
+Bg
+Bg
 Pg
 Pg
 Pg
@@ -10888,13 +10894,13 @@ Pg
 Pg
 Pg
 Pg
-BP
-BP
-BP
-BP
-BP
-BP
-BP
+Bg
+Bg
+Bg
+Bg
+Bg
+Bg
+Bg
 Pg
 "}
 (41,1,3) = {"
@@ -10939,13 +10945,13 @@ CT
 CT
 CT
 CT
-BP
-BP
-BP
-BP
-BP
-BP
-BP
+Bg
+Bg
+Bg
+Bg
+Bg
+Bg
+Bg
 Pg
 Pg
 Pg
@@ -10956,11 +10962,11 @@ Pg
 Pg
 Pg
 Pg
-BP
-BP
-BP
-BP
-BP
+Bg
+Bg
+Bg
+Bg
+Bg
 Pg
 Pg
 "}
@@ -11007,7 +11013,7 @@ CT
 CT
 CT
 CT
-BP
+Bg
 Pg
 Pg
 Pg
@@ -11024,10 +11030,10 @@ Pg
 Pg
 Pg
 Pg
-BP
-BP
-BP
-BP
+Bg
+Bg
+Bg
+Bg
 Pg
 Pg
 "}
@@ -11091,7 +11097,7 @@ Pg
 Pg
 Pg
 Pg
-BP
+Bg
 Pg
 Pg
 Pg
@@ -11230,7 +11236,7 @@ Pg
 Pg
 Pg
 Pg
-BP
+Bg
 "}
 (46,1,3) = {"
 CT
@@ -11288,14 +11294,14 @@ CT
 CT
 CT
 CT
-BP
-BP
-BP
-BP
-BP
-BP
-BP
-BP
+Bg
+Bg
+Bg
+Bg
+Bg
+Bg
+Bg
+Bg
 CT
 CT
 "}
