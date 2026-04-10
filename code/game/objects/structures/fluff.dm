@@ -1542,3 +1542,25 @@
 	stake.forceMove(drop_location())
 	stake = null
 	qdel(src)
+
+/obj/structure/fluff/statue/noc
+	name = "noc statue"
+	desc = "Wise and calm."
+	icon_state = "noc"
+	icon = 'icons/roguetown/misc/statues/statue_noc.dmi'
+
+/obj/structure/fluff/statue/noc/guard
+	name = "active noc statue"
+	icon_state = "noc_guard"
+
+/obj/structure/fluff/statue/eora
+	name = "eora statue"
+	desc = "Beautiful and Charming"
+	icon_state = "eora"
+	icon = 'icons/roguetown/misc/statues/statue_eora.dmi'
+
+/obj/structure/fluff/statue/zizo
+	name = "zaelorian statue"
+	desc = "Blasphemy... unless...?"
+	icon_state = "zaelorian_crynsaris"
+	icon = 'icons/roguetown/misc/statues/statue_zizo.dmi'
