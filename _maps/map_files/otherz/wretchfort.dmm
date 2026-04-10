@@ -1806,6 +1806,10 @@
 	},
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/under/cave/inhumen/wretch/camp)
+"uq" = (
+/obj/effect/landmark/start/wretchlate,
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/outdoors/cave/wretch)
 "uB" = (
 /obj/structure/fluff/traveltile/wretch{
 	aportalgoesto = "wretchout2";
@@ -4001,6 +4005,10 @@
 	water_color = "#705a43";
 	water_reagent = /datum/reagent/water/gross
 	},
+/area/rogue/outdoors/cave/wretch)
+"Ru" = (
+/obj/effect/landmark/start/wretchlate,
+/turf/open/floor/rogue/blocks/flipped,
 /area/rogue/outdoors/cave/wretch)
 "RF" = (
 /obj/structure/fluff/statue/femalestatue/zizo{
@@ -7353,7 +7361,7 @@ CT
 CT
 CT
 Ov
-Az
+uq
 pX
 CT
 Az
@@ -11953,7 +11961,7 @@ CT
 CT
 CT
 Ov
-ke
+Ru
 Ov
 CT
 CT
