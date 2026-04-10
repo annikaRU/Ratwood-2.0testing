@@ -477,6 +477,7 @@
 	. = ..()
 	icon_state = "bush[pick(5,6)]winter"
 
+
 /obj/structure/flora/rogueshroom
 	name = "mushroom"
 	desc = "Mushrooms are the only happy beings in this land."
@@ -497,12 +498,22 @@
 	var/random_mush_zone = TRUE
 
 /obj/structure/flora/rogueshroom/attack_right(mob/user)
-	handle_special_items_retrieval(user, src)
+	if(user.mind && isliving(user))
+		if(user.mind.special_items && user.mind.special_items.len)
+			var/item = input(user, "What will I take?", "STASH") as null|anything in user.mind.special_items
+			if(item)
+				if(user.Adjacent(src))
+					if(user.mind.special_items[item])
+						var/path2item = user.mind.special_items[item]
+						user.mind.special_items -= item
+						var/obj/item/I = new path2item(user.loc)
+						user.put_in_hands(I)
+			return
 
-
-/obj/structure/flora/rogueshroom/Initialize(mapload)
+/obj/structure/flora/rogueshroom/Initialize()
 	. = ..()
-	icon_state = "mush[rand(1,5)]"
+	if(random_mush_zone)
+		icon_state = "mush[rand(1,5)]"
 	if(icon_state == "mush5")
 		static_debris = list(/obj/item/natural/thorn=1, /obj/item/grown/log/tree/small = 1)
 	pixel_x += rand(8,-8)
@@ -537,10 +548,8 @@
 	return ..()
 
 /obj/structure/flora/rogueshroom/obj_destruction(damage_flag)
-	var/obj/structure/S = new /obj/structure/flora/shroomstump(loc)
-	S.icon_state = "[icon_state]stump"
+	new /obj/structure/flora/shroomstump(loc, initial(icon_state), icon)
 	. = ..()
-
 
 /obj/structure/flora/shroomstump
 	name = "shroom stump"
@@ -772,21 +781,21 @@
 	var/trait_required = TRAIT_WOODSMAN
 	var/special_examine = "Upon closer inspection, the pulsing rhythm of its cap matches a humen heartbeat. You recall these grow atop corpses, mimicing the cadence of that specific person."
 	var/list/abyssal_screams = list(
-		'sound/mobs/abyssal/abyssal_attack.ogg',
-		'sound/mobs/abyssal/abyssal_attack2.ogg',
-		'sound/mobs/abyssal/abyssal_aggro.ogg',
-		'sound/mobs/abyssal/abyssal_pain.ogg',
-		'sound/mobs/abyssal/abyssal_teleport.ogg',
-		'sound/misc/murderbeast.ogg'
+		'modular_azurepeak/sound/mobs/abyssal/abyssal_attack.ogg',
+		'modular_azurepeak/sound/mobs/abyssal/abyssal_attack2.ogg',
+		'modular_azurepeak/sound/mobs/abyssal/abyssal_aggro.ogg',
+		'modular_azurepeak/sound/mobs/abyssal/abyssal_pain.ogg',
+		'modular_azurepeak/sound/mobs/abyssal/abyssal_teleport.ogg',
+		'modular_azurepeak/sound/mobs/abyssal/murderbeast.ogg'
 	)
 	static_debris = list(/obj/item/reagent_containers/food/snacks/rogue/meat_rotten = 1)
 	var/rare_mush_bonus_drop = /obj/item/reagent_containers/powder/ozium
 	var/mush_animate = TRUE
 	var/mush_scream = TRUE
 
-/obj/structure/flora/rogueshroom/get_mechanics_examine(mob/user)
-	. = ..()
-	. += span_info("Most shroomtrees can be toppled by hitting them with the 'CUT', 'CHOP', or 'REND' intents on bladed weapons. Nothing chops trees and foliage better, or quicker, than a good old fashioned axe.")
+// /obj/structure/flora/rogueshroom/get_mechanics_examine(mob/user)
+// 	. = ..()
+// 	. += span_info("Most shroomtrees can be toppled by hitting them with the 'CUT', 'CHOP', or 'REND' intents on bladed weapons. Nothing chops trees and foliage better, or quicker, than a good old fashioned axe.")
 
 /obj/structure/flora/rogueshroom/happy/Initialize()
 	. = ..()
@@ -796,10 +805,10 @@
 /obj/structure/flora/rogueshroom/happy/take_damage(damage_amount, damage_type, damage_flag, sound_effect, attack_dir)
 	. = ..()
 	if(damage_amount > 0 && mush_scream)
-		playsound(src, pick(abyssal_screams), 80, FALSE)
+		playsound(src, pick(abyssal_screams), 50, FALSE)
 
 /obj/structure/flora/rogueshroom/happy/obj_destruction(damage_flag)
-	playsound(src, pick(abyssal_screams), 100, FALSE)
+	playsound(src, pick(abyssal_screams), 60, FALSE)
 	if(prob(7) && rare_mush_bonus_drop)
 		new rare_mush_bonus_drop(loc)
 	. = ..()
@@ -880,6 +889,26 @@
 	if(mush_light_power > 0)
 		set_light(mush_light_range, mush_light_range, mush_light_power, l_color = mush_light_color)
 
+/obj/structure/flora/rogueshroom/happy/mushroom1
+	icon = 'icons/roguetown/misc/foliagetall.dmi'
+	icon_state = "happymush1"
+
+/obj/structure/flora/rogueshroom/happy/mushroom2
+	icon = 'icons/roguetown/misc/foliagetall.dmi'
+	icon_state = "happymush2"
+
+/obj/structure/flora/rogueshroom/happy/mushroom3
+	icon = 'icons/roguetown/misc/foliagetall.dmi'
+	icon_state = "happymush3"
+
+/obj/structure/flora/rogueshroom/happy/mushroom4
+	icon = 'icons/roguetown/misc/foliagetall.dmi'
+	icon_state = "happymush4"
+
+/obj/structure/flora/rogueshroom/happy/mushroom5
+	icon = 'icons/roguetown/misc/foliagetall.dmi'
+	icon_state = "happymush5"
+
 /obj/structure/flora/rogueshroom/happy/metal
 	name = "metallic mushroom"
 	icon_state = "metal"
@@ -894,7 +923,7 @@
 	mush_light_color = null
 	int_req = 20
 	mush_animate = FALSE
-	static_debris = list(/obj/item/rogueore/lithmyc = 1)
+	// static_debris = list(/obj/item/rogueore/lithmyc = 1)
 	mush_scream = FALSE
 
 /obj/structure/flora/mushroomcluster
