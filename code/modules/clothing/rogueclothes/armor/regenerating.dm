@@ -25,9 +25,9 @@
 
 /obj/item/clothing/suit/roguetown/armor/regenerating/equipped(mob/user, slot)
 	. = ..()
-	UnregisterSignal(user, COMSIG_SPECIES_ATTACKED_BY)
+	UnregisterSignal(user, list(COMSIG_SPECIES_ATTACKED_BY, COMSIG_LIVING_ARMOR_CHECKED, COMSIG_MOB_APPLY_DAMGE))
 	if(slot == SLOT_SHIRT || slot == SLOT_ARMOR)
-		RegisterSignal(user, COMSIG_SPECIES_ATTACKED_BY, PROC_REF(on_attacked_by))
+		RegisterSignal(user, list(COMSIG_SPECIES_ATTACKED_BY, COMSIG_LIVING_ARMOR_CHECKED, COMSIG_MOB_APPLY_DAMGE), PROC_REF(on_attacked_by))
 
 /// Combat tag system, makes your skin stop regenning if you are attacked by anything
 /obj/item/clothing/suit/roguetown/armor/regenerating/proc/on_attacked_by(datum/source)

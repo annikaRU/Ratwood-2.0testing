@@ -100,3 +100,6 @@
 
 /// From /datum/species/proc/spec_attacked_by()
 #define COMSIG_SPECIES_ATTACKED_BY "species_attacked_by"
+
+/// From /mob/living/proc/run_armor_check()
+#define COMSIG_LIVING_ARMOR_CHECKED "living_armor_checked"
