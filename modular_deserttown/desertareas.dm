@@ -413,3 +413,12 @@
 /area/rogue/indoors/town/desert/arenaview
 	name = "Grand Arena"
 	viewing_area = TRUE
+
+/area/rogue/indoors/town/church/cavebasement
+	icon_state = "church"
+	first_time_text = "THE CRYPT OF THE TEN"
+	ambientsounds = AMB_CAVEWATER
+	ambientnight = AMB_CAVEWATER
+	spookysounds = SPOOKY_CAVE
+	spookynight = SPOOKY_CAVE
+	droning_sound = 'sound/music/area/underdark2.ogg'
