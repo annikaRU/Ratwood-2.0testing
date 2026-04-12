@@ -14,7 +14,7 @@
 	max_integrity = 475
 	item_flags = DROPDEL
 	repair_time = 14 SECONDS
-	interrupt_damount = 15
+	combat_taggable = TRUE
 
 /datum/antagonist/gnoll
 	name = "Gnoll"
