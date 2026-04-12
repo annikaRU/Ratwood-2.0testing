@@ -337,10 +337,15 @@
 	var/bushtype
 
 /obj/structure/flora/roguegrass/bush/Initialize(mapload)
-	if(prob(88) && isnull(bushtype))
-		bushtype = pickweight(list(/obj/item/reagent_containers/food/snacks/grown/berries/rogue=5,
-					/obj/item/reagent_containers/food/snacks/grown/berries/rogue/poison=3,
-					/obj/item/reagent_containers/food/snacks/grown/rogue/pipeweed=1))
+	if(isnull(bushtype))
+		var/area/rogue/bush_area = get_area(src)
+		if(!bush_area.town_area)
+			if(prob(88))
+				bushtype = pickweight(list(/obj/item/reagent_containers/food/snacks/grown/berries/rogue=5,
+						/obj/item/reagent_containers/food/snacks/grown/berries/rogue/poison=3,
+						/obj/item/reagent_containers/food/snacks/grown/rogue/pipeweed=1))
+		else
+			desc += "Sadly, years of harvest inside this town have left it fruitless."
 	loot_replenish()
 	pixel_x += rand(-3,3)
 	return ..()

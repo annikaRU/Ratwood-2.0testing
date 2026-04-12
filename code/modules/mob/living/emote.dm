@@ -1620,7 +1620,7 @@
 	message_muffled = "makes a muffled sound!"
 	vary = TRUE
 	show_runechat = FALSE
-	is_animal = TRUE	
+	is_animal = TRUE
 
 /mob/living/carbon/human/verb/emote_dove()
 	if(istype(usr.getorganslot(ORGAN_SLOT_TONGUE), /obj/item/organ/tongue/wild_tongue) || istype(usr.getorganslot(ORGAN_SLOT_TONGUE), /obj/item/organ/tongue/harpy))
@@ -2446,3 +2446,33 @@
 	set category = "Emotes"
 
 	emote("fortune", intentional = TRUE)
+
+/datum/emote/living/praysuicide
+	key = "praysuicide"
+	key_third_person = "utters their last words"
+	message = ""
+	emote_type = EMOTE_AUDIBLE
+	stat_allowed = UNCONSCIOUS
+	show_runechat = FALSE
+
+/mob/living/carbon/human/verb/emote_praysuicide()
+	set name = "Suicidal pray"
+	set category = "Emotes"
+	emote("praysuicide", intentional = TRUE)
+
+/datum/emote/living/praysuicide/run_emote(mob/user, params, type_override, intentional)
+	if(!user)
+		return FALSE
+
+	var/mob/living/L = user
+	to_chat(L, span_danger("I pray to my patron for my death... and I am heard."))
+	var/lastmsg = params
+	if(!lastmsg)
+		lastmsg = input("Whisper your final words:", "Last Words") as text|null
+	if(!lastmsg)
+		return FALSE
+	L.whisper(lastmsg)
+	sleep(50)
+	L.death()
+
+	return TRUE
