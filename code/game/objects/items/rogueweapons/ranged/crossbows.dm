@@ -29,7 +29,7 @@
 	obj_flags = UNIQUE_RENAME
 	damfactor = 1.2
 	accfactor = 1.1
-    damage_from_perception = FALSE
+	damage_from_perception = FALSE
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow/getonmobprop(tag)
 	. = ..()
@@ -208,7 +208,7 @@
 	movingreload = TRUE
 	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_HIP
 	penfactor = 0.5		//Bolts have 50 pen, this decreases to 25. Should only pen armor with less than 67 protection.
-    damage_from_perception = TRUE
+	damage_from_perception = TRUE
 
 
 //Pseudo-Arbalest. This thing is intended to be fuckhuge, but it's using a temp sprite.
