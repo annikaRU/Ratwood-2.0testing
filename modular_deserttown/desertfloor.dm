@@ -249,6 +249,8 @@
 /turf/open/floor/rogue/dirt/road/desert
 	icon = 'modular_deserttown/icons/desertfloor.dmi'
 
+/turf/open/floor/rogue/grass/desert
+	icon = 'modular_deserttown/icons/desertfloor.dmi'
 
 ///.
 
